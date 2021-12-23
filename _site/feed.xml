@@ -1,0 +1,286 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>zhaowcheng</title>
+  <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
+  <updated>2021-12-08T16:25:06+08:00</updated>
+  <author>
+    <name>zhaowcheng</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="zh-CN"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
+  <rights> © 2021 zhaowcheng </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Python入门教程-9-输入输出</title>
+    <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python入门教程-9-输入输出" />
+    <published>2021-02-24T20:44:30+08:00</published>
+  
+    <updated>2021-02-24T20:44:30+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-9-input-and-output/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python入门教程" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      终端的输入输出
+
+input
+
+Python 提供了一个 input 函数供终端的输入使用，当程序执行到 input 处时会暂停并等待用户输入，用户输入完成并敲击回车后才会继续执行后续的代码。input 的返回值就是读取到的用户输入内容，还可以在调用 input 时传入一个字符串参数作为等待输入的提示信息显示。
+
+# 用 var 保存用户输入内容
+&amp;gt;&amp;gt;&amp;gt; var = input()
+'hello, world'
+&amp;gt;&amp;gt;&amp;gt; var
+'hello, world'
+&amp;gt;&amp;gt;&amp;gt; 
+
+# 等待输入时显示提示信息
+&amp;gt;&amp;gt;&amp;gt; name = input('Please input your name:')
+Please input your name:'tom'
+&amp;gt;&amp;gt;&amp;gt; name
+'tom'
+&amp;gt;&amp;gt;&amp;gt; ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Python入门教程-8-函数定义</title>
+    <link href="http://localhost:4000/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python入门教程-8-函数定义" />
+    <published>2020-11-24T10:45:50+08:00</published>
+  
+    <updated>2020-11-24T10:45:50+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-8-function-definition/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python入门教程" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      函数定义
+
+先看一个简单的函数定义的例子，以 def 语句开头，定义一个名为 add 的函数，接收两个参数 a 和 b，然后返回这两个参数的 和：
+
+&amp;gt;&amp;gt;&amp;gt; def add(a, b):
+...     return a + b
+...
+&amp;gt;&amp;gt;&amp;gt; add(1, 2)
+3
+&amp;gt;&amp;gt;&amp;gt;
+
+
+在 Python 中，一个定义好的函数可以把函数名赋值给其他变量，然后通过其他变量也可以调用该函数：
+
+&amp;gt;&amp;gt;&amp;gt; def add(a, b):
+...     return a + b
+...
+&amp;gt;&amp;gt;&amp;gt; plus = add
+&amp;gt;&amp;gt;&amp;gt; plus(1, 2)
+3
+&amp;gt;&amp;gt;&amp;gt;
+
+
+如果定义的函数体中没有明确使用 return 语句返回值，那么默认返回值是 None：
+
+&amp;gt;&amp;gt;&amp;gt; d...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Python入门教程-7-流程控制</title>
+    <link href="http://localhost:4000/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python入门教程-7-流程控制" />
+    <published>2020-10-18T15:58:25+08:00</published>
+  
+    <updated>2020-10-18T15:58:25+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-7-flow-control/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-7-flow-control/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python入门教程" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      if
+
+if 是条件控制语句，其语法定义如下：
+
+if_stmt ::=  "if" expression ":" suite
+             ( "elif" expression ":" suite )*
+             ["else" ":" suite]
+
+
+if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 suite，然后可以在后面接 0 或任意多个 elif 语句，最后一条 else 语句为 可选。
+
+&amp;gt;&amp;gt;&amp;gt; x = 8
+&amp;gt;&amp;gt;&amp;gt; if x &amp;lt; 0:
+...     print('negative')
+... elif x == 0:
+...     print('zero')
+... else:
+...     print('positive')
+... 
+positive
+&amp;g...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Python入门教程-6-字典与集合</title>
+    <link href="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python入门教程-6-字典与集合" />
+    <published>2020-08-06T10:31:58+08:00</published>
+  
+    <updated>2020-08-06T10:31:58+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-6-dict-and-set/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python入门教程" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      字典（dict）
+
+字典通过 键值对(key: value) 的方式，把 key 映射到 value。key 必须是 可 hash 的(hashable)，由于 Python 中所有内置的 不可变类型(immutable) 都是可 hash 的，所以都可用作字典的 key，比如 字符串(str)、数字(int, float) 和 只包含不可变类型元素的元组(tuple)，如果元组直接或间接的包含了 可变类型 的元素，也不能作为字典的 key。value 则可以是任意类型。
+
+字典中元素是无序的，并不会按照插入的顺序排列，可能会是任意的顺序，如果想要有序的字典，可以使用 collections.OrderedDict。但是从 Python 3.7 开始，字典默认是按照插入顺序排序的了。
+
+字典创建
+
+创建一个字典可以通过以下 3 种方式：
+
+
+  
+    大括号 {} 方式：
+
+  ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Python入门教程-5-列表与元组</title>
+    <link href="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" rel="alternate" type="text/html" title="Python入门教程-5-列表与元组" />
+    <published>2020-07-15T15:16:00+08:00</published>
+  
+    <updated>2020-07-15T15:16:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-5-list-and-tuple/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python入门教程" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      序列（Sequence）
+
+在前面已经介绍过的 字符串(str)，以及接下来要学习的 列表(list) 和 元组(tuple) 都属于 序列(Sequence) 类型。
+序列又分为 可变序列(mutable) 和 不可变序列(immutable)，可变指的是可修改序列的元素，列表属于可变序列，字符串和元组都属于不可变序列。
+
+# 列表使用中括号表示
+&amp;gt;&amp;gt;&amp;gt; nums = [1, 2, 3]
+&amp;gt;&amp;gt;&amp;gt; type(nums)
+&amp;lt;class 'list'&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; nums[1] = 0  # 列表是可变序列
+&amp;gt;&amp;gt;&amp;gt; nums
+[1, 0, 3]
+
+# 元组使用圆括号表示
+&amp;gt;&amp;gt;&amp;gt; seqs = (4, 5, 6)
+&amp;gt;&amp;gt;&amp;gt; type(seqs)
+&amp;lt;class 'tupl...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
