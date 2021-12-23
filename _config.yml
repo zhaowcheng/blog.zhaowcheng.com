@@ -93,13 +93,14 @@ avatar: 'assets/img/favicons/android-chrome-512x512.png'
 # boolean type, the global switch for ToC in posts.
 toc: true
 
-gitment:
+giscus:
   comments: true
-  owner: 'zhaowcheng'
-  repo: 'zhaowcheng.com'
-  oauth:
-    client_id: '416c4295050df6bfd1f6'
-    client_secret: '089248c8c71ac873a3bca44d8ab020e8a093bd98'
+  repo: 
+    name: 'zhaowcheng/zhaowcheng.com'
+    id: 'R_kgDOGknPwA'
+  category:
+    name: 'Announcements'
+    id: 'DIC_kwDOGknPwM4CAZWd'
 
 paginate: 10
 
