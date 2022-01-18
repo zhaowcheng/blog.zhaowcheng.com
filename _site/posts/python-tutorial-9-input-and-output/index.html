@@ -38,8 +38,8 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="终端的输入输出" />
 <meta property="og:description" content="终端的输入输出" />
-<link rel="canonical" href="https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/" />
-<meta property="og:url" content="https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/" />
+<link rel="canonical" href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
+<meta property="og:url" content="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
 <meta property="og:site_name" content="zhaowcheng" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-02-24T20:44:30+08:00" />
@@ -47,7 +47,7 @@
 <meta property="twitter:title" content="Python入门教程-9-输入输出" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"Python入门教程-9-输入输出","dateModified":"2021-02-24T20:44:30+08:00","datePublished":"2021-02-24T20:44:30+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/"},"url":"https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/","@type":"BlogPosting","description":"终端的输入输出","@context":"https://schema.org"}</script>
+{"headline":"Python入门教程-9-输入输出","dateModified":"2021-02-24T20:44:30+08:00","datePublished":"2021-02-24T20:44:30+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-9-input-and-output/"},"url":"http://localhost:4000/posts/python-tutorial-9-input-and-output/","@type":"BlogPosting","description":"终端的输入输出","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -513,7 +513,7 @@
     data-toggle="tooltip"
     data-placement="bottom"
     title="2021-02-24, 20:44 +0800"
-  >02-24<i class="unloaded">2021-02-24T20:44:30+08:00</i>
+  >2021-02-24<i class="unloaded">2021-02-24T20:44:30+08:00</i>
 </span>
 
         </div>
@@ -542,7 +542,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="468 字">2 分钟
+  title="2278 字">12 分钟
     阅读</span>
 
 
@@ -656,8 +656,612 @@
 
 <h1 id="文件的输入输出">文件的输入输出</h1>
 
+<p>文件的输入输出即为文件的读写，Python 中文件的读写分别使用 <code class="language-plaintext highlighter-rouge">read</code> 和 <code class="language-plaintext highlighter-rouge">write</code> 函数，但是在进行文件读写前必须使用 <code class="language-plaintext highlighter-rouge">open</code> 函数打开文件。</p>
+
+<h2 id="open">open</h2>
+
+<p><code class="language-plaintext highlighter-rouge">open</code> 函数定义如下：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">closefd</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">opener</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>下面分别对其各参数进行说明：</p>
+
+<ul>
+  <li>
+    <p>file</p>
+
+    <p>可以是表示 <code class="language-plaintext highlighter-rouge">文件路径</code>（相对路径或绝对路径）的字符串（<code class="language-plaintext highlighter-rouge">string</code>）或者字节类型（<code class="language-plaintext highlighter-rouge">bytes</code>）。<br />
+  也可以是表示 <code class="language-plaintext highlighter-rouge">文件描述符</code> 的数字（<code class="language-plaintext highlighter-rouge">Integer</code>），如果是文件描述符，那么默认情况下当 open 返回的文件对象被关闭时，文件描述符也会同时被关闭，除非调用 open 时传入 <code class="language-plaintext highlighter-rouge">closefd</code> 参数为 <code class="language-plaintext highlighter-rouge">False</code>。</p>
+  </li>
+  <li>
+    <p>mode</p>
+
+    <p>由固定的字符组成的表示文件打开模式的字符串，所有可选字符模式如下：</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>字符</th>
+          <th>含义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>r</td>
+          <td>读模式</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>写模式，如果文件已存在则清空文件内容</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>写模式，如果文件已存在则报错</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>追加写模式，如果文件已存在则从文件末尾开始写入</td>
+        </tr>
+        <tr>
+          <td>b</td>
+          <td>二进制模式</td>
+        </tr>
+        <tr>
+          <td>t</td>
+          <td>文本模式</td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>更新模式（可读可写）</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <p>以上字符又可以按照如下规则进行组合：</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Text
+  
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>  (r|w|x|a)[b|t][+]  
+
+  共 3 部分组成，圆括号表示必选参数，方括号表示可选参数
+  第一部分为必选参数，从 r、w、x、a 中任选一个
+  第二部分为可选参数，从 b 和 t 中任选一个，默认为 t
+  第三部分也为可选参数，只有一个可选项 +
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <p>根据组合规则，最终完整的模式及含义如下：</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>模式</th>
+          <th>含义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>r</td>
+          <td>只读模式，进行写操作会报错</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>只写模式，如果文件不存在则创建新文件，如果已存在则清空文件内容，进行读操作会报错</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>只写模式，如果文件不存在则创建新文件，如果已存在则报错，进行读操作会报错</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>追加写模式，如果文件不存在则创建新文件，如果已存在在从文件末尾开始写</td>
+        </tr>
+        <tr>
+          <td>r+</td>
+          <td>读写模式，相当于对 r 模式增加了写操作</td>
+        </tr>
+        <tr>
+          <td>w+</td>
+          <td>读写模式，相当于对 w 模式增加了读操作</td>
+        </tr>
+        <tr>
+          <td>x+</td>
+          <td>读写模式，相当于对 x 模式增加了读操作</td>
+        </tr>
+        <tr>
+          <td>a+</td>
+          <td>读写模式，相当于对 a 模式增加了读操作</td>
+        </tr>
+        <tr>
+          <td>rb</td>
+          <td>与 r 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>wb</td>
+          <td>与 w 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>xb</td>
+          <td>与 x 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>ab</td>
+          <td>与 a 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>rb+</td>
+          <td>与 rb 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>wb+</td>
+          <td>与 wb 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>xb+</td>
+          <td>与 xb 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>ab+</td>
+          <td>与 ab 模式相比，不同点在于以二进制模式打开文件</td>
+        </tr>
+        <tr>
+          <td>rt</td>
+          <td>与 r 模式相同</td>
+        </tr>
+        <tr>
+          <td>wt</td>
+          <td>与 w 模式相同</td>
+        </tr>
+        <tr>
+          <td>xt</td>
+          <td>与 x 模式相同</td>
+        </tr>
+        <tr>
+          <td>at</td>
+          <td>与 a 模式相同</td>
+        </tr>
+        <tr>
+          <td>rt+</td>
+          <td>与 r+ 模式相同</td>
+        </tr>
+        <tr>
+          <td>wt+</td>
+          <td>与 w+ 模式相同</td>
+        </tr>
+        <tr>
+          <td>xt+</td>
+          <td>与 x+ 模式相同</td>
+        </tr>
+        <tr>
+          <td>at+</td>
+          <td>与 a+ 模式相同</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li>
+    <p>buffering</p>
+
+    <p>缓存策略，可选值即含义如下：</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>含义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>-1</td>
+          <td><code class="language-plaintext highlighter-rouge">二进制模式</code>: 自动检测存储设备的块大小（即 io.DEFAULT_BUFFER_SIZE，通常是 4096 或 8192，单位字节），并以此作为缓存大小。<br /> <code class="language-plaintext highlighter-rouge">交互式文本模式</code>: 即 isatty() 为 True 的文件对象，该情况下将缓存 <code class="language-plaintext highlighter-rouge">一行</code>。 <br /> <code class="language-plaintext highlighter-rouge">其他文本模式</code>: 与二进制模式相同。</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>不使用缓存，<code class="language-plaintext highlighter-rouge">仅适用于二进制模式</code></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>缓存 <code class="language-plaintext highlighter-rouge">一行</code>，<code class="language-plaintext highlighter-rouge">仅适用于文本模式</code></td>
+        </tr>
+        <tr>
+          <td>&gt;1</td>
+          <td>以该值（单位字节）作为固定大小进行缓存</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li>
+    <p>encoding</p>
+
+    <p>文件编码和解码格式，<code class="language-plaintext highlighter-rouge">仅适用于文本模式</code>，完整的可选编码格式列表见 <a href="https://docs.python.org/3.5/library/codecs.html#standard-encodings">standard-encodings</a></p>
+  </li>
+  <li>
+    <p>errors</p>
+
+    <p>当编码或者解码文件内容出现错误时的处理方式，<code class="language-plaintext highlighter-rouge">仅适用于文本模式</code>，常用的处理方式如下</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>含义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>strict</td>
+          <td>当出现编码错误时报 <code class="language-plaintext highlighter-rouge">ValueError</code>，默认值</td>
+        </tr>
+        <tr>
+          <td>ignore</td>
+          <td>忽略错误</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <p>完整的处理方式见 <a href="https://docs.python.org/3.5/library/codecs.html#error-handlers">error-handlers</a></p>
+  </li>
+  <li>
+    <p>newline</p>
+
+    <p>该参数控制读和写的换行符，<code class="language-plaintext highlighter-rouge">仅适用于文本模式</code>，可选值及其作用如下：</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>值</th>
+          <th>读操作时</th>
+          <th>写操作时</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>None</td>
+          <td>‘\n’、’\r’ 和 ‘\r\n’ 都会被当作换行符，并且统一转换为 ‘\n’</td>
+          <td>‘\n’ 会被转换为当前系统默认换行符，即 <code class="language-plaintext highlighter-rouge">os.linesep</code></td>
+        </tr>
+        <tr>
+          <td>’’</td>
+          <td>‘\n’、’\r’ 和 ‘\r\n’ 都会被当作换行符，但是均保持原样，不做转换</td>
+          <td>对换行符保持原样，不做转换</td>
+        </tr>
+        <tr>
+          <td>‘\n’</td>
+          <td>只有 ‘\n’ 会被当作换行符，但是不会做转换</td>
+          <td>同 ‘’</td>
+        </tr>
+        <tr>
+          <td>‘\r’</td>
+          <td>同 ‘\n’</td>
+          <td>‘\r’ 会被转换为 ‘\n’</td>
+        </tr>
+        <tr>
+          <td>‘\r\n’</td>
+          <td>同 ‘\n’</td>
+          <td>‘\r\n’ 会被转换为 ‘\n’</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+</ul>
+
+<h2 id="io">io</h2>
+
+<p><code class="language-plaintext highlighter-rouge">open</code> 方法返回的所有对象都定义在 <code class="language-plaintext highlighter-rouge">io</code> 模块中，其类图如下：</p>
+
+<pre><code class="language-mermaid">classDiagram
+    IOBase &lt;|-- RawIOBase
+    RawIOBase &lt;|-- FileIO
+    IOBase &lt;|-- BufferedIOBase
+    BufferedIOBase &lt;|-- BufferedReader
+    BufferedIOBase &lt;|-- BufferedWriter
+    BufferedIOBase &lt;|-- BufferedRWPair
+    BufferedIOBase &lt;|-- BufferedRandom
+    BufferedIOBase &lt;|-- BytesIO
+    IOBase &lt;|-- TextIOBase
+    TextIOBase &lt;|-- TextIOWrapper
+    TextIOBase &lt;|-- StringIO
+    class IOBase{
+        +closed
+        +close()
+        +fileno()
+        +flush()
+        +isatty()
+        +readable()
+        +readline(size=-1)
+        +readlines(hint=-1)
+        +seek(offset[, whence])
+        +seekable()
+        +tell()
+        +truncate(size=None)
+        +writable()
+        +writelines(lines)
+    }
+    class RawIOBase{
+        +read(size=-1)
+        +readall()
+        +readinto(b)
+        +write(b)
+    }
+    class FileIO{
+        +mode
+        +name
+    }
+    class BufferedIOBase{
+        +raw
+        +detach()
+        +read(size=-1)
+        +read1(size=-1)
+        +readinto(b)
+        +readinto1(b)
+        +write(b)
+    }
+    class BufferedReader{
+        +peek([size])
+        +read([size])
+        +read1(size)
+    }
+    class BufferedWriter{
+        +flush()
+        +write(b)
+    }
+    class BytesIO{
+        +getbuffer()
+        +getvalue()
+        +read1()
+        +readinto1()
+    }
+    class TextIOBase{
+        +encoding
+        +errors
+        +newlines
+        +buffer
+        +detach()
+        +read(size)
+        +readline(size=-1)
+        +seek(offset[, whence])
+        +tell()
+        +write(s)
+    }
+    class TextIOWrapper{
+        +line_buffering
+    }
+    class StringIO{
+        +getvalue()
+    }
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">open</code> 方法在不同模式和缓存策略下返回的文件对象类型如下：</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>模式</th>
+      <th>buffering == 0</th>
+      <th>buffering != 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>r</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>r+</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>w+</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>x+</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>a+</td>
+      <td>N/A</td>
+      <td>TextIOWrapper</td>
+    </tr>
+    <tr>
+      <td>rb</td>
+      <td>FileIO</td>
+      <td>BufferedReader</td>
+    </tr>
+    <tr>
+      <td>wb</td>
+      <td>FileIO</td>
+      <td>BufferedWriter</td>
+    </tr>
+    <tr>
+      <td>xb</td>
+      <td>FileIO</td>
+      <td>BufferedWriter</td>
+    </tr>
+    <tr>
+      <td>ab</td>
+      <td>FileIO</td>
+      <td>BufferedWriter</td>
+    </tr>
+    <tr>
+      <td>rb+</td>
+      <td>FileIO</td>
+      <td>BufferedRandom</td>
+    </tr>
+    <tr>
+      <td>wb+</td>
+      <td>FileIO</td>
+      <td>BufferedRandom</td>
+    </tr>
+    <tr>
+      <td>xb+</td>
+      <td>FileIO</td>
+      <td>BufferedRandom</td>
+    </tr>
+    <tr>
+      <td>ab+</td>
+      <td>FileIO</td>
+      <td>BufferedRandom</td>
+    </tr>
+    <tr>
+      <td>rt</td>
+      <td>与 r 模式相同</td>
+      <td>与 r 模式相同</td>
+    </tr>
+    <tr>
+      <td>wt</td>
+      <td>与 w 模式相同</td>
+      <td>与 w 模式相同</td>
+    </tr>
+    <tr>
+      <td>xt</td>
+      <td>与 x 模式相同</td>
+      <td>与 x 模式相同</td>
+    </tr>
+    <tr>
+      <td>at</td>
+      <td>与 a 模式相同</td>
+      <td>与 a 模式相同</td>
+    </tr>
+    <tr>
+      <td>rt+</td>
+      <td>与 r+ 模式相同</td>
+      <td>与 r+ 模式相同</td>
+    </tr>
+    <tr>
+      <td>wt+</td>
+      <td>与 w+ 模式相同</td>
+      <td>与 w+ 模式相同</td>
+    </tr>
+    <tr>
+      <td>xt+</td>
+      <td>与 x+ 模式相同</td>
+      <td>与 x+ 模式相同</td>
+    </tr>
+    <tr>
+      <td>at+</td>
+      <td>与 a+ 模式相同</td>
+      <td>与 a+ 模式相同</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h2 id="文件读写示例">文件读写示例</h2>
+
+<p>通常文件读写的流程是先使用 open() 打开文件，然后进行读写操作，最后使用 close() 方法关闭文件：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'testfile'</span><span class="p">,</span> <span class="s">'r+'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+<span class="s">'hello'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'world'</span><span class="p">)</span>
+<span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+<span class="s">'helloworld'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>但是更推荐的方法是使用 <code class="language-plaintext highlighter-rouge">with</code> 子句来进行文件读写操作，这样在 with 结束后会自动关闭文件，避免因忘记关闭而占用文件的情况：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="s">''</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'testfile'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="p">...</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+<span class="p">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">closed</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+<span class="s">'hello'</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h1 id="引用资料">引用资料</h1>
 
+<ul>
+  <li>[Input and Output] : https://docs.python.org/3.5/tutorial/inputoutput.html</li>
+  <li>[input] : https://docs.python.org/3.5/library/functions.html#input</li>
+  <li>[print] : https://docs.python.org/3.5/library/functions.html#print</li>
+  <li>[open] : https://docs.python.org/3.5/library/functions.html#open</li>
+  <li>[io] : https://docs.python.org/3.5/library/io.html#i-o-base-classes</li>
+</ul>
 
 
       </div>
@@ -1099,7 +1703,7 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
   <div class="d-flex justify-content-between align-items-center">
     <div class="footer-left">
       <p class="mb-0">
-        © 2021
+        © 2022
         <a href="https://zhaowcheng.com">zhaowcheng</a>.
         
         <span data-toggle="tooltip" data-placement="top"
@@ -1165,6 +1769,37 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
 
 
     </div> <!-- #main-wrapper -->
+
+    
+      <!--
+  mermaid-js loader
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+<script>
+  $(function() {
+    let initTheme = "default";
+
+    if ($("html[mode=dark]").length > 0
+      || ($("html[mode]").length == 0
+        && window.matchMedia("(prefers-color-scheme: dark)").matches ) ) {
+      initTheme = "dark";
+    }
+
+    let mermaidConf = {
+      theme: initTheme  /* <default|dark|forest|neutral> */
+    };
+
+    /* Markdown converts to HTML */
+    $("pre").has("code.language-mermaid").each(function() {
+      let svgCode = $(this).children().html();
+      $(this).addClass("unloaded");
+      $(this).after(`<div class=\"mermaid\">${svgCode}</div>`);
+    });
+
+    mermaid.initialize(mermaidConf);
+  });
+</script>
 
     
 

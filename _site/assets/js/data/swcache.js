@@ -48,7 +48,7 @@ const allowedDomains = [
     'www.google-analytics.com',
   
 
-  'zhaowcheng.com',
+  'localhost:4000',
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',
