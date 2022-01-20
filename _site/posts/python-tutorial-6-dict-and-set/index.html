@@ -557,13 +557,13 @@
 
         
 
-        <h1 id="字典dict">字典（dict）</h1>
+        <h2 id="字典dict">字典（dict）</h2>
 
 <p>字典通过 <code class="language-plaintext highlighter-rouge">键值对(key: value)</code> 的方式，把 key 映射到 value。key 必须是 <code class="language-plaintext highlighter-rouge">可 hash 的</code>(<a href="https://docs.python.org/3.5/glossary.html#term-hashable">hashable</a>)，由于 Python 中所有内置的 <code class="language-plaintext highlighter-rouge">不可变类型</code>(<a href="https://docs.python.org/3.5/glossary.html#term-immutable">immutable</a>) 都是可 hash 的，所以都可用作字典的 key，比如 <code class="language-plaintext highlighter-rouge">字符串(str)</code>、<code class="language-plaintext highlighter-rouge">数字(int, float)</code> 和 <code class="language-plaintext highlighter-rouge">只包含不可变类型元素的元组(tuple)</code>，如果元组直接或间接的包含了 <code class="language-plaintext highlighter-rouge">可变类型</code> 的元素，也不能作为字典的 key。value 则可以是任意类型。</p>
 
 <p>字典中元素是无序的，并不会按照插入的顺序排列，可能会是任意的顺序，如果想要有序的字典，可以使用 <a href="https://docs.python.org/3.5/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>。但是从 <code class="language-plaintext highlighter-rouge">Python 3.7</code> 开始，字典默认是按照插入顺序排序的了。</p>
 
-<h2 id="字典创建">字典创建</h2>
+<h3 id="字典创建">字典创建</h3>
 
 <p>创建一个字典可以通过以下 3 种方式：</p>
 
@@ -665,7 +665,7 @@
   </li>
 </ul>
 
-<h2 id="字典操作">字典操作</h2>
+<h3 id="字典操作">字典操作</h3>
 
 <ul>
   <li>
@@ -1173,7 +1173,7 @@
   </li>
 </ul>
 
-<h2 id="字典视图">字典视图</h2>
+<h3 id="字典视图">字典视图</h3>
 
 <p>上面提到的 d.keys()、d.values() 和 d.items() 等方法返回的都是一个 <code class="language-plaintext highlighter-rouge">视图类型(view object)</code>，通过这些视图可以访问字典 d 的 keys、values 或 items，并且视图会随着字典的变化而自动更新。</p>
 
@@ -1224,7 +1224,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">items</span>
 <span class="n">dict_items</span><span class="p">([(</span><span class="s">'one'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'two'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
 
-<span class="c1"># 视图随着字典变化而动态更新
+<span class="c1">## 视图随着字典变化而动态更新
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">three</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">keys</span>
 <span class="n">dict_keys</span><span class="p">([</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">])</span>
@@ -1233,7 +1233,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">items</span>
 <span class="n">dict_items</span><span class="p">([(</span><span class="s">'one'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'two'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'three'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
 
-<span class="c1"># 可以对视图进行迭代(iteration)
+<span class="c1">## 可以对视图进行迭代(iteration)
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 <span class="p">...</span>
@@ -1242,17 +1242,17 @@
 <span class="n">three</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="字典比较">字典比较</h2>
+<h3 id="字典比较">字典比较</h3>
 
 <p>字典只支持 <code class="language-plaintext highlighter-rouge">==</code> 比较操作符，当且仅当所有项都相等时才相等。对于 <code class="language-plaintext highlighter-rouge">&lt;</code>、<code class="language-plaintext highlighter-rouge">&gt;</code>、<code class="language-plaintext highlighter-rouge">&lt;=</code> 和 <code class="language-plaintext highlighter-rouge">&gt;=</code> 比较操作符都不支持，如果使用会抛 <code class="language-plaintext highlighter-rouge">TypeError</code> 错误。</p>
 
-<h1 id="集合set">集合（set）</h1>
+<h2 id="集合set">集合（set）</h2>
 
 <p><code class="language-plaintext highlighter-rouge">集合(set)</code> 是一些 <code class="language-plaintext highlighter-rouge">无序(unordered)</code>、<code class="language-plaintext highlighter-rouge">无重复(no duplicate)</code> 并且 <code class="language-plaintext highlighter-rouge">可hash(hashable)</code> 元素的组合。通常用于 <code class="language-plaintext highlighter-rouge">是否包含某个成员的检测</code>、<code class="language-plaintext highlighter-rouge">去除重复元素</code> 等操作。同时也支持数学上的集合运算，比如 <code class="language-plaintext highlighter-rouge">交集(intersection)</code>、<code class="language-plaintext highlighter-rouge">并集(union)</code>、<code class="language-plaintext highlighter-rouge">差集(difference)</code> 和 <code class="language-plaintext highlighter-rouge">对称差集(symmetric difference)</code>。</p>
 
 <p>Python 内置两种类型集合，<code class="language-plaintext highlighter-rouge">set</code> 和 <code class="language-plaintext highlighter-rouge">frozenset</code>，set 是可变类型(mutable)，frozenset 是不可变类型(immutable)。</p>
 
-<h2 id="集合创建">集合创建</h2>
+<h3 id="集合创建">集合创建</h3>
 
 <p>集合创建可以通过以下 3 种方式：</p>
 
@@ -1384,17 +1384,17 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre><span class="c1"># str、numeric 和 tuple 类型都是可hash的
+</pre></td><td class="rouge-code"><pre><span class="c1">## str、numeric 和 tuple 类型都是可hash的
 </span><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s">'one'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>
 <span class="p">{</span><span class="s">'one'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)}</span>
 
-<span class="c1"># list 是 unhashable 类型
+<span class="c1">## list 是 unhashable 类型
 </span><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">]}</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="nb">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s">'list'</span>
 
-<span class="c1"># 间接包含 unhashable 类型也不行
+<span class="c1">## 间接包含 unhashable 类型也不行
 </span><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])}</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
@@ -1436,7 +1436,7 @@
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">dict</span><span class="s">'&gt;
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="集合操作">集合操作</h2>
+<h3 id="集合操作">集合操作</h3>
 
 <p>以下是 <code class="language-plaintext highlighter-rouge">set</code> 和 <code class="language-plaintext highlighter-rouge">frozenset</code> 都支持的操作：</p>
 
@@ -2103,19 +2103,21 @@ set ^= other</p>
 
 <p>同样的以上的 update()、intersection_update()、difference_update() 和 symmetric_difference_update() 也接受可迭代类型参数，但是对应的 <code class="language-plaintext highlighter-rouge">运算符</code> 则只能接受集合类型参数。</p>
 
-<h1 id="immutable-与-hashable">immutable 与 hashable</h1>
+<h2 id="immutable-与-hashable">immutable 与 hashable</h2>
 
 <p>Python 中不可变类型 <code class="language-plaintext highlighter-rouge">immutable</code> 都是 <code class="language-plaintext highlighter-rouge">hashable</code> 类型的，但是 hashable 类型并不一定都是 immutable 的，因为默认所有 <code class="language-plaintext highlighter-rouge">自定义类的实例</code> 都是 hashable 类型的，其 hash 值通常就是 <code class="language-plaintext highlighter-rouge">id()</code> 函数的计算结果，由于用户自定义类不一定是不可变类型的，所以 hashable 类型不一定都是 immutable 类型。</p>
 
 <p>关于 hashable 可参考：https://docs.python.org/3.5/glossary.html#term-hashable<br />
 关于 immutable 可参考：https://docs.python.org/3.5/glossary.html#term-immutable</p>
 
-<h1 id="引用资料">引用资料</h1>
+<h2 id="引用资料">引用资料</h2>
 
-<p>[Sets] : https://docs.python.org/3.5/tutorial/datastructures.html#sets<br />
-[Dictionaries] : https://docs.python.org/3.5/tutorial/datastructures.html#dictionaries<br />
-[Set Types — set, frozenset] : https://docs.python.org/3.5/library/stdtypes.html#set-types-set-frozenset<br />
-[Mapping Types — dict] : https://docs.python.org/3.5/library/stdtypes.html#mapping-types-dict</p>
+<ul>
+  <li>[Sets] : https://docs.python.org/3.5/tutorial/datastructures.html#sets</li>
+  <li>[Dictionaries] : https://docs.python.org/3.5/tutorial/datastructures.html#dictionaries</li>
+  <li>[Set Types — set, frozenset] : https://docs.python.org/3.5/library/stdtypes.html#set-types-set-frozenset</li>
+  <li>[Mapping Types — dict] : https://docs.python.org/3.5/library/stdtypes.html#mapping-types-dict</li>
+</ul>
 
 
       </div>
@@ -2187,6 +2189,22 @@ set ^= other</p>
 
 
 
+
+  
+
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
 
   
 
@@ -2404,10 +2422,12 @@ set ^= other</p>
 
 
                 课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
               </p>
             </div>
           </div>
@@ -2445,9 +2465,10 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
                 Windows
 
 下载安装包
+
 进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
 
-需要注意的是从Python ...
+需要注意的是从Python...
               </p>
             </div>
           </div>
@@ -2482,11 +2503,11 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
-                数字：int, float
+                数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
               </p>
             </div>
           </div>

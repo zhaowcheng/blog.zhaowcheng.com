@@ -557,7 +557,7 @@
 
         
 
-        <h1 id="函数定义">函数定义</h1>
+        <h2 id="函数定义">函数定义</h2>
 
 <p>先看一个简单的函数定义的例子，以 <code class="language-plaintext highlighter-rouge">def</code> 语句开头，定义一个名为 <code class="language-plaintext highlighter-rouge">add</code> 的函数，接收两个参数 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>，然后返回这两个参数的 <code class="language-plaintext highlighter-rouge">和</code>：</p>
 
@@ -638,9 +638,9 @@
 <span class="o">&gt;&gt;&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="函数参数">函数参数</h1>
+<h2 id="函数参数">函数参数</h2>
 
-<h2 id="参数默认值">参数默认值</h2>
+<h3 id="参数默认值">参数默认值</h3>
 
 <p>定义函数时可以指定参数的默认值，调用函数时可以不给默认参数传值，不传值则会使用默认值：</p>
 
@@ -664,7 +664,7 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="c1"># 定义一个有两个参数有默认值的函数
+</pre></td><td class="rouge-code"><pre><span class="c1">## 定义一个有两个参数有默认值的函数
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="s">'beijing'</span><span class="p">):</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'My name is %s, I am %d years old and I am from %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">city</span><span class="p">))</span>
 <span class="p">...</span>
@@ -677,7 +677,7 @@
 <span class="o">&gt;&gt;&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>需要注意的是如果参数默认值使用变量的话，那在函数定义时就值已经确定了，即使后面再改变变量的值不会影响参数的默认值：</p>
+<p>需要注意的是如果参数默认值使用变量的话，那在函数定义时值就已经确定了，即使后面再改变变量的值不会影响参数的默认值：</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -759,7 +759,7 @@
 </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 
-<span class="c1"># 如果想要避免上面的情况，应该像下面这样写
+<span class="c1">## 如果想要避免上面的情况，应该像下面这样写
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
 <span class="p">...</span>     <span class="k">if</span> <span class="n">L</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
 <span class="p">...</span>         <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
@@ -775,7 +775,7 @@
 <span class="o">&gt;&gt;&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="args-和-kwargs">*args 和 **kwargs</h2>
+<h3 id="args-和-kwargs">*args 和 **kwargs</h3>
 
 <p>有两种比较特殊的形式 <code class="language-plaintext highlighter-rouge">*args</code> 和 <code class="language-plaintext highlighter-rouge">**kwargs</code> 在函数定义和其他情况下使用时有着不同的作用，在函数定义时使用，相当于定义了个数不确定的参数：</p>
 
@@ -805,14 +805,14 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre><span class="c1"># 此函数的 nums 相当于是一个序列
+</pre></td><td class="rouge-code"><pre><span class="c1">## 此函数的 nums 相当于是一个序列
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
 <span class="p">...</span>     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="p">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
 <span class="p">...</span>         <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span>
 <span class="p">...</span>     <span class="k">return</span> <span class="n">s</span>
 <span class="p">...</span>
-<span class="c1"># 调用时可以传入任意多个位置参数（按位置传入的参数即为位置参数）
+<span class="c1">## 调用时可以传入任意多个位置参数（按位置传入的参数即为位置参数）
 </span><span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
 <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -845,12 +845,12 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre><span class="c1"># 此函数的 kwargs 相当于一个字典
+</pre></td><td class="rouge-code"><pre><span class="c1">## 此函数的 kwargs 相当于一个字典
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="p">...</span>     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
 <span class="p">...</span>         <span class="k">print</span><span class="p">(</span><span class="s">'%s: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
 <span class="p">...</span>
-<span class="c1"># 调用时可以传入任意多个关键字参数（以 name=value 形式传入的参数即为关键字参数）
+<span class="c1">## 调用时可以传入任意多个关键字参数（以 name=value 形式传入的参数即为关键字参数）
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">fun</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'tom'</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="s">'beijing'</span><span class="p">)</span>
 <span class="n">name</span><span class="p">:</span> <span class="n">tom</span>
 <span class="n">age</span><span class="p">:</span> <span class="mi">18</span>
@@ -911,7 +911,7 @@
 <span class="o">&gt;&gt;&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="匿名函数lambda">匿名函数（lambda）</h1>
+<h2 id="匿名函数lambda">匿名函数（lambda）</h2>
 
 <p>Python 中运行使用 <code class="language-plaintext highlighter-rouge">lambda</code> 语句定义一个匿名函数，通常用在只需要一行代码即可完成定义的函数：</p>
 
@@ -929,14 +929,14 @@
 3
 4
 5
-</pre></td><td class="rouge-code"><pre><span class="c1"># 以下使用 lambda 定义一个匿名函数，函数有两个参数 a 和 b，函数体返回 a + b
+</pre></td><td class="rouge-code"><pre><span class="c1">## 以下使用 lambda 定义一个匿名函数，函数有两个参数 a 和 b，函数体返回 a + b
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mi">3</span>
 <span class="o">&gt;&gt;&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="函数文档字符串docstr">函数文档字符串（docstr）</h1>
+<h2 id="函数文档字符串docstr">函数文档字符串（docstr）</h2>
 
 <p>定义函数时可以在文档字符串中对函数进行简介或详细说明，同时文档字符串还可以方便其他文档生成工具自动生成代码的函数说明文档。文档字符串在函数定义 <code class="language-plaintext highlighter-rouge">def</code> 语句的下一行开始写，以三个双引号（<code class="language-plaintext highlighter-rouge">"""</code>）进行包裹，可以是一行或多行：</p>
 
@@ -965,12 +965,12 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre><span class="c1"># 只有一行文档字符串进行简要介绍
+</pre></td><td class="rouge-code"><pre><span class="c1">## 只有一行文档字符串进行简要介绍
 </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="s">"""This is an add function."""</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="c1"># 多行文档字符串对函数进行详细说明
+<span class="c1">## 多行文档字符串对函数进行详细说明
 </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="s">"""This is an add function.
 
@@ -983,7 +983,7 @@
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="函数注解function-annotations">函数注解（Function Annotations）</h1>
+<h2 id="函数注解function-annotations">函数注解（Function Annotations）</h2>
 
 <p>从 Python3 开始支持定义函数时使用 <code class="language-plaintext highlighter-rouge">注解</code> 方式说明参数和返回值类型：</p>
 
@@ -1003,7 +1003,7 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="c1"># 使用注解说明参数 a, b 和返回值类型都是 int
+</pre></td><td class="rouge-code"><pre><span class="c1">## 使用注解说明参数 a, b 和返回值类型都是 int
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="p">...</span>
@@ -1014,12 +1014,14 @@
 
 <p>更多关于函数注解说明可以参考 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a></p>
 
-<h1 id="引用资料">引用资料</h1>
+<h2 id="引用资料">引用资料</h2>
 
-<p>[Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#defining-functions<br />
-[More on Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#more-on-defining-functions<br />
-[Function definitions] : https://docs.python.org/3.5/reference/compound_stmts.html#function-definitions<br />
-[PEP 484] : https://www.python.org/dev/peps/pep-0484/</p>
+<ul>
+  <li>[Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#defining-functions</li>
+  <li>[More on Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#more-on-defining-functions</li>
+  <li>[Function definitions] : https://docs.python.org/3.5/reference/compound_stmts.html#function-definitions</li>
+  <li>[PEP 484] : https://www.python.org/dev/peps/pep-0484/</li>
+</ul>
 
 
       </div>
@@ -1091,6 +1093,22 @@
 
 
 
+
+  
+
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
 
   
 
@@ -1308,10 +1326,12 @@
 
 
                 课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
               </p>
             </div>
           </div>
@@ -1349,9 +1369,10 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
                 Windows
 
 下载安装包
+
 进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
 
-需要注意的是从Python ...
+需要注意的是从Python...
               </p>
             </div>
           </div>
@@ -1386,11 +1407,11 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
-                数字：int, float
+                数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
               </p>
             </div>
           </div>

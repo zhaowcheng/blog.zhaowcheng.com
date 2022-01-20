@@ -557,7 +557,7 @@
 
         
 
-        <h1 id="if">if</h1>
+        <h2 id="if">if</h2>
 
 <p>if 是条件控制语句，其语法定义如下：</p>
 
@@ -613,7 +613,7 @@
 
 <p>Python 中没有像 C 语言的 <code class="language-plaintext highlighter-rouge">switch...case</code> 这样的结构，因为使用 <code class="language-plaintext highlighter-rouge">elif</code> 就能达到这样的效果。</p>
 
-<h2 id="真值计算">真值计算</h2>
+<h3 id="真值计算">真值计算</h3>
 
 <p>对于 <code class="language-plaintext highlighter-rouge">if</code> 语句后面的表达式 <code class="language-plaintext highlighter-rouge">expression</code> 的计算结果，除了以下几种情况为 <code class="language-plaintext highlighter-rouge">假</code> 之外，其他情况均为 <code class="language-plaintext highlighter-rouge">真</code>：</p>
 
@@ -670,7 +670,7 @@
 33
 34
 35
-</pre></td><td class="rouge-code"><pre><span class="c1"># None
+</pre></td><td class="rouge-code"><pre><span class="c1">## None
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="bp">None</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'should not print'</span><span class="p">)</span>
 <span class="p">...</span> <span class="k">else</span><span class="p">:</span>
@@ -679,7 +679,7 @@
 <span class="n">should</span> <span class="k">print</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 整数0
+<span class="c1">## 整数0
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'should not print'</span><span class="p">)</span>
 <span class="p">...</span> <span class="k">else</span><span class="p">:</span>
@@ -688,7 +688,7 @@
 <span class="n">should</span> <span class="k">print</span>
 <span class="o">&gt;&gt;&gt;</span>
 
-<span class="c1"># 空字符串
+<span class="c1">## 空字符串
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="s">''</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'should not print'</span><span class="p">)</span>
 <span class="p">...</span> <span class="k">else</span><span class="p">:</span>
@@ -697,7 +697,7 @@
 <span class="n">should</span> <span class="k">print</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 空字典
+<span class="c1">## 空字典
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="p">{}:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'should not print'</span><span class="p">)</span>
 <span class="p">...</span> <span class="k">else</span><span class="p">:</span>
@@ -707,7 +707,7 @@
 <span class="o">&gt;&gt;&gt;</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="布尔运算符">布尔运算符</h2>
+<h3 id="布尔运算符">布尔运算符</h3>
 
 <p>有时在 <code class="language-plaintext highlighter-rouge">if</code> 后面的 <code class="language-plaintext highlighter-rouge">expression</code> 中会是一个由 <code class="language-plaintext highlighter-rouge">布尔运算符</code> 连接多个部分所组成的表达式，比如：</p>
 
@@ -794,7 +794,7 @@
 <span class="mi">0</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="比较运算符">比较运算符</h2>
+<h3 id="比较运算符">比较运算符</h3>
 
 <p>比较运算符也常用于 <code class="language-plaintext highlighter-rouge">if</code> 后面的 <code class="language-plaintext highlighter-rouge">expression</code> 表达式，比较运算符总是返回 <code class="language-plaintext highlighter-rouge">bool</code> 类型的结果，即 <code class="language-plaintext highlighter-rouge">True</code> 或 <code class="language-plaintext highlighter-rouge">Flase</code>，所有比较运算符如下：</p>
 
@@ -841,7 +841,7 @@
   </tbody>
 </table></div>
 
-<h1 id="for">for</h1>
+<h2 id="for">for</h2>
 
 <p>for 语句的定义如下：</p>
 
@@ -914,7 +914,7 @@
 41
 42
 43
-</pre></td><td class="rouge-code"><pre><span class="c1"># 遍历一个 list
+</pre></td><td class="rouge-code"><pre><span class="c1">## 遍历一个 list
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="p">...</span> 
@@ -923,8 +923,8 @@
 <span class="n">c</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 如果想要类似 C 语言中的 for 循环，可以使用 range
-# 关于 range 的详细说明可参考前面《列表与元组》章节
+<span class="c1">## 如果想要类似 C 语言中的 for 循环，可以使用 range
+## 关于 range 的详细说明可参考前面《列表与元组》章节
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="p">...</span> 
@@ -935,7 +935,7 @@
 <span class="mi">4</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 如果使用了 else 子句，那么会在循环正常结束后再执行 else 子句
+<span class="c1">## 如果使用了 else 子句，那么会在循环正常结束后再执行 else 子句
 </span><span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
 <span class="p">...</span>     <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
@@ -945,7 +945,7 @@
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 如果 for 循环体中使用了 break，那么则不会执行 else 子句
+<span class="c1">## 如果 for 循环体中使用了 break，那么则不会执行 else 子句
 </span><span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
 <span class="p">...</span>     <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
@@ -1028,21 +1028,21 @@
 31
 32
 33
-</pre></td><td class="rouge-code"><pre><span class="c1"># 想要去除 nums 中的偶数
+</pre></td><td class="rouge-code"><pre><span class="c1">## 想要去除 nums 中的偶数
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="p">...</span>         <span class="n">nums</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="p">...</span> 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">nums</span>
-<span class="c1"># python 在循环时内部会有一个计数器记录当前循环下标(从 0 开始)，并且每次自动加 1
-# 所以当循环到元素 2 时，记录的当前下标为 1，然后判断 2 为偶数并移除了它，然后后面
-# 的元素依次往前挪一位，当进入下一次循环时自动取下标为 2 的元素，则取到了元素 3，这
-# 样就把元素 4 给漏掉了。
+<span class="c1">## python 在循环时内部会有一个计数器记录当前循环下标(从 0 开始)，并且每次自动加 1
+## 所以当循环到元素 2 时，记录的当前下标为 1，然后判断 2 为偶数并移除了它，然后后面
+## 的元素依次往前挪一位，当进入下一次循环时自动取下标为 2 的元素，则取到了元素 3，这
+## 样就把元素 4 给漏掉了。
 </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 这种情况一般建议拷贝一份序列后再对其进行遍历
+<span class="c1">## 这种情况一般建议拷贝一份序列后再对其进行遍历
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">.</span><span class="n">copy</span><span class="p">():</span>
 <span class="p">...</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1052,7 +1052,7 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 
-<span class="c1"># 还可以使用切片方式 nums[:] 创建一个拷贝，比 copy 的方式更简洁
+<span class="c1">## 还可以使用切片方式 nums[:] 创建一个拷贝，比 copy 的方式更简洁
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[:]:</span>
 <span class="p">...</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1098,7 +1098,7 @@
 22
 23
 24
-</pre></td><td class="rouge-code"><pre><span class="c1"># 遍历字典的 key
+</pre></td><td class="rouge-code"><pre><span class="c1">## 遍历字典的 key
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'tom'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">18</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
@@ -1107,7 +1107,7 @@
 <span class="n">age</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 同时遍历 key 和 value
+<span class="c1">## 同时遍历 key 和 value
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 <span class="p">...</span> 
@@ -1115,7 +1115,7 @@
 <span class="n">age</span> <span class="mi">18</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 只遍历 value
+<span class="c1">## 只遍历 value
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="p">...</span> 
@@ -1152,7 +1152,7 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre><span class="c1"># 同时遍历 2 个序列
+</pre></td><td class="rouge-code"><pre><span class="c1">## 同时遍历 2 个序列
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s">'tom'</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
@@ -1162,7 +1162,7 @@
 <span class="n">age</span> <span class="mi">18</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 同时遍历 3 个序列
+<span class="c1">## 同时遍历 3 个序列
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]):</span>
 <span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 <span class="p">...</span> 
@@ -1198,7 +1198,7 @@
 <span class="o">&gt;&gt;&gt;</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="while">while</h1>
+<h2 id="while">while</h2>
 
 <p><code class="language-plaintext highlighter-rouge">while</code> 语句的定义如下：</p>
 
@@ -1266,7 +1266,7 @@
 36
 37
 38
-</pre></td><td class="rouge-code"><pre><span class="c1"># 使用 while 循环计算 1 ~ 10 的和
+</pre></td><td class="rouge-code"><pre><span class="c1">## 使用 while 循环计算 1 ~ 10 的和
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
@@ -1277,7 +1277,7 @@
 <span class="mi">55</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># else 子句在 while 的 expression 为假时执行
+<span class="c1">## else 子句在 while 的 expression 为假时执行
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
@@ -1290,7 +1290,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span>
 <span class="mi">55</span>
 
-<span class="c1"># while 的循环体中执行了 break，所以子句 else 被跳过不执行
+<span class="c1">## while 的循环体中执行了 break，所以子句 else 被跳过不执行
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
@@ -1306,11 +1306,11 @@
 <span class="o">&gt;&gt;&gt;</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="break">break</h1>
+<h2 id="break">break</h2>
 
 <p><code class="language-plaintext highlighter-rouge">break</code> 语句用于 <code class="language-plaintext highlighter-rouge">for</code> 或者 <code class="language-plaintext highlighter-rouge">while</code> 循环体中，执行后直接退出循环，并且不会执行循环的 <code class="language-plaintext highlighter-rouge">else</code> 子句，具体示例请见上面的 for 和 while 小节内容，这里不再重复举例。</p>
 
-<h1 id="continue">continue</h1>
+<h2 id="continue">continue</h2>
 
 <p><code class="language-plaintext highlighter-rouge">continue</code> 语句用在 <code class="language-plaintext highlighter-rouge">for</code> 或者 <code class="language-plaintext highlighter-rouge">while</code> 循环体中，跳过本次循环中后续的内容，然后进入下一次循环，它不会结束整个循环，并且不影响循环的 else 子句。</p>
 
@@ -1357,7 +1357,7 @@
 32
 33
 34
-</pre></td><td class="rouge-code"><pre><span class="c1"># 使用 continue 跳过 for 循环中偶数的打印步骤，并且不会影响到 else 子句
+</pre></td><td class="rouge-code"><pre><span class="c1">## 使用 continue 跳过 for 循环中偶数的打印步骤，并且不会影响到 else 子句
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
 <span class="p">...</span>     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="p">...</span>         <span class="k">continue</span>
@@ -1373,7 +1373,7 @@
 <span class="n">loops</span> <span class="n">over</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 使用 continue 跳过 while 循环中偶数的打印步骤，并且不会影响到 else 子句
+<span class="c1">## 使用 continue 跳过 while 循环中偶数的打印步骤，并且不会影响到 else 子句
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
 <span class="p">...</span>     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1393,7 +1393,7 @@
 <span class="o">&gt;&gt;&gt;</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="pass">pass</h1>
+<h2 id="pass">pass</h2>
 
 <p><code class="language-plaintext highlighter-rouge">pass</code> 语句不做任何事情，通常用于一些在语法上需要写内容，但是实际没有内容可写的情况下进行占位。</p>
 
@@ -1413,24 +1413,26 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="c1"># 自定义异常类
+</pre></td><td class="rouge-code"><pre><span class="c1">## 自定义异常类
 </span><span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="c1"># 先定好函数名，函数体还需进一步思考后编写
+<span class="c1">## 先定好函数名，函数体还需进一步思考后编写
 </span><span class="k">def</span> <span class="nf">myfun</span><span class="p">():</span>
     <span class="k">pass</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="引用资料">引用资料</h1>
+<h2 id="引用资料">引用资料</h2>
 
-<p>[More Control Flow Tools] : https://docs.python.org/3.5/tutorial/controlflow.html<br />
-[Truth Value Testing] : https://docs.python.org/3.5/library/stdtypes.html#truth-value-testing<br />
-[Boolean Operations] : https://docs.python.org/3.5/library/stdtypes.html#boolean-operations-and-or-not<br />
-[Comparisons] : https://docs.python.org/3.5/library/stdtypes.html#comparisons<br />
-[The if statement] : https://docs.python.org/3.5/reference/compound_stmts.html#the-if-statement<br />
-[The while statement] : https://docs.python.org/3.5/reference/compound_stmts.html#the-while-statement<br />
-[The for statement] : https://docs.python.org/3.5/reference/compound_stmts.html#the-for-statement</p>
+<ul>
+  <li>[More Control Flow Tools] : https://docs.python.org/3.5/tutorial/controlflow.html</li>
+  <li>[Truth Value Testing] : https://docs.python.org/3.5/library/stdtypes.html#truth-value-testing</li>
+  <li>[Boolean Operations] : https://docs.python.org/3.5/library/stdtypes.html#boolean-operations-and-or-not</li>
+  <li>[Comparisons] : https://docs.python.org/3.5/library/stdtypes.html#comparisons</li>
+  <li>[The if statement] : https://docs.python.org/3.5/reference/compound_stmts.html#the-if-statement</li>
+  <li>[The while statement] : https://docs.python.org/3.5/reference/compound_stmts.html#the-while-statement</li>
+  <li>[The for statement] : https://docs.python.org/3.5/reference/compound_stmts.html#the-for-statement</li>
+</ul>
 
 
       </div>
@@ -1502,6 +1504,22 @@
 
 
 
+
+  
+
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
 
   
 
@@ -1719,10 +1737,12 @@
 
 
                 课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
               </p>
             </div>
           </div>
@@ -1760,9 +1780,10 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
                 Windows
 
 下载安装包
+
 进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
 
-需要注意的是从Python ...
+需要注意的是从Python...
               </p>
             </div>
           </div>
@@ -1797,11 +1818,11 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
-                数字：int, float
+                数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
               </p>
             </div>
           </div>

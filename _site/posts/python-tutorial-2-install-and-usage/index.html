@@ -653,7 +653,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1865 字">10 分钟
+  title="1869 字">10 分钟
     阅读</span>
 
 
@@ -668,9 +668,10 @@
 
         
 
-        <h1 id="windows">Windows</h1>
+        <h2 id="windows">Windows</h2>
 
-<h2 id="下载安装包">下载安装包</h2>
+<h3 id="下载安装包">下载安装包</h3>
+
 <p>进入Python官网的 <a href="https://www.python.org/downloads/windows/">windows downloads</a> 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。</p>
 
 <p>需要注意的是从Python 3.5开始就只支持Windows Vista及以上的版本，如果是Windows XP则只能选择安装Python 3.4。如何查看操作系统版本和位数可以参考 <a href="https://support.microsoft.com/zh-cn/help/13443/windows-which-version-am-i-running">微软官方帮助文档</a>。</p>
@@ -682,7 +683,8 @@
   <li>web-based：在线安装包，只是一个安装器，在安装过程种需要联网下载安装所需的组件</li>
 </ul>
 
-<h2 id="图形界面安装">图形界面安装</h2>
+<h3 id="图形界面安装">图形界面安装</h3>
+
 <p>下面以Python 3.5为例进行说明，双击安装包进入图界面安装：<br />
 <img data-proofer-ignore data-src="/assets/img/python-tutorial/win_installer.png" alt="win_installer" /></p>
 
@@ -693,7 +695,8 @@
 
 <p>如果不是多版本并存的系统上，建议都勾选上 <code class="language-plaintext highlighter-rouge">Add Python 3.5 to PATH</code>，这样会把Python的安装路径自动添加到环境变量 <code class="language-plaintext highlighter-rouge">PATH</code> 中，避免在命令行中执行 <code class="language-plaintext highlighter-rouge">python</code> 命令时系统不能识别。如果是多版本并存的系统上可以不用勾选，然后都使用 <code class="language-plaintext highlighter-rouge">Python Launcher</code> 进行多版本管理。</p>
 
-<h2 id="命令行安装">命令行安装</h2>
+<h3 id="命令行安装">命令行安装</h3>
+
 <p>可能很多同学不知道，Windows下的Python安装包其实也支持命令行的方式安装，这个在用于制作自动安装程序或者批量安装时非常有用。</p>
 
 <p>我们以下载的64位的3.5.1的安装包为例，下载后的安装包名称为 <code class="language-plaintext highlighter-rouge">python-3.5.1-amd64.exe</code>，在命令行(cmd)中切换到安装包所在路径，然后执行 <code class="language-plaintext highlighter-rouge">python-3.5.1-amd64.exe /?</code>，可以看到如下图所示的命令行安装帮助：<br />
@@ -715,10 +718,12 @@
 </pre></td><td class="rouge-code"><pre>python-3.5.1-amd64.exe /passive <span class="nv">InstallAllUsers</span><span class="o">=</span>1 <span class="nv">PrependPath</span><span class="o">=</span>1
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="linux">Linux</h1>
+<h2 id="linux">Linux</h2>
+
 <p>大多数的Linux发行版都自带了Python2，系统自带的python2一定不要删除，因为通常会有一些系统自带软件依赖于它，如果要安装Python3可以通过下面几种方式。</p>
 
-<h2 id="通过安装源在线安装">通过安装源在线安装</h2>
+<h3 id="通过安装源在线安装">通过安装源在线安装</h3>
+
 <p>如果你的电脑可以连接互联网，或者在一个内部网络上但是有内部安装源，推荐使用这种方式。不同的Linux发行版有不同的安装源工具，以CentOS7为例，CentOS7自带的python版本是2.7，CentOS上的安装源工具是yum，我们可以通过命令 <code class="language-plaintext highlighter-rouge">yum install python3</code> 来安装Python3，目前CentOS7官方yum源的python3的版本应该是3.7，安装完成后可通过键入 <code class="language-plaintext highlighter-rouge">python3</code> 查看是否安装成功</p>
 
 <p>需要注意的是在CentOS上安装好Python3后一定不能修改系统默认链接 <code class="language-plaintext highlighter-rouge">/usr/bin/python</code> 指向python3，否则运行yum时会得到如下错误：</p>
@@ -742,7 +747,8 @@ SyntaxError: invalid syntax
 </pre></td></tr></tbody></table></code></div></div>
 <p>这是由于yum依赖于系统自带的python2，改成python3之后由于语法不兼容，所以会出现错误。所以应该保持链接 <code class="language-plaintext highlighter-rouge">/usr/bin/python</code> 始终执行系统自带的python2。如果在其他Linux发行版上也遇到类似问题可以参考这种情况。</p>
 
-<h2 id="使用包管理器离线安装">使用包管理器离线安装</h2>
+<h3 id="使用包管理器离线安装">使用包管理器离线安装</h3>
+
 <p>不同的Linux发行版也有不同的包管理方式，安装源在线安装本质上就是自动从源上下载安装包然后使用包管理器进行安装。好处是方便，但是如果电脑不能联网就只能提前下载好安装包，然后使用系统自带的包管理器进行离线安装。</p>
 
 <p>还是以CentOS7为例，CentOS的包管理器是 <code class="language-plaintext highlighter-rouge">rpm</code>，比如已经下载好的rpm安装包名为 <code class="language-plaintext highlighter-rouge">python35-3.5.1-xxx.rpm</code>，那么可以使用命令 <code class="language-plaintext highlighter-rouge">rpm -ivh python35-3.5.1-xxx.rpm</code> 进行离线安装。</p>
@@ -754,15 +760,18 @@ SyntaxError: invalid syntax
   <li>阿里巴巴：https://developer.aliyun.com/mirror/</li>
 </ul>
 
-<h2 id="使用源码编译安装">使用源码编译安装</h2>
+<h3 id="使用源码编译安装">使用源码编译安装</h3>
+
 <p>Python官网提供 <a href="https://www.python.org/downloads/source/">源码下载</a>，下载解压后可通过make三连击 <code class="language-plaintext highlighter-rouge">./configure &amp;&amp; make &amp;&amp; make install</code> 进行编译安装，前提是系统上已经配置好gcc等编译安装环境，如果对Linux不是很熟悉的用户不推荐使用此方式，因为出现安装问题的解决难度较大。</p>
 
-<h1 id="macos">macOS</h1>
+<h2 id="macos">macOS</h2>
+
 <p>macOS是在BSD(Berkeley Software Distribution)的基础上发展而来，而BSD是一个派生自Unix的操作系统，而Linux又是一个类Unix系统，所以macOS安装Python的方式也和Linux大体上差不多，主要分下面两种方式。</p>
 
 <p>需要注意的是macOS同样也自带了python2，系统自带的一些软件也会依赖于此，所以也一定不能删除。以macOS 10.15为例，自带的python2.7安装在 <code class="language-plaintext highlighter-rouge">/System/Library/Frameworks/Python.framework/Versions/2.7</code> 路径下。</p>
 
-<h2 id="使用homebrew在线安装">使用Homebrew在线安装</h2>
+<h3 id="使用homebrew在线安装">使用Homebrew在线安装</h3>
+
 <p>Homebrew是macOS上的一种安装源工具，类似于CentOS的yum，直接使用如下命令安装即可：</p>
 <div class="language-sh highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -777,13 +786,16 @@ SyntaxError: invalid syntax
 </pre></td><td class="rouge-code"><pre>brew <span class="nb">install </span>python3
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="图形界面安装-1">图形界面安装</h2>
+<h3 id="图形界面安装-1">图形界面安装</h3>
+
 <p>可去Python官网下载 <a href="https://www.python.org/downloads/mac-osx/">macOS installer</a>，下载后双击进行图形界面安装，安装选项说明大体和Windows类似，这里不再赘述。</p>
 
-<h1 id="python命令行使用">Python命令行使用</h1>
+<h2 id="python命令行使用">Python命令行使用</h2>
+
 <p>除了在命令行直接键入 <code class="language-plaintext highlighter-rouge">python</code> 进入Python交互式命令行的使用方式外，在命令行下使用Python通常还有下面三种方式</p>
 
-<h2 id="python--c-command">python -c command</h2>
+<h3 id="python--c-command">python -c command</h3>
+
 <p>通过这种方式可以快速的执行python命令：</p>
 
 <div class="language-sh highlighter-rouge"><div class="code-header">
@@ -799,7 +811,8 @@ SyntaxError: invalid syntax
 </pre></td><td class="rouge-code"><pre>python <span class="nt">-c</span> <span class="s2">"print('hello, world!')"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="python-stript">python stript</h2>
+<h3 id="python-stript">python stript</h3>
+
 <p>通过这种方式可以直接执行一个脚本文件：</p>
 
 <div class="language-sh highlighter-rouge"><div class="code-header">
@@ -815,7 +828,8 @@ SyntaxError: invalid syntax
 </pre></td><td class="rouge-code"><pre>python mystript.py
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="python--m-module_name">python -m module_name</h2>
+<h3 id="python--m-module_name">python -m module_name</h3>
+
 <p>通过这种方式调用一个安装好的python模块，比如可以使用python自带的http.server模块临时启动一个http服务器：</p>
 
 <div class="language-sh highlighter-rouge"><div class="code-header">
@@ -831,11 +845,12 @@ SyntaxError: invalid syntax
 </pre></td><td class="rouge-code"><pre>python <span class="nt">-m</span> http.server
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="引用">引用</h1>
-<ol>
-  <li>[Python安装]：https://www.liaoxuefeng.com/wiki/1016959663602400/1016959856222624</li>
-  <li>[Python Setup and Usage]：https://docs.python.org/3.5/using/index.html</li>
-</ol>
+<h2 id="引用资料">引用资料</h2>
+
+<ul>
+  <li>[Python安装] ：https://www.liaoxuefeng.com/wiki/1016959663602400/1016959856222624</li>
+  <li>[Python Setup and Usage] ：https://docs.python.org/3.5/using/index.html</li>
+</ul>
 
 
       </div>
@@ -907,6 +922,22 @@ SyntaxError: invalid syntax
 
 
 
+
+  
+
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
 
   
 
@@ -1124,10 +1155,12 @@ SyntaxError: invalid syntax
 
 
                 课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
               </p>
             </div>
           </div>
@@ -1162,11 +1195,11 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
-                数字：int, float
+                数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
               </p>
             </div>
           </div>
@@ -1201,15 +1234,20 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
 
 
 
-                在上一节课（数据类型）中对 字符串(str) 进行了一个简单的介绍，由于字符串在 Python 中使用频率较高，所以这一节课中专门对字符串进行一个深入的讲解。
-
-字符串方法
+                字符串方法
 
 字符串(str) 在 Python 中是一个 对象(object)，并且包含很多的 方法(method)，这些方法可以给我们操作字符串带来很大的方便，下面列举一些常用的方法及其使用示例：
 
 
   
-    str.ca...
+    str.capitalize()
+
+    把字符串的首字母变成大写。
+
+    1
+2
+  &gt;&gt;&gt; 'hello'.capitalize()
+  'Hel...
               </p>
             </div>
           </div>

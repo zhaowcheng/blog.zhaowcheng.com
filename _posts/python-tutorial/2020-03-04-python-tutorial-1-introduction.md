@@ -5,10 +5,12 @@ categories: [Python入门教程]
 tags: []
 ---
 
-# 课程说明
-在 [廖雪峰Python3教程](https://www.liaoxuefeng.com/wiki/1016959663602400) 和 [Python3.5官方文档](https://docs.python.org/3.5/tutorial/index.html) 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+## 课程说明
 
-# Python简介
+在 [廖雪峰Python3教程](https://www.liaoxuefeng.com/wiki/1016959663602400) 和 [Python3.5官方文档](https://docs.python.org/3.5/tutorial/index.html) 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
+
+## Python简介
+
 Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧"Monty Python’s Flying Circus"。
 
 Python是在另一种编程语言 `ABC` 的基础上发展而来，ABC是“龟叔”参与设计的一种教学语言，他认为ABC非常优美和强大，但是并没有取得成功，他认为是没有开放造成的，所以Python进行了开源。Python还结合了很多C语言的使用习惯，比如Python中的open函数和C语言的open函数非常类似，Python里同样也有文件描述符等概念。
@@ -23,7 +25,8 @@ Python是一种 [解释型](https://zh.wikipedia.org/wiki/%E7%9B%B4%E8%AD%AF%E8%
 
 面向对象和面向过程语言的主要区别是面向对象可以定义类(class)，而面向过程语言只能定义函数，Python既支持面向过程，也支持面向对象。关于面向对象和面向过程的更多区别请点击对应的链接进行深入了解。
 
-# Python应用
+## Python应用
+
 近些年来Python越来越火，应用也越来越广泛，根据编程语言排行榜 [TIOBE](https://www.tiobe.com/tiobe-index/) 2020年2月最新的数据显示，目前Python的流行程度排行第3，居于Java和C之后。
 
 很多我们所熟知的网站也是使用Python开发，比如国外的Youtube、Instgram，国内的知乎、豆瓣，还有像Google、Yahoo这样的大公司内部都在大量的使用Python。
@@ -36,20 +39,22 @@ Python在人工智能领域也非常流行，很多人工智能框架都选择�
 
 可以在Python官网 https://www.python.org/about/apps/ 上看到Python的很多应用列表。
 
-# Python版本
-Python自诞生以来经历了2个主要的大版本，一个是发布于2000年的Python2，另一个是发布于2008年的Python3。Python3相比Python2由了很大的变更，所以Python2下编写的代码是不能直接在Python3上运行的。而且官方已经于2020.1.1停止了对Python2的维护，也就是说如果Python2出现了重大漏洞也不会再有更新的修复版本发布了，所以建议如果是新写的项目都使用Python3。
+## Python版本
+
+Python自诞生以来经历了2个主要的大版本，一个是发布于2000年的Python2，另一个是发布于2008年的Python3。Python3相比Python2有了很大的变更，所以Python2下编写的代码是不能直接在Python3上运行的。而且官方已经于2020.1.1停止了对Python2的维护，也就是说如果Python2出现了重大漏洞也不会再有更新的修复版本发布了，所以建议如果是新写的项目都使用Python3。
 
 如果由老的Python2的应用需要迁移到Python3，可以参考官方迁移指南：https://docs.python.org/3/howto/pyporting.html  
 更多关于Python2和Python3的区别可以参考：http://python-future.org/compatible_idioms.html
 
-# Python解释器
+## Python解释器
+
 通常我们说Python是用C语言编写的，是因为官方下载的解释器CPython是使用C语言编写的，其实除了CPython之外还有很多其他的解释器。
 
 > *以下内容引用自：https://www.liaoxuefeng.com/wiki/1016959663602400/1016966024263840*
 >  
 > **IPython**  
 > IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。  
-> CPython用>>>作为提示符，而IPython用In [序号]:作为提示符。
+> CPython用`>>>`作为提示符，而IPython用`In [序号]:`作为提示符。
 > 
 > **PyPy**  
 > PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。  
@@ -61,14 +66,16 @@ Python自诞生以来经历了2个主要的大版本，一个是发布于2000年
 > **IronPython**  
 > IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。
 
-# Python编辑器(IDE)
-由很多的编辑器支持编写和调试Python程序，以下列出几个比较流行的，可以根据个人喜好进行选择：
+## Python编辑器(IDE)
+
+有很多的编辑器支持编写和调试Python程序，以下列出几个比较流行的，可以根据个人喜好进行选择：
 * IDLE：这个Python官方的IDE，Windows上安装Python后就会有，功能较简单，可以用于学习和测试一些语法。
 * PyCharm：这个是由JetBrains开发的Python IDE，功能强大，有专业版和社区版，个人使用可以选择免费的社区版。
 * VSCode：这个是微软的Visual Studio的精简版，开源且支持大量的插件，通过安装Python插件可以用于Python开发。
 * Vim：如果是Linux下也可以使用这Vim加一些插件进行Python开发。
 
-# 引用资料
-1. [Python简介]：https://www.liaoxuefeng.com/wiki/1016959663602400/1016959735620448
-2. [Whetting Your Appetite]：https://docs.python.org/3.5/tutorial/appetite.html
-3. [Python-wikipedia]：https://zh.wikipedia.org/wiki/Python#cite_note-python_history-3
+## 引用资料
+
+- [Python简介] ：https://www.liaoxuefeng.com/wiki/1016959663602400/1016959735620448
+- [Whetting Your Appetite] ：https://docs.python.org/3.5/tutorial/appetite.html
+- [Python-wikipedia] ：https://zh.wikipedia.org/wiki/Python#cite_note-python_history-3

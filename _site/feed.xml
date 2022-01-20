@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-18T14:04:11+08:00</updated>
+  <updated>2022-01-20T14:42:39+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python入门教程-9-输入输出" />
     <published>2021-02-24T20:44:30+08:00</published>
   
-    <updated>2021-02-24T20:44:30+08:00</updated>
+    <updated>2022-01-18T14:08:02+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-9-input-and-output/</id>
     <content src="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
@@ -52,19 +52,19 @@ input
 
 Python 提供了一个 input 函数供终端的输入使用，当程序执行到 input 处时会暂停并等待用户输入，用户输入完成并敲击回车后才会继续执行后续的代码。input 的返回值就是读取到的用户输入内容，还可以在调用 input 时传入一个字符串参数作为等待输入的提示信息显示。
 
-# 用 var 保存用户输入内容
+## 用 var 保存用户输入内容
 &amp;gt;&amp;gt;&amp;gt; var = input()
 'hello, world'
 &amp;gt;&amp;gt;&amp;gt; var
 'hello, world'
 &amp;gt;&amp;gt;&amp;gt; 
 
-# 等待输入时显示提示信息
+## 等待输入时显示提示信息
 &amp;gt;&amp;gt;&amp;gt; name = input('Please input your name:')
 Please input your name:'tom'
 &amp;gt;&amp;gt;&amp;gt; name
 'tom'
-&amp;gt;&amp;gt;&amp;gt; ...
+&amp;gt;&amp;gt;&amp;gt...
     </summary>
   
 
@@ -264,7 +264,7 @@ positive
 在前面已经介绍过的 字符串(str)，以及接下来要学习的 列表(list) 和 元组(tuple) 都属于 序列(Sequence) 类型。
 序列又分为 可变序列(mutable) 和 不可变序列(immutable)，可变指的是可修改序列的元素，列表属于可变序列，字符串和元组都属于不可变序列。
 
-# 列表使用中括号表示
+## 列表使用中括号表示
 &amp;gt;&amp;gt;&amp;gt; nums = [1, 2, 3]
 &amp;gt;&amp;gt;&amp;gt; type(nums)
 &amp;lt;class 'list'&amp;gt;
@@ -272,10 +272,10 @@ positive
 &amp;gt;&amp;gt;&amp;gt; nums
 [1, 0, 3]
 
-# 元组使用圆括号表示
+## 元组使用圆括号表示
 &amp;gt;&amp;gt;&amp;gt; seqs = (4, 5, 6)
 &amp;gt;&amp;gt;&amp;gt; type(seqs)
-&amp;lt;class 'tupl...
+&amp;lt;class 'tu...
     </summary>
   
 

@@ -499,8 +499,8 @@ input
 
 Python 提供了一个 input 函数供终端的输入使用，当程序执行到 input 处时会暂停并等待用户输入，用户输入完成并敲击回车后才会继续执行后续的代码。input 的返回值就是读取到的用户输入内容，还可以在调用 input 时传入一个字符串参数作为等待输入的提示信息显示。
 
-# 用 var 保存用户输入内容
-&gt;&gt;&gt; var = inp...
+## 用 var 保存用户输入内容
+&gt;&gt;&gt; var = in...
       </p>
     </div>
 
@@ -549,7 +549,7 @@ Python 提供了一个 input 函数供终端的输入使用，当程序执行到
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2278 字">12 分钟</span>
+  title="2321 字">12 分钟</span>
 
 
         <!-- page views -->
@@ -836,8 +836,8 @@ if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 s
 在前面已经介绍过的 字符串(str)，以及接下来要学习的 列表(list) 和 元组(tuple) 都属于 序列(Sequence) 类型。
 序列又分为 可变序列(mutable) 和 不可变序列(immutable)，可变指的是可修改序列的元素，列表属于可变序列，字符串和元组都属于不可变序列。
 
-# 列表使用中括号表示
-&gt;&gt;&gt; nums = [...
+## 列表使用中括号表示
+&gt;&gt;&gt; nums = ...
       </p>
     </div>
 
@@ -914,15 +914,19 @@ if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 s
 
 
 
-        在上一节课（数据类型）中对 字符串(str) 进行了一个简单的介绍，由于字符串在 Python 中使用频率较高，所以这一节课中专门对字符串进行一个深入的讲解。
-
-字符串方法
+        字符串方法
 
 字符串(str) 在 Python 中是一个 对象(object)，并且包含很多的 方法(method)，这些方法可以给我们操作字符串带来很大的方便，下面列举一些常用的方法及其使用示例：
 
 
   
-    str.ca...
+    str.capitalize()
+
+    把字符串的首字母变成大写。
+
+      &gt;&gt;&gt; 'hello'.capitalize()
+  'Hello'
+...
       </p>
     </div>
 
@@ -971,7 +975,7 @@ if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 s
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3427 字">19 分钟</span>
+  title="3361 字">18 分钟</span>
 
 
         <!-- page views -->
@@ -999,11 +1003,11 @@ if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 s
 
 
 
-        数字：int, float
+        数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
       </p>
     </div>
 
@@ -1083,9 +1087,10 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
         Windows
 
 下载安装包
+
 进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
 
-需要注意的是从Python ...
+需要注意的是从Python...
       </p>
     </div>
 
@@ -1134,7 +1139,7 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1865 字">10 分钟</span>
+  title="1869 字">10 分钟</span>
 
 
         <!-- page views -->
@@ -1163,10 +1168,12 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
 
 
         课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
       </p>
     </div>
 
@@ -1215,7 +1222,7 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1876 字">10 分钟</span>
+  title="1859 字">10 分钟</span>
 
 
         <!-- page views -->
@@ -1319,6 +1326,22 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
+
+  
+
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
 
   
 

@@ -6,21 +6,21 @@ tags: []
 mermaid: true
 ---
 
-# 终端的输入输出
+## 终端的输入输出
 
-## input
+### input
 
 Python 提供了一个 `input` 函数供终端的输入使用，当程序执行到 `input` 处时会暂停并等待用户输入，用户输入完成并敲击回车后才会继续执行后续的代码。`input` 的返回值就是读取到的用户输入内容，还可以在调用 `input` 时传入一个字符串参数作为等待输入的提示信息显示。
 
 ```python
-# 用 var 保存用户输入内容
+## 用 var 保存用户输入内容
 >>> var = input()
 'hello, world'
 >>> var
 'hello, world'
 >>> 
 
-# 等待输入时显示提示信息
+## 等待输入时显示提示信息
 >>> name = input('Please input your name:')
 Please input your name:'tom'
 >>> name
@@ -28,7 +28,7 @@ Please input your name:'tom'
 >>> 
 ```
 
-## print
+### print
 
 Python 提供一个 `print` 函数，可用于向终端打印内容，`print` 函数的定义如下：
 
@@ -39,13 +39,13 @@ print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 根据定义：`print` 会把任意多个 `object` 使用 `str()` 方法转换为字符串，并且在多个 object 之间使用 `sep` 进行分割，并且在最后增加 `end`，`sep` 和 `end` 必须是字符串，然后将这些内容输出到 `file` 参数所指定的对象，`file` 参数指定的对象必须要有 `write(string)` 方法，默认 file 参数为 `sys.stdout`，即当前终端。
 
 ```python
-# 向终端输出两个字符 a 和 b
+## 向终端输出两个字符 a 和 b
 >>> print('a', 'b')
 a b
-# 向终端输出 a 和 b，并且将 a 和 b 使用 - 进行分割
+## 向终端输出 a 和 b，并且将 a 和 b 使用 - 进行分割
 >>> print('a', 'b', sep='-')
 a-b
-# 向终端输出 a 和 b，并且在最后输出两个换行(\n)
+## 向终端输出 a 和 b，并且在最后输出两个换行(\n)
 >>> print('a', 'b', end='\n\n')
 a b
 
@@ -54,11 +54,11 @@ a b
 
 需要注意的是 print 函数的 `sep`、`end`、`file` 和 `flush` 参数必须使用关键字参数的方式传入(即使用 name=value 的形式)，否则会被当作待打印的 `object` 对象。
 
-# 文件的输入输出
+## 文件的输入输出
 
 文件的输入输出即为文件的读写，Python 中文件的读写分别使用 `read` 和 `write` 函数，但是在进行文件读写前必须使用 `open` 函数打开文件。
 
-## open
+### open
 
 `open` 函数定义如下：
 
@@ -105,7 +105,7 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
     | r | 只读模式，进行写操作会报错 |
     | w | 只写模式，如果文件不存在则创建新文件，如果已存在则清空文件内容，进行读操作会报错 |
     | x | 只写模式，如果文件不存在则创建新文件，如果已存在则报错，进行读操作会报错 |
-    | a | 追加写模式，如果文件不存在则创建新文件，如果已存在在从文件末尾开始写 |
+    | a | 追加写模式，如果文件不存在则创建新文件，如果已存在则从文件末尾开始写 |
     | r+ | 读写模式，相当于对 r 模式增加了写操作 |
     | w+ | 读写模式，相当于对 w 模式增加了读操作 |
     | x+ | 读写模式，相当于对 x 模式增加了读操作 |
@@ -114,10 +114,10 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
     | wb | 与 w 模式相比，不同点在于以二进制模式打开文件 |
     | xb | 与 x 模式相比，不同点在于以二进制模式打开文件 |
     | ab | 与 a 模式相比，不同点在于以二进制模式打开文件 |
-    | rb+ | 与 rb 模式相比，不同点在于以二进制模式打开文件 |
-    | wb+ | 与 wb 模式相比，不同点在于以二进制模式打开文件 |
-    | xb+ | 与 xb 模式相比，不同点在于以二进制模式打开文件 |
-    | ab+ | 与 ab 模式相比，不同点在于以二进制模式打开文件 |
+    | rb+ | 与 r+ 模式相比，不同点在于以二进制模式打开文件 |
+    | wb+ | 与 w+ 模式相比，不同点在于以二进制模式打开文件 |
+    | xb+ | 与 x+ 模式相比，不同点在于以二进制模式打开文件 |
+    | ab+ | 与 a+ 模式相比，不同点在于以二进制模式打开文件 |
     | rt | 与 r 模式相同 |
     | wt | 与 w 模式相同 |
     | xt | 与 x 模式相同 |
@@ -161,11 +161,11 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
     | -- | -------- | -------- |
     | None | '\n'、'\r' 和 '\r\n' 都会被当作换行符，并且统一转换为 '\n' | '\n' 会被转换为当前系统默认换行符，即 `os.linesep` |
     | '' | '\n'、'\r' 和 '\r\n' 都会被当作换行符，但是均保持原样，不做转换 | 对换行符保持原样，不做转换 |
-    | '\n' | 只有 '\n' 会被当作换行符，但是不会做转换 | 同 '' |
-    | '\r' | 同 '\n' | '\r' 会被转换为 '\n' |
-    | '\r\n' | 同 '\n' | '\r\n' 会被转换为 '\n' |
+    | '\n' | 只有 '\n' 会被当作换行符，但是不会做转换 | 对换行符保持原样，不做转换 |
+    | '\r' | 只有 '\r' 会被当作换行符，但是不会做转换 | '\n' 会被转换为 '\r' |
+    | '\r\n' | 只有 '\r\n' 会被当作换行符，但是不会做转换 | '\n' 会被转换为 '\r\n' |
 
-## io
+### io
 
 `open` 方法返回的所有对象都定义在 `io` 模块中，其类图如下：
 
@@ -281,7 +281,7 @@ classDiagram
 | xt+ | 与 x+ 模式相同 | 与 x+ 模式相同 |
 | at+ | 与 a+ 模式相同 | 与 a+ 模式相同 |
 
-## 文件读写示例
+### 文件读写示例
 
 通常文件读写的流程是先使用 open() 打开文件，然后进行读写操作，最后使用 close() 方法关闭文件：
 
@@ -311,7 +311,7 @@ True
 'hello'
 ```
 
-# 引用资料
+## 引用资料
 
 - [Input and Output] : https://docs.python.org/3.5/tutorial/inputoutput.html
 - [input] : https://docs.python.org/3.5/library/functions.html#input

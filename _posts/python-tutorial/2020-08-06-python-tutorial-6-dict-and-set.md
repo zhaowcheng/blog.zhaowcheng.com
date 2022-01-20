@@ -5,13 +5,13 @@ categories: [Python入门教程]
 tags: []
 ---
 
-# 字典（dict）
+## 字典（dict）
 
 字典通过 `键值对(key: value)` 的方式，把 key 映射到 value。key 必须是 `可 hash 的`([hashable](https://docs.python.org/3.5/glossary.html#term-hashable))，由于 Python 中所有内置的 `不可变类型`([immutable](https://docs.python.org/3.5/glossary.html#term-immutable)) 都是可 hash 的，所以都可用作字典的 key，比如 `字符串(str)`、`数字(int, float)` 和 `只包含不可变类型元素的元组(tuple)`，如果元组直接或间接的包含了 `可变类型` 的元素，也不能作为字典的 key。value 则可以是任意类型。
 
 字典中元素是无序的，并不会按照插入的顺序排列，可能会是任意的顺序，如果想要有序的字典，可以使用 [collections.OrderedDict](https://docs.python.org/3.5/library/collections.html#collections.OrderedDict)。但是从 `Python 3.7` 开始，字典默认是按照插入顺序排序的了。
 
-## 字典创建
+### 字典创建
 
 创建一个字典可以通过以下 3 种方式：
 
@@ -56,7 +56,7 @@ tags: []
     {2: 4, 4: 16, 6: 36}
     ```
 
-## 字典操作
+### 字典操作
 
 - len(_d_)
 
@@ -293,7 +293,7 @@ tags: []
     {'four': 4.0, 'two': 2.0, 'three': 3.0, 'six': 6.0, 'one': 1.0, 'seven': 7.0, 'five': 5.0}
     ```
 
-## 字典视图
+### 字典视图
 
 上面提到的 d.keys()、d.values() 和 d.items() 等方法返回的都是一个 `视图类型(view object)`，通过这些视图可以访问字典 d 的 keys、values 或 items，并且视图会随着字典的变化而自动更新。
 
@@ -309,7 +309,7 @@ dict_values([1, 2])
 >>> items
 dict_items([('one', 1), ('two', 2)])
 
-# 视图随着字典变化而动态更新
+## 视图随着字典变化而动态更新
 >>> d.update(three=3)
 >>> keys
 dict_keys(['one', 'two', 'three'])
@@ -318,7 +318,7 @@ dict_values([1, 2, 3])
 >>> items
 dict_items([('one', 1), ('two', 2), ('three', 3)])
 
-# 可以对视图进行迭代(iteration)
+## 可以对视图进行迭代(iteration)
 >>> for k in keys:
 ...     print(k)
 ...
@@ -327,17 +327,17 @@ two
 three
 ```
 
-## 字典比较
+### 字典比较
 
 字典只支持 `==` 比较操作符，当且仅当所有项都相等时才相等。对于 `<`、`>`、`<=` 和 `>=` 比较操作符都不支持，如果使用会抛 `TypeError` 错误。
 
-# 集合（set）
+## 集合（set）
 
 `集合(set)` 是一些 `无序(unordered)`、`无重复(no duplicate)` 并且 `可hash(hashable)` 元素的组合。通常用于 `是否包含某个成员的检测`、`去除重复元素` 等操作。同时也支持数学上的集合运算，比如 `交集(intersection)`、`并集(union)`、`差集(difference)` 和 `对称差集(symmetric difference)`。
 
 Python 内置两种类型集合，`set` 和 `frozenset`，set 是可变类型(mutable)，frozenset 是不可变类型(immutable)。
 
-## 集合创建
+### 集合创建
 
 集合创建可以通过以下 3 种方式：
 
@@ -387,17 +387,17 @@ Python 内置两种类型集合，`set` 和 `frozenset`，set 是可变类型(mu
 集合中的元素必须是 `可hash的`([hashable](https://docs.python.org/3.5/glossary.html#term-hashable))
 
 ```python
-# str、numeric 和 tuple 类型都是可hash的
+## str、numeric 和 tuple 类型都是可hash的
 >>> {'one', 2, (3, 4)}
 {'one', 2, (3, 4)}
 
-# list 是 unhashable 类型
+## list 是 unhashable 类型
 >>> {1, [2]}
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'list'
 
-# 间接包含 unhashable 类型也不行
+## 间接包含 unhashable 类型也不行
 >>> {1, (2, [3])}
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -420,7 +420,7 @@ frozenset()
 <class 'dict'>
 ```
 
-## 集合操作
+### 集合操作
 
 以下是 `set` 和 `frozenset` 都支持的操作：
 
@@ -736,16 +736,16 @@ TypeError: unsupported operand type(s) for |: 'set' and 'list'
 
 同样的以上的 update()、intersection_update()、difference_update() 和 symmetric_difference_update() 也接受可迭代类型参数，但是对应的 `运算符` 则只能接受集合类型参数。
 
-# immutable 与 hashable
+## immutable 与 hashable
 
 Python 中不可变类型 `immutable` 都是 `hashable` 类型的，但是 hashable 类型并不一定都是 immutable 的，因为默认所有 `自定义类的实例` 都是 hashable 类型的，其 hash 值通常就是 `id()` 函数的计算结果，由于用户自定义类不一定是不可变类型的，所以 hashable 类型不一定都是 immutable 类型。
 
 关于 hashable 可参考：https://docs.python.org/3.5/glossary.html#term-hashable  
 关于 immutable 可参考：https://docs.python.org/3.5/glossary.html#term-immutable
 
-# 引用资料
+## 引用资料
 
-[Sets] : https://docs.python.org/3.5/tutorial/datastructures.html#sets  
-[Dictionaries] : https://docs.python.org/3.5/tutorial/datastructures.html#dictionaries  
-[Set Types — set, frozenset] : https://docs.python.org/3.5/library/stdtypes.html#set-types-set-frozenset  
-[Mapping Types — dict] : https://docs.python.org/3.5/library/stdtypes.html#mapping-types-dict
+- [Sets] : https://docs.python.org/3.5/tutorial/datastructures.html#sets
+- [Dictionaries] : https://docs.python.org/3.5/tutorial/datastructures.html#dictionaries  
+- [Set Types — set, frozenset] : https://docs.python.org/3.5/library/stdtypes.html#set-types-set-frozenset  
+- [Mapping Types — dict] : https://docs.python.org/3.5/library/stdtypes.html#mapping-types-dict

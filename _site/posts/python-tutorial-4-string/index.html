@@ -36,8 +36,8 @@
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="Python入门教程-4-字符串" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="在上一节课（数据类型）中对 字符串(str) 进行了一个简单的介绍，由于字符串在 Python 中使用频率较高，所以这一节课中专门对字符串进行一个深入的讲解。" />
-<meta property="og:description" content="在上一节课（数据类型）中对 字符串(str) 进行了一个简单的介绍，由于字符串在 Python 中使用频率较高，所以这一节课中专门对字符串进行一个深入的讲解。" />
+<meta name="description" content="字符串方法" />
+<meta property="og:description" content="字符串方法" />
 <link rel="canonical" href="http://localhost:4000/posts/python-tutorial-4-string/" />
 <meta property="og:url" content="http://localhost:4000/posts/python-tutorial-4-string/" />
 <meta property="og:site_name" content="zhaowcheng" />
@@ -47,7 +47,7 @@
 <meta property="twitter:title" content="Python入门教程-4-字符串" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"Python入门教程-4-字符串","dateModified":"2020-07-10T17:39:07+08:00","datePublished":"2020-07-10T17:39:07+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-4-string/"},"url":"http://localhost:4000/posts/python-tutorial-4-string/","@type":"BlogPosting","description":"在上一节课（数据类型）中对 字符串(str) 进行了一个简单的介绍，由于字符串在 Python 中使用频率较高，所以这一节课中专门对字符串进行一个深入的讲解。","@context":"https://schema.org"}</script>
+{"headline":"Python入门教程-4-字符串","dateModified":"2020-07-10T17:39:07+08:00","datePublished":"2020-07-10T17:39:07+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-4-string/"},"url":"http://localhost:4000/posts/python-tutorial-4-string/","@type":"BlogPosting","description":"字符串方法","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -542,7 +542,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3427 字">19 分钟
+  title="3361 字">18 分钟
     阅读</span>
 
 
@@ -557,9 +557,7 @@
 
         
 
-        <p>在上一节课（数据类型）中对 <code class="language-plaintext highlighter-rouge">字符串(str)</code> 进行了一个简单的介绍，由于字符串在 Python 中使用频率较高，所以这一节课中专门对字符串进行一个深入的讲解。</p>
-
-<h1 id="字符串方法">字符串方法</h1>
+        <h2 id="字符串方法">字符串方法</h2>
 
 <p><code class="language-plaintext highlighter-rouge">字符串(str)</code> 在 Python 中是一个 <code class="language-plaintext highlighter-rouge">对象(object)</code>，并且包含很多的 <code class="language-plaintext highlighter-rouge">方法(method)</code>，这些方法可以给我们操作字符串带来很大的方便，下面列举一些常用的方法及其使用示例：</p>
 
@@ -1036,7 +1034,7 @@
   </li>
 </ul>
 
-<h1 id="使用--格式化字符串">使用 % 格式化字符串</h1>
+<h2 id="使用--格式化字符串">使用 % 格式化字符串</h2>
 
 <p>Python 中使用 % 格式化字符串的格式是 <code class="language-plaintext highlighter-rouge">format % values</code> ：</p>
 
@@ -1515,18 +1513,18 @@ T : 转换类型(conversion type)。
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="c1"># 十进制浮点数转换类型(f)，带符号位(+)，左对齐(-)，最小宽度5(5)，精度1位(.1)
+</pre></td><td class="rouge-code"><pre><span class="c1">## 十进制浮点数转换类型(f)，带符号位(+)，左对齐(-)，最小宽度5(5)，精度1位(.1)
 </span><span class="o">&gt;&gt;&gt;</span> <span class="s">'%+-5.1f'</span> <span class="o">%</span> <span class="mf">3.14</span>
 <span class="s">'+3.1 '</span>
-<span class="c1"># 十进制整数转换类型(d)，带符号位(+)，最小宽度4(4)，不足位补0(0)
+<span class="c1">## 十进制整数转换类型(d)，带符号位(+)，最小宽度4(4)，不足位补0(0)
 </span><span class="o">&gt;&gt;&gt;</span> <span class="s">'%+04d'</span> <span class="o">%</span> <span class="mi">16</span>
 <span class="s">'+016'</span>
-<span class="c1"># 字符串转换类型(s)，左对齐(-)，最小宽度6(6)，精度2(.2)
+<span class="c1">## 字符串转换类型(s)，左对齐(-)，最小宽度6(6)，精度2(.2)
 </span><span class="o">&gt;&gt;&gt;</span> <span class="s">'%-6.2s'</span> <span class="o">%</span> <span class="s">'Python'</span>
 <span class="s">'Py    '</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="使用-strformat-格式化字符串">使用 str.format 格式化字符串</h1>
+<h2 id="使用-strformat-格式化字符串">使用 str.format 格式化字符串</h2>
 
 <p>从 Python3 开始官方推荐使用字符串自带的 format 方法对字符串进行格式化，该方法能够完全兼容 % 的形式且更强大，比如像下面这样：</p>
 
@@ -1920,7 +1918,7 @@ type        ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o"
   </li>
 </ul>
 
-<h1 id="引用资料">引用资料</h1>
+<h2 id="引用资料">引用资料</h2>
 
 <ul>
   <li>[Strings] : https://docs.python.org/3.5/tutorial/introduction.html#strings</li>
@@ -2002,6 +2000,22 @@ type        ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o"
 
   
 
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
+
+  
+
   
 
 
@@ -2023,6 +2037,13 @@ type        ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o"
   
   </div> <!-- .access -->
 
+  
+    <!-- BS-toc.js will be loaded at medium priority -->
+    <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+    <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+      <span class="pl-3 pt-2 mb-2">文章内容</span>
+      <nav id="toc" data-toggle="toc"></nav>
+    </div>
   
 
 </div> <!-- #panel-wrapper -->
@@ -2209,10 +2230,12 @@ type        ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o"
 
 
                 课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
               </p>
             </div>
           </div>
@@ -2250,9 +2273,10 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
                 Windows
 
 下载安装包
+
 进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
 
-需要注意的是从Python ...
+需要注意的是从Python...
               </p>
             </div>
           </div>
@@ -2287,11 +2311,11 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
-                数字：int, float
+                数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
               </p>
             </div>
           </div>

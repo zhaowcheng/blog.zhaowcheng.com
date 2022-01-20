@@ -47,7 +47,7 @@
 <meta property="twitter:title" content="Python入门教程-9-输入输出" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"Python入门教程-9-输入输出","dateModified":"2021-02-24T20:44:30+08:00","datePublished":"2021-02-24T20:44:30+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-9-input-and-output/"},"url":"http://localhost:4000/posts/python-tutorial-9-input-and-output/","@type":"BlogPosting","description":"终端的输入输出","@context":"https://schema.org"}</script>
+{"headline":"Python入门教程-9-输入输出","dateModified":"2022-01-18T14:08:02+08:00","datePublished":"2021-02-24T20:44:30+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-9-input-and-output/"},"url":"http://localhost:4000/posts/python-tutorial-9-input-and-output/","@type":"BlogPosting","description":"终端的输入输出","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -521,6 +521,28 @@
         <div>
           <!-- lastmod -->
           
+          <span>
+            更新于
+            <!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+
+
+
+
+
+<span class="timeago lastmod"
+  
+    data-toggle="tooltip"
+    data-placement="bottom"
+    title="2022-01-18, 14:08 +0800"
+  >01-18<i class="unloaded">2022-01-18T14:08:02+08:00</i>
+</span>
+
+          </span>
+          
 
           <!-- read time -->
           <!--
@@ -542,7 +564,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2278 字">12 分钟
+  title="2321 字">12 分钟
     阅读</span>
 
 
@@ -557,9 +579,9 @@
 
         
 
-        <h1 id="终端的输入输出">终端的输入输出</h1>
+        <h2 id="终端的输入输出">终端的输入输出</h2>
 
-<h2 id="input">input</h2>
+<h3 id="input">input</h3>
 
 <p>Python 提供了一个 <code class="language-plaintext highlighter-rouge">input</code> 函数供终端的输入使用，当程序执行到 <code class="language-plaintext highlighter-rouge">input</code> 处时会暂停并等待用户输入，用户输入完成并敲击回车后才会继续执行后续的代码。<code class="language-plaintext highlighter-rouge">input</code> 的返回值就是读取到的用户输入内容，还可以在调用 <code class="language-plaintext highlighter-rouge">input</code> 时传入一个字符串参数作为等待输入的提示信息显示。</p>
 
@@ -585,14 +607,14 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre><span class="c1"># 用 var 保存用户输入内容
+</pre></td><td class="rouge-code"><pre><span class="c1">## 用 var 保存用户输入内容
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 <span class="s">'hello, world'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">var</span>
 <span class="s">'hello, world'</span>
 <span class="o">&gt;&gt;&gt;</span> 
 
-<span class="c1"># 等待输入时显示提示信息
+<span class="c1">## 等待输入时显示提示信息
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Please input your name:'</span><span class="p">)</span>
 <span class="n">Please</span> <span class="nb">input</span> <span class="n">your</span> <span class="n">name</span><span class="p">:</span><span class="s">'tom'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name</span>
@@ -600,7 +622,7 @@
 <span class="o">&gt;&gt;&gt;</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="print">print</h2>
+<h3 id="print">print</h3>
 
 <p>Python 提供一个 <code class="language-plaintext highlighter-rouge">print</code> 函数，可用于向终端打印内容，<code class="language-plaintext highlighter-rouge">print</code> 函数的定义如下：</p>
 
@@ -639,13 +661,13 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="c1"># 向终端输出两个字符 a 和 b
+</pre></td><td class="rouge-code"><pre><span class="c1">## 向终端输出两个字符 a 和 b
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">)</span>
 <span class="n">a</span> <span class="n">b</span>
-<span class="c1"># 向终端输出 a 和 b，并且将 a 和 b 使用 - 进行分割
+<span class="c1">## 向终端输出 a 和 b，并且将 a 和 b 使用 - 进行分割
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'-'</span><span class="p">)</span>
 <span class="n">a</span><span class="o">-</span><span class="n">b</span>
-<span class="c1"># 向终端输出 a 和 b，并且在最后输出两个换行(\n)
+<span class="c1">## 向终端输出 a 和 b，并且在最后输出两个换行(\n)
 </span><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
 <span class="n">a</span> <span class="n">b</span>
 
@@ -654,11 +676,11 @@
 
 <p>需要注意的是 print 函数的 <code class="language-plaintext highlighter-rouge">sep</code>、<code class="language-plaintext highlighter-rouge">end</code>、<code class="language-plaintext highlighter-rouge">file</code> 和 <code class="language-plaintext highlighter-rouge">flush</code> 参数必须使用关键字参数的方式传入(即使用 name=value 的形式)，否则会被当作待打印的 <code class="language-plaintext highlighter-rouge">object</code> 对象。</p>
 
-<h1 id="文件的输入输出">文件的输入输出</h1>
+<h2 id="文件的输入输出">文件的输入输出</h2>
 
 <p>文件的输入输出即为文件的读写，Python 中文件的读写分别使用 <code class="language-plaintext highlighter-rouge">read</code> 和 <code class="language-plaintext highlighter-rouge">write</code> 函数，但是在进行文件读写前必须使用 <code class="language-plaintext highlighter-rouge">open</code> 函数打开文件。</p>
 
-<h2 id="open">open</h2>
+<h3 id="open">open</h3>
 
 <p><code class="language-plaintext highlighter-rouge">open</code> 函数定义如下：</p>
 
@@ -777,7 +799,7 @@
         </tr>
         <tr>
           <td>a</td>
-          <td>追加写模式，如果文件不存在则创建新文件，如果已存在在从文件末尾开始写</td>
+          <td>追加写模式，如果文件不存在则创建新文件，如果已存在则从文件末尾开始写</td>
         </tr>
         <tr>
           <td>r+</td>
@@ -813,19 +835,19 @@
         </tr>
         <tr>
           <td>rb+</td>
-          <td>与 rb 模式相比，不同点在于以二进制模式打开文件</td>
+          <td>与 r+ 模式相比，不同点在于以二进制模式打开文件</td>
         </tr>
         <tr>
           <td>wb+</td>
-          <td>与 wb 模式相比，不同点在于以二进制模式打开文件</td>
+          <td>与 w+ 模式相比，不同点在于以二进制模式打开文件</td>
         </tr>
         <tr>
           <td>xb+</td>
-          <td>与 xb 模式相比，不同点在于以二进制模式打开文件</td>
+          <td>与 x+ 模式相比，不同点在于以二进制模式打开文件</td>
         </tr>
         <tr>
           <td>ab+</td>
-          <td>与 ab 模式相比，不同点在于以二进制模式打开文件</td>
+          <td>与 a+ 模式相比，不同点在于以二进制模式打开文件</td>
         </tr>
         <tr>
           <td>rt</td>
@@ -952,24 +974,24 @@
         <tr>
           <td>‘\n’</td>
           <td>只有 ‘\n’ 会被当作换行符，但是不会做转换</td>
-          <td>同 ‘’</td>
+          <td>对换行符保持原样，不做转换</td>
         </tr>
         <tr>
           <td>‘\r’</td>
-          <td>同 ‘\n’</td>
-          <td>‘\r’ 会被转换为 ‘\n’</td>
+          <td>只有 ‘\r’ 会被当作换行符，但是不会做转换</td>
+          <td>‘\n’ 会被转换为 ‘\r’</td>
         </tr>
         <tr>
           <td>‘\r\n’</td>
-          <td>同 ‘\n’</td>
-          <td>‘\r\n’ 会被转换为 ‘\n’</td>
+          <td>只有 ‘\r\n’ 会被当作换行符，但是不会做转换</td>
+          <td>‘\n’ 会被转换为 ‘\r\n’</td>
         </tr>
       </tbody>
     </table></div>
   </li>
 </ul>
 
-<h2 id="io">io</h2>
+<h3 id="io">io</h3>
 
 <p><code class="language-plaintext highlighter-rouge">open</code> 方法返回的所有对象都定义在 <code class="language-plaintext highlighter-rouge">io</code> 模块中，其类图如下：</p>
 
@@ -1189,7 +1211,7 @@
   </tbody>
 </table></div>
 
-<h2 id="文件读写示例">文件读写示例</h2>
+<h3 id="文件读写示例">文件读写示例</h3>
 
 <p>通常文件读写的流程是先使用 open() 打开文件，然后进行读写操作，最后使用 close() 方法关闭文件：</p>
 
@@ -1253,7 +1275,7 @@
 <span class="s">'hello'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="引用资料">引用资料</h1>
+<h2 id="引用资料">引用资料</h2>
 
 <ul>
   <li>[Input and Output] : https://docs.python.org/3.5/tutorial/inputoutput.html</li>
@@ -1333,6 +1355,22 @@
 
 
 
+
+  
+
+    <div id="access-lastmod" class="post">
+      <span>最近更新</span>
+      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-9-input-and-output/">Python入门教程-9-输入输出</a></li>
+      
+
+      </ul>
+    </div> <!-- #access-lastmod -->
 
   
 
@@ -1550,10 +1588,12 @@
 
 
                 课程说明
-在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，预计每节课10~20分钟左右，只是进行一个简单入门讲解，所以每个小节最后附上讲解内容对应章节的链接，各位同学可在课后进行深入的学习。
+
+在 廖雪峰Python3教程 和 Python3.5官方文档 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
 
 Python简介
-Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取...
+
+Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧”Monty Py...
               </p>
             </div>
           </div>
@@ -1591,9 +1631,10 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
                 Windows
 
 下载安装包
+
 进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
 
-需要注意的是从Python ...
+需要注意的是从Python...
               </p>
             </div>
           </div>
@@ -1628,11 +1669,11 @@ Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，
 
 
 
-                数字：int, float
+                数字（int, float）
 
 Python 中的整数和数学上的整数一样，但是跟 Python2 和 C 语言相比不同的是，Python3 中的整数没有 短整型(int) 和 长整型(long) 的区别，即 int 直接相当于 Python2 和 C 语言中的 长整型(long) 类型。
 
-Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方法...
+Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数是由于在计算机中小数的表示方...
               </p>
             </div>
           </div>

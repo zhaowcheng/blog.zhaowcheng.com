@@ -5,13 +5,13 @@ categories: [Python入门教程]
 tags: []
 ---
 
-# 序列（Sequence）
+## 序列（Sequence）
 
 在前面已经介绍过的 `字符串(str)`，以及接下来要学习的 `列表(list)` 和 `元组(tuple)` 都属于 `序列(Sequence)` 类型。  
 序列又分为 `可变序列(mutable)` 和 `不可变序列(immutable)`，可变指的是可修改序列的元素，列表属于可变序列，字符串和元组都属于不可变序列。
 
 ```python
-# 列表使用中括号表示
+## 列表使用中括号表示
 >>> nums = [1, 2, 3]
 >>> type(nums)
 <class 'list'>
@@ -19,7 +19,7 @@ tags: []
 >>> nums
 [1, 0, 3]
 
-# 元组使用圆括号表示
+## 元组使用圆括号表示
 >>> seqs = (4, 5, 6)
 >>> type(seqs)
 <class 'tuple'>
@@ -31,7 +31,7 @@ TypeError: 'tuple' object does not support item assignment
 (4, 5, 6)
 ```
 
-## 序列操作
+### 序列操作
 
 序列类型支持的一些通用操作（即可变和不可变序列均支持）如下表：
 
@@ -110,7 +110,7 @@ TypeError: 'tuple' object does not support item assignment
     [1, 2, 3]
     >>> [1, 2, 3][2:1]  # 如果 j <= i，则返回一个空列表
     []
-    >>> [1, 2, 3][1:-1]  # i 和 j 也可以时负数，如果时负数则会被转换为 len(s) + i/j
+    >>> [1, 2, 3][1:-1]  # i 和 j 也可以是负数，如果是负数则会被转换为 len(s) + i/j
     [2]
     >>> [1, 2, 3][1:2]  # [1:-1] 就相当于 [1:len(s)+(-1)] = [1:3-1] = [1:2]
     [2]
@@ -194,9 +194,9 @@ TypeError: 'tuple' object does not support item assignment
     0
     ```
 
-# 列表（list）
+## 列表（list）
 
-列表属于不可变序列（immutable Sequence），列表定义除了用 `中括号([])` 外，还可以使用内置函数 `list()` 把其他序列类型转换为列表：
+列表属于可变序列（mutable Sequence），列表定义除了用 `中括号([])` 外，还可以使用内置函数 `list()` 把其他序列类型转换为列表：
 
 ```python
 >>> list('abc')  # 把字符串转换为列表
@@ -205,7 +205,7 @@ TypeError: 'tuple' object does not support item assignment
 [1, 2, 3]
 ```
 
-## 列表操作
+### 列表操作
 
 列表除了支持序列类型的通用操作外，还支持以下这些 `可变序列独有的操作`：
 
@@ -382,7 +382,7 @@ TypeError: 'tuple' object does not support item assignment
     [3, 2, 1]
     ```
 
-## 列表排序
+### 列表排序
 
 列表除了支持 `序列通用操作` 和 `可变序列操作` 外，列表还实现了一个单独的方法 `sort` ：
 
@@ -410,7 +410,7 @@ TypeError: 'tuple' object does not support item assignment
     ['tom-01', 'lily-02', 'jack-03']
     ```
 
-## 列表推导式
+### 列表推导式
 
 列表推导式提供了一种简洁的方式来创建列表，比如需要创建一个 1~10 的平方数的列表，只需要像这样一行代码即可完成：
 
@@ -432,7 +432,7 @@ TypeError: 'tuple' object does not support item assignment
 >>> [(x, y) for x in [1, 2] for y in [3, 4]]
 [(1, 3), (1, 4), (2, 3), (2, 4)]
 
-# 上面的推导式与以下嵌套循环作用相同
+## 上面的推导式与以下嵌套循环作用相同
 >>> combs = []
 >>> for x in [1, 2]:
 ...     for y in [3, 4]:
@@ -442,7 +442,7 @@ TypeError: 'tuple' object does not support item assignment
 [(1, 3), (1, 4), (2, 3), (2, 4)]
 ```
 
-## 浅拷贝与深拷贝
+### 浅拷贝与深拷贝
 
 列表支持嵌套列表或嵌套其他可变对象，对于列表自带的 copy 方法和切片式拷贝，以及 *(repeation)，都只是一个 `浅拷贝`，下面举例对浅拷贝进行说明：
 
@@ -450,14 +450,14 @@ TypeError: 'tuple' object does not support item assignment
 >>> nested_nums = [1, [2, 3], 4]
 >>> copy_nested_nums = nested_nums.copy()  # 浅拷贝，等同于 nested_nums[:]
 
-# 修改原始列表中非嵌套元素，拷贝列表不受影响
+## 修改原始列表中非嵌套元素，拷贝列表不受影响
 >>> nested_nums[0] = 9
 >>> nested_nums
 [9, [2, 3], 4]
 >>> copy_nested_nums
 [1, [2, 3], 4]
 
-# 修改原始列表中嵌套列表的元素，拷贝列表受影响
+## 修改原始列表中嵌套列表的元素，拷贝列表受影响
 >>> nested_nums[1][0] = 9
 >>> nested_nums
 [9, [9, 3], 4]
@@ -465,7 +465,7 @@ TypeError: 'tuple' object does not support item assignment
 [1, [9, 3], 4]
 ```
 
-如果相应避免上面的浅拷贝的情况，可以使用 copy.deepcopy 函数进行深拷贝：
+如果想要避免上面的浅拷贝的情况，可以使用 copy.deepcopy 函数进行深拷贝：
 
 ```python
 >>> nested_nums = [1, [2, 3], 4]
@@ -478,7 +478,7 @@ TypeError: 'tuple' object does not support item assignment
 [1, [2, 3], 4]
 ```
 
-# range
+## range
 
 range 是一个 `内置类型`，可以用来创建一个 `不可变序列(immutable)`，定义如下：
 
@@ -486,7 +486,7 @@ range 是一个 `内置类型`，可以用来创建一个 `不可变序列(immut
 class range(stop)
 class range(start, stop[, step])
 
-在 start 到 stop 范围内（不包含 stop），以步长为 step，产生一个序列。
+# 在 start 到 stop 范围内（不包含 stop），以步长为 step，产生一个序列。
 ```
 
 _start_, _stop_, _step_ 均为 int 类型，如果只传入一个参数，这个参数会被当作 _stop_ ：
@@ -537,7 +537,7 @@ range(1, 5)
 48
 ```
 
-# 元组（tuple）
+## 元组（tuple）
 
 元组和列表类似，都是序列，不同的是元组是 `不可变序列(immutable Sequence)`，元组的定义使用 `圆括号`，也可以使用内置关键字 `tuple`，将其他序列转换为元组：
 
@@ -548,8 +548,8 @@ range(1, 5)
 >>> t = 1, 2, 3  # 如果元素个数超过 1 个，也可以不使用圆括号
 >>> t
 (1, 2, 3)
-# 只有 1 个元素的元组需要用圆括号括起来，并且在末尾添加一个逗号(,)
-# 这样做是为了和数学符号的圆括号进行区分
+## 只有 1 个元素的元组需要用圆括号括起来，并且在末尾添加一个逗号(,)
+## 这样做是为了和数学符号的圆括号进行区分
 >>> t = (1,)  
 >>> t
 (1,)
@@ -576,8 +576,8 @@ TypeError: 'tuple' object does not support item assignment
 (1, [3, 3], 4)
 ```
 
-# 引用资料
+## 引用资料
 
-1. [More on Lists] : https://docs.python.org/3.5/tutorial/datastructures.html#more-on-lists
-2. [Tuples and Sequences] : https://docs.python.org/3.5/tutorial/datastructures.html#tuples-and-sequences
-3. [Sequence Types — list, tuple, range] : https://docs.python.org/3.5/library/stdtypes.html#sequence-types-list-tuple-range
+- [More on Lists] : https://docs.python.org/3.5/tutorial/datastructures.html#more-on-lists
+- [Tuples and Sequences] : https://docs.python.org/3.5/tutorial/datastructures.html#tuples-and-sequences
+- [Sequence Types — list, tuple, range] : https://docs.python.org/3.5/library/stdtypes.html#sequence-types-list-tuple-range
