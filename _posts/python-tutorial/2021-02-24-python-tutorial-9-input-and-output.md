@@ -1,7 +1,7 @@
 ---
-title: Python入门教程-9-输入输出
+title: Python入门-9-输入输出
 date: 2021-02-24 20:44:30 +0800
-categories: [Python入门教程]
+categories: [Python入门]
 tags: []
 mermaid: true
 ---

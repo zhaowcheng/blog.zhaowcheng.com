@@ -1,7 +1,7 @@
 ---
-title: Python入门教程-2-安装和使用
+title: Python入门-2-安装和使用
 date: 2020-03-07 20:03:27 +0800
-categories: [Python入门教程]
+categories: [Python入门]
 tags: []
 ---
 

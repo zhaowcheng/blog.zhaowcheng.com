@@ -1,7 +1,7 @@
 ---
-title: Python入门教程-5-列表与元组
+title: Python入门-5-列表与元组
 date: 2020-07-15 15:16:00 +0800
-categories: [Python入门教程]
+categories: [Python入门]
 tags: []
 ---
 
