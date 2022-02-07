@@ -1,7 +1,7 @@
 ---
-title: Python入门-4-字符串
+title: Python 入门-4-字符串
 date: 2020-07-10 17:39:07 +0800
-categories: [Python入门]
+categories: [Python 入门]
 tags: []
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Python入门-1-简介
+title: Python 入门-1-简介
 date: 2020-03-04 17:43:50 +0800
-categories: [Python入门]
+categories: [Python 入门]
 tags: []
 ---
 

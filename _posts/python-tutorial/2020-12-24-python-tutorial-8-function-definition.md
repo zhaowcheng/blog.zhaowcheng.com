@@ -1,7 +1,7 @@
 ---
-title: Python入门-8-函数定义
+title: Python 入门-8-函数定义
 date: 2020-11-24 10:45:50 +0800
-categories: [Python入门]
+categories: [Python 入门]
 tags: []
 ---
 

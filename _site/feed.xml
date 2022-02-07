@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-07T16:27:51+08:00</updated>
+  <updated>2022-02-07T16:40:54+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>Python入门-9-输入输出</title>
-    <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python入门-9-输入输出" />
+    <title>Python 入门-9-输入输出</title>
+    <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python 入门-9-输入输出" />
     <published>2021-02-24T20:44:30+08:00</published>
   
-    <updated>2022-01-20T14:49:27+08:00</updated>
+    <updated>2022-02-07T16:29:36+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-9-input-and-output/</id>
     <content src="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
@@ -34,7 +34,7 @@
 
   
     
-    <category term="Python入门" />
+    <category term="Python 入门" />
     
   
 
@@ -72,11 +72,11 @@ Please input your name:'tom'
 
   
   <entry>
-    <title>Python入门-8-函数定义</title>
-    <link href="http://localhost:4000/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python入门-8-函数定义" />
+    <title>Python 入门-8-函数定义</title>
+    <link href="http://localhost:4000/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python 入门-8-函数定义" />
     <published>2020-11-24T10:45:50+08:00</published>
   
-    <updated>2022-01-20T14:49:27+08:00</updated>
+    <updated>2022-02-07T16:29:36+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-8-function-definition/</id>
     <content src="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
@@ -86,7 +86,7 @@ Please input your name:'tom'
 
   
     
-    <category term="Python入门" />
+    <category term="Python 入门" />
     
   
 
@@ -131,11 +131,11 @@ Please input your name:'tom'
 
   
   <entry>
-    <title>Python入门-7-流程控制</title>
-    <link href="http://localhost:4000/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python入门-7-流程控制" />
+    <title>Python 入门-7-流程控制</title>
+    <link href="http://localhost:4000/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python 入门-7-流程控制" />
     <published>2020-10-18T15:58:25+08:00</published>
   
-    <updated>2022-01-20T14:49:27+08:00</updated>
+    <updated>2022-02-07T16:29:36+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-7-flow-control/</id>
     <content src="http://localhost:4000/posts/python-tutorial-7-flow-control/" />
@@ -145,7 +145,7 @@ Please input your name:'tom'
 
   
     
-    <category term="Python入门" />
+    <category term="Python 入门" />
     
   
 
@@ -185,11 +185,11 @@ positive
 
   
   <entry>
-    <title>Python入门-6-字典与集合</title>
-    <link href="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python入门-6-字典与集合" />
+    <title>Python 入门-6-字典与集合</title>
+    <link href="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python 入门-6-字典与集合" />
     <published>2020-08-06T10:31:58+08:00</published>
   
-    <updated>2022-01-20T14:49:27+08:00</updated>
+    <updated>2022-02-07T16:29:36+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-6-dict-and-set/</id>
     <content src="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" />
@@ -199,7 +199,7 @@ positive
 
   
     
-    <category term="Python入门" />
+    <category term="Python 入门" />
     
   
 
@@ -233,11 +233,11 @@ positive
 
   
   <entry>
-    <title>Python入门-5-列表与元组</title>
-    <link href="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" rel="alternate" type="text/html" title="Python入门-5-列表与元组" />
+    <title>Python 入门-5-列表与元组</title>
+    <link href="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" rel="alternate" type="text/html" title="Python 入门-5-列表与元组" />
     <published>2020-07-15T15:16:00+08:00</published>
   
-    <updated>2022-01-20T14:49:27+08:00</updated>
+    <updated>2022-02-07T16:29:36+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-5-list-and-tuple/</id>
     <content src="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" />
@@ -247,7 +247,7 @@ positive
 
   
     
-    <category term="Python入门" />
+    <category term="Python 入门" />
     
   
 
