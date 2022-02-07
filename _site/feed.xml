@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://zhaowcheng.com/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-07T16:40:54+08:00</updated>
+  <updated>2022-02-07T16:49:47+08:00</updated>
   <author>
     <name>zhaowcheng</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://zhaowcheng.com/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://zhaowcheng.com/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="http://localhost:4000/"/>
+    href="https://zhaowcheng.com/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
   <rights> © 2022 zhaowcheng </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Python 入门-9-输入输出</title>
-    <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python 入门-9-输入输出" />
+    <link href="https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python 入门-9-输入输出" />
     <published>2021-02-24T20:44:30+08:00</published>
   
-    <updated>2022-02-07T16:29:36+08:00</updated>
+    <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>http://localhost:4000/posts/python-tutorial-9-input-and-output/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
+    <id>https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/</id>
+    <content src="https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -73,13 +73,13 @@ Please input your name:'tom'
   
   <entry>
     <title>Python 入门-8-函数定义</title>
-    <link href="http://localhost:4000/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python 入门-8-函数定义" />
+    <link href="https://zhaowcheng.com/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python 入门-8-函数定义" />
     <published>2020-11-24T10:45:50+08:00</published>
   
-    <updated>2022-02-07T16:29:36+08:00</updated>
+    <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>http://localhost:4000/posts/python-tutorial-8-function-definition/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
+    <id>https://zhaowcheng.com/posts/python-tutorial-8-function-definition/</id>
+    <content src="https://zhaowcheng.com/posts/python-tutorial-8-function-definition/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -132,13 +132,13 @@ Please input your name:'tom'
   
   <entry>
     <title>Python 入门-7-流程控制</title>
-    <link href="http://localhost:4000/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python 入门-7-流程控制" />
+    <link href="https://zhaowcheng.com/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python 入门-7-流程控制" />
     <published>2020-10-18T15:58:25+08:00</published>
   
-    <updated>2022-02-07T16:29:36+08:00</updated>
+    <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>http://localhost:4000/posts/python-tutorial-7-flow-control/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-7-flow-control/" />
+    <id>https://zhaowcheng.com/posts/python-tutorial-7-flow-control/</id>
+    <content src="https://zhaowcheng.com/posts/python-tutorial-7-flow-control/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -186,13 +186,13 @@ positive
   
   <entry>
     <title>Python 入门-6-字典与集合</title>
-    <link href="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python 入门-6-字典与集合" />
+    <link href="https://zhaowcheng.com/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python 入门-6-字典与集合" />
     <published>2020-08-06T10:31:58+08:00</published>
   
-    <updated>2022-02-07T16:29:36+08:00</updated>
+    <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>http://localhost:4000/posts/python-tutorial-6-dict-and-set/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" />
+    <id>https://zhaowcheng.com/posts/python-tutorial-6-dict-and-set/</id>
+    <content src="https://zhaowcheng.com/posts/python-tutorial-6-dict-and-set/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -234,13 +234,13 @@ positive
   
   <entry>
     <title>Python 入门-5-列表与元组</title>
-    <link href="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" rel="alternate" type="text/html" title="Python 入门-5-列表与元组" />
+    <link href="https://zhaowcheng.com/posts/python-tutorial-5-list-and-tuple/" rel="alternate" type="text/html" title="Python 入门-5-列表与元组" />
     <published>2020-07-15T15:16:00+08:00</published>
   
-    <updated>2022-02-07T16:29:36+08:00</updated>
+    <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>http://localhost:4000/posts/python-tutorial-5-list-and-tuple/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-5-list-and-tuple/" />
+    <id>https://zhaowcheng.com/posts/python-tutorial-5-list-and-tuple/</id>
+    <content src="https://zhaowcheng.com/posts/python-tutorial-5-list-and-tuple/" />
     <author>
       <name>zhaowcheng</name>
     </author>
