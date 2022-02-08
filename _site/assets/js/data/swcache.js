@@ -59,5 +59,7 @@ const allowedDomains = [
 /* Requests that include the following path will be banned */
 const denyUrls = [
   
+    'https://zhaowcheng.com/postviews.json'
+  
 ];
 

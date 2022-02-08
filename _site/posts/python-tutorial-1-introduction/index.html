@@ -29,6 +29,8 @@
     
 
     
+      <meta name="pv-cache-path" content="/postviews.json">
+    
 
   
 
@@ -569,6 +571,11 @@
 
 
           <!-- page views -->
+          
+          <span id="pv" class="pageviews">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </span>
+          次浏览
           
 
         </div>
@@ -1267,6 +1274,10 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+    <!-- pv-report needs countup.js -->
+    <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script>
+    <script defer src="/assets/js/dist/pvreport.min.js"></script>
   
 
 
