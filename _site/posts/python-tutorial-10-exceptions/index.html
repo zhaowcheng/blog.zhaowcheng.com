@@ -36,24 +36,24 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="Python 入门-8-函数定义" />
+<meta property="og:title" content="Python 入门-10-异常" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="函数定义" />
-<meta property="og:description" content="函数定义" />
-<link rel="canonical" href="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
-<meta property="og:url" content="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
+<meta name="description" content="异常简介" />
+<meta property="og:description" content="异常简介" />
+<link rel="canonical" href="http://localhost:4000/posts/python-tutorial-10-exceptions/" />
+<meta property="og:url" content="http://localhost:4000/posts/python-tutorial-10-exceptions/" />
 <meta property="og:site_name" content="zhaowcheng" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-24T10:45:50+08:00" />
+<meta property="article:published_time" content="2022-02-11T14:12:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Python 入门-8-函数定义" />
+<meta property="twitter:title" content="Python 入门-10-异常" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"Python 入门-8-函数定义","dateModified":"2022-02-07T16:41:43+08:00","datePublished":"2020-11-24T10:45:50+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-8-function-definition/"},"url":"http://localhost:4000/posts/python-tutorial-8-function-definition/","@type":"BlogPosting","description":"函数定义","@context":"https://schema.org"}</script>
+{"headline":"Python 入门-10-异常","dateModified":"2022-02-11T14:12:00+08:00","datePublished":"2022-02-11T14:12:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-10-exceptions/"},"url":"http://localhost:4000/posts/python-tutorial-10-exceptions/","@type":"BlogPosting","description":"异常简介","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Python 入门-8-函数定义 | zhaowcheng
+  <title>Python 入门-10-异常 | zhaowcheng
   </title>
 
   <!--
@@ -409,7 +409,7 @@
         
 
           
-            <span>Python 入门-8-函数定义</span>
+            <span>Python 入门-10-异常</span>
           
 
         
@@ -489,7 +489,7 @@
 
     <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
 
-      <h1 data-toc-skip>Python 入门-8-函数定义</h1>
+      <h1 data-toc-skip>Python 入门-10-异常</h1>
 
       <div class="post-meta text-muted d-flex flex-column">
         <!-- Published date and author -->
@@ -514,36 +514,14 @@
   
     data-toggle="tooltip"
     data-placement="bottom"
-    title="2020-11-24, 10:45 +0800"
-  >2020-11-24<i class="unloaded">2020-11-24T10:45:50+08:00</i>
+    title="2022-02-11, 14:12 +0800"
+  >02-11<i class="unloaded">2022-02-11T14:12:00+08:00</i>
 </span>
 
         </div>
 
         <div>
           <!-- lastmod -->
-          
-          <span>
-            更新于
-            <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
--->
-
-
-
-
-
-
-<span class="timeago lastmod"
-  
-    data-toggle="tooltip"
-    data-placement="bottom"
-    title="2022-02-07, 16:41 +0800"
-  >02-07<i class="unloaded">2022-02-07T16:41:43+08:00</i>
-</span>
-
-          </span>
           
 
           <!-- read time -->
@@ -566,7 +544,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1467 字">8 分钟
+  title="1451 字">8 分钟
     阅读</span>
 
 
@@ -586,9 +564,9 @@
 
         
 
-        <h2 id="函数定义">函数定义</h2>
+        <h2 id="异常简介">异常简介</h2>
 
-<p>先看一个简单的函数定义的例子，以 <code class="language-plaintext highlighter-rouge">def</code> 语句开头，定义一个名为 <code class="language-plaintext highlighter-rouge">add</code> 的函数，接收两个参数 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>，然后返回这两个参数的 <code class="language-plaintext highlighter-rouge">和</code>：</p>
+<p><code class="language-plaintext highlighter-rouge">异常（Exception）</code> 即程序执行过程中产生的预期以外的错误，例如有一个脚本 <code class="language-plaintext highlighter-rouge">test.py</code>，其内容如下：</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -602,18 +580,68 @@
       <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
+</pre></td><td class="rouge-code"><pre><span class="c1">#!/bin/python3
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'2'</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>当执行该脚本时会产生如下异常：</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Shell
+  
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@localhost ~] python3 test.py 
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">"test.py"</span>, line 3, <span class="k">in</span> &lt;module&gt;
+    print<span class="o">(</span><span class="s1">'2'</span> + 2<span class="o">)</span>
+TypeError: can only concatenate str <span class="o">(</span>not <span class="s2">"int"</span><span class="o">)</span> to str
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>上面打印的内容称为 <code class="language-plaintext highlighter-rouge">异常栈</code>，以 File 开头的那一行指明了产生异常的位置（即 test.py 的第 3 行），接下来一行即产生异常的语句（即 print(‘2’ + 2)），最后一行为异常类型以及异常消息，通过查看异常栈可以准确定位到产生异常的代码位置并进行修复。</p>
+
+<h2 id="异常处理">异常处理</h2>
+
+<h3 id="try">try</h3>
+
+<p>Python 中使用 <code class="language-plaintext highlighter-rouge">try</code> 语句进行异常处理，其语法定义如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Text
+  
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
+7
+</pre></td><td class="rouge-code"><pre>try_stmt  ::=  try1_stmt | try2_stmt
+try1_stmt ::=  "try" ":" suite
+               ("except" [expression ["as" identifier]] ":" suite)+
+               ["else" ":" suite]
+               ["finally" ":" suite]
+try2_stmt ::=  "try" ":" suite
+               "finally" ":" suite
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在 Python 中，一个定义好的函数可以把函数名赋值给其他变量，然后通过其他变量也可以调用该函数：</p>
+<p>以下是一个简单的示例，该示例会一直等到用户输入一个整数为止，如果输入的不是整数，就会进入到 except 子句中执行 print 打印错误提示：</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -631,16 +659,33 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="p">...</span>     <span class="k">try</span><span class="p">:</span>
+<span class="p">...</span>         <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Please enter a number: "</span><span class="p">))</span>
+<span class="p">...</span>         <span class="k">break</span>
+<span class="p">...</span>     <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+<span class="p">...</span>         <span class="k">print</span><span class="p">(</span><span class="s">"Oops!  That was no valid number.  Try again..."</span><span class="p">)</span>
 <span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">plus</span> <span class="o">=</span> <span class="n">add</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>如果定义的函数体中没有明确使用 <code class="language-plaintext highlighter-rouge">return</code> 语句返回值，那么默认返回值是 <code class="language-plaintext highlighter-rouge">None</code>：</p>
+<h3 id="except">except</h3>
+
+<p>except 后面的异常类型可以是多个，使用圆括号括起来，表示捕获其中任一异常类型：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">except</span> <span class="p">(</span><span class="nb">RuntimeError</span><span class="p">,</span> <span class="nb">TypeError</span><span class="p">,</span> <span class="nb">NameError</span><span class="p">):</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>except 后面也可以不接异常类型，表示捕获任意异常：</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -653,25 +698,28 @@
 "><i class="fa-fw fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">nothing</span><span class="p">():</span>
-<span class="p">...</span>     <span class="k">pass</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">nothing</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="ow">is</span> <span class="bp">None</span>
-<span class="bp">True</span>
-<span class="o">&gt;&gt;&gt;</span>
+</pre></td><td class="rouge-code"><pre><span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Some error occurred."</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="函数参数">函数参数</h2>
+<p>except 后面还可以接一个 <code class="language-plaintext highlighter-rouge">as</code> 子句来保存异常实例，以便后续进行处理：</p>
 
-<h3 id="参数默认值">参数默认值</h3>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
 
-<p>定义函数时可以指定参数的默认值，调用函数时可以不给默认参数传值，不传值则会使用默认值：</p>
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">except</span> <span class="nb">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"OS error: {0}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>try 后面也可以同时接多个 except 子句，当发生异常时会按照顺序从上往下匹配，如果其中某个 except 子句匹配上了，后面的 except 子句就会跳过:</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -693,20 +741,24 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="c1">## 定义一个有两个参数有默认值的函数
-</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="s">'beijing'</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'My name is %s, I am %d years old and I am from %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">city</span><span class="p">))</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">introduce</span><span class="p">(</span><span class="s">'tom'</span><span class="p">)</span>  <span class="c1"># age 和 city 都使用默认值
-</span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">tom</span><span class="p">,</span> <span class="n">I</span> <span class="n">am</span> <span class="mi">18</span> <span class="n">years</span> <span class="n">old</span> <span class="ow">and</span> <span class="n">I</span> <span class="n">am</span> <span class="k">from</span> <span class="n">beijing</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">introduce</span><span class="p">(</span><span class="s">'liubei'</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="s">'chengdu'</span><span class="p">)</span>  <span class="c1"># city 不使用默认值
-</span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">liubei</span><span class="p">,</span> <span class="n">I</span> <span class="n">am</span> <span class="mi">18</span> <span class="n">years</span> <span class="n">old</span> <span class="ow">and</span> <span class="n">I</span> <span class="n">am</span> <span class="k">from</span> <span class="n">chengdu</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">introduce</span><span class="p">(</span><span class="s">'sanmao'</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s">'chongqin'</span> <span class="p">)</span>  <span class="c1"># age 和 city 都不使用默认值
-</span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">sanmao</span><span class="p">,</span> <span class="n">I</span> <span class="n">am</span> <span class="mi">30</span> <span class="n">years</span> <span class="n">old</span> <span class="ow">and</span> <span class="n">I</span> <span class="n">am</span> <span class="k">from</span> <span class="n">chongqin</span>
-<span class="o">&gt;&gt;&gt;</span>
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'myfile.txt'</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="k">except</span> <span class="nb">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"OS error: {0}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Could not convert data to an integer."</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Unexpected error:"</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">raise</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>需要注意的是如果参数默认值使用变量的话，那在函数定义时值就已经确定了，即使后面再改变变量的值不会影响参数的默认值：</p>
+<p>当产生的异常属于某个 except 子句后面的异常类的子类时，也会被捕获，比如以下示例中由于 C 和 D 都是 B 的子类，所以最终打印结果将是 <code class="language-plaintext highlighter-rouge">B B B</code>：</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -727,19 +779,305 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="n">i</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">()</span>
-<span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">()</span>  <span class="c1"># i 已经变为 6，但是 arg 参数的默认值仍然是 5
-</span><span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">for</span> <span class="n">cls</span> <span class="ow">in</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">]:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">cls</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">B</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"B"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">C</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">D</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"D"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>如果参数默认值是一个可变类型的话，可能会有一些意想不到的结果：</p>
+<h3 id="else">else</h3>
+
+<p>在 except 子句后面还可以接一个 <code class="language-plaintext highlighter-rouge">else</code> 子句（如果有多个 except，else 必须放在所有 except 后面），当没有异常发生时，才会进入到 else 子句：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'hello, world'</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'error'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'no error'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="finally">finally</h3>
+
+<p>在 try 语句的最后（即 except 和 else 后面）还可以接一个 <code class="language-plaintext highlighter-rouge">finally</code> 子句，无论是否发生异常，最终都会进入 finally 子句，所以通常可以在 <code class="language-plaintext highlighter-rouge">finally</code> 子句中进行一些清理工作：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'hello, world'</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'error'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'no error'</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'finished'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="抛出异常">抛出异常</h2>
+
+<p><code class="language-plaintext highlighter-rouge">raise</code> 语句可以主动抛出异常：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">raise</span> <span class="nb">NameError</span><span class="p">(</span><span class="s">'HiThere'</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">NameError</span><span class="p">:</span> <span class="n">HiThere</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">raise</code> 后面可以是一个异常类或者一个异常实例，如果接的是一个异常类则相当于无参数的异常类实例：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">raise</span> <span class="nb">ValueError</span>  <span class="c1"># 相当于 'raise ValueError()'
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>在 <code class="language-plaintext highlighter-rouge">except</code> 子句中还可以使用不接任何参数的 <code class="language-plaintext highlighter-rouge">raise</code> 语句，这样表示直接将 except 捕获的异常再次原样抛出：</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Python
+
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
+<span class="p">...</span>     <span class="k">raise</span> <span class="nb">NameError</span><span class="p">(</span><span class="s">'HiThere'</span><span class="p">)</span>
+<span class="p">...</span> <span class="k">except</span> <span class="nb">NameError</span><span class="p">:</span>
+<span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'An exception flew by!'</span><span class="p">)</span>
+<span class="p">...</span>     <span class="k">raise</span>
+<span class="p">...</span>
+<span class="n">An</span> <span class="n">exception</span> <span class="n">flew</span> <span class="n">by</span><span class="err">!</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">NameError</span><span class="p">:</span> <span class="n">HiThere</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="自定义异常">自定义异常</h2>
+
+<p>Python 提供了很多了内置异常类，其继承关系如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span text-data="
+
+
+
+
+    Text
+  
+"><i class="fa-fw fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+</pre></td><td class="rouge-code"><pre>BaseException
+ +-- SystemExit
+ +-- KeyboardInterrupt
+ +-- GeneratorExit
+ +-- Exception
+      +-- StopIteration
+      +-- StopAsyncIteration
+      +-- ArithmeticError
+      |    +-- FloatingPointError
+      |    +-- OverflowError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- BufferError
+      +-- EOFError
+      +-- ImportError
+      +-- LookupError
+      |    +-- IndexError
+      |    +-- KeyError
+      +-- MemoryError
+      +-- NameError
+      |    +-- UnboundLocalError
+      +-- OSError
+      |    +-- BlockingIOError
+      |    +-- ChildProcessError
+      |    +-- ConnectionError
+      |    |    +-- BrokenPipeError
+      |    |    +-- ConnectionAbortedError
+      |    |    +-- ConnectionRefusedError
+      |    |    +-- ConnectionResetError
+      |    +-- FileExistsError
+      |    +-- FileNotFoundError
+      |    +-- InterruptedError
+      |    +-- IsADirectoryError
+      |    +-- NotADirectoryError
+      |    +-- PermissionError
+      |    +-- ProcessLookupError
+      |    +-- TimeoutError
+      +-- ReferenceError
+      +-- RuntimeError
+      |    +-- NotImplementedError
+      |    +-- RecursionError
+      +-- SyntaxError
+      |    +-- IndentationError
+      |         +-- TabError
+      +-- SystemError
+      +-- TypeError
+      +-- ValueError
+      |    +-- UnicodeError
+      |         +-- UnicodeDecodeError
+      |         +-- UnicodeEncodeError
+      |         +-- UnicodeTranslateError
+      +-- Warning
+           +-- DeprecationWarning
+           +-- PendingDeprecationWarning
+           +-- RuntimeWarning
+           +-- SyntaxWarning
+           +-- UserWarning
+           +-- FutureWarning
+           +-- ImportWarning
+           +-- UnicodeWarning
+           +-- BytesWarning
+           +-- ResourceWarning
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>但是用户也可以自定义异常类，自定义异常类必须直接或间接的继承自 <code class="language-plaintext highlighter-rouge">Exception</code>，通常一个异常类里边什么都不做，或者最多定义几个属性用于保存异常相关的信息：</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span text-data="
@@ -776,280 +1114,47 @@
 24
 25
 26
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
-<span class="p">...</span>     <span class="n">L</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">L</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># 因为 L 是对一个列表的引用，多次调用都是操作的同一个列表
-</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+    <span class="s">"""Base class for exceptions in this module."""</span>
+    <span class="k">pass</span>
 
-<span class="c1">## 如果想要避免上面的情况，应该像下面这样写
-</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">if</span> <span class="n">L</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-<span class="p">...</span>         <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="p">...</span>     <span class="n">L</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">L</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
+<span class="k">class</span> <span class="nc">InputError</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+    <span class="s">"""Exception raised for errors in the input.
 
-<h3 id="args-和-kwargs">*args 和 **kwargs</h3>
-
-<p>有两种比较特殊的形式 <code class="language-plaintext highlighter-rouge">*args</code> 和 <code class="language-plaintext highlighter-rouge">**kwargs</code> 在函数定义和其他情况下使用时有着不同的作用，在函数定义时使用，相当于定义了个数不确定的参数：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="rouge-code"><pre><span class="c1">## 此函数的 nums 相当于是一个序列
-</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
-<span class="p">...</span>     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="p">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-<span class="p">...</span>         <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">s</span>
-<span class="p">...</span>
-<span class="c1">## 调用时可以传入任意多个位置参数（按位置传入的参数即为位置参数）
-</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
-<span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">()</span> 
-<span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="c1">## 此函数的 kwargs 相当于一个字典
-</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
-<span class="p">...</span>         <span class="k">print</span><span class="p">(</span><span class="s">'%s: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-<span class="p">...</span>
-<span class="c1">## 调用时可以传入任意多个关键字参数（以 name=value 形式传入的参数即为关键字参数）
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">fun</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'tom'</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="s">'beijing'</span><span class="p">)</span>
-<span class="n">name</span><span class="p">:</span> <span class="n">tom</span>
-<span class="n">age</span><span class="p">:</span> <span class="mi">18</span>
-<span class="n">city</span><span class="p">:</span> <span class="n">beijing</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">fun</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>当 <code class="language-plaintext highlighter-rouge">*args</code> 和 <code class="language-plaintext highlighter-rouge">**kwargs</code> 在其他地方使用时，其作用相当于对一个序列和字典进行 <code class="language-plaintext highlighter-rouge">解包</code> 操作：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span>  <span class="c1"># 函数调用时在 nums 前面加 * 相当于解包 nums
-</span><span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-<span class="p">...</span>     <span class="k">print</span><span class="p">(</span><span class="s">'My name is %s, I am %d years old.'</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'tom'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">18</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">introduce</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># 函数调用时在字典 d 前面加 ** 相当于解包 d
-</span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">tom</span><span class="p">,</span> <span class="n">I</span> <span class="n">am</span> <span class="mi">18</span> <span class="n">years</span> <span class="n">old</span><span class="p">.</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="匿名函数lambda">匿名函数（lambda）</h2>
-
-<p>Python 中运行使用 <code class="language-plaintext highlighter-rouge">lambda</code> 语句定义一个匿名函数，通常用在只需要一行代码即可完成定义的函数：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="c1">## 以下使用 lambda 定义一个匿名函数，函数有两个参数 a 和 b，函数体返回 a + b
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="函数文档字符串docstr">函数文档字符串（docstr）</h2>
-
-<p>定义函数时可以在文档字符串中对函数进行简介或详细说明，同时文档字符串还可以方便其他文档生成工具自动生成代码的函数说明文档。文档字符串在函数定义 <code class="language-plaintext highlighter-rouge">def</code> 语句的下一行开始写，以三个双引号（<code class="language-plaintext highlighter-rouge">"""</code>）进行包裹，可以是一行或多行：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre><span class="c1">## 只有一行文档字符串进行简要介绍
-</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="s">"""This is an add function."""</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="c1">## 多行文档字符串对函数进行详细说明
-</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="s">"""This is an add function.
-
-    :param a: number a
-    :type a: int
-    :param b: number b
-    :type b: int
-    :return: The sum of a and b.
+    Attributes:
+        expression -- input expression in which the error occurred
+        message -- explanation of the error
     """</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expression</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">expression</span> <span class="o">=</span> <span class="n">expression</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
+
+<span class="k">class</span> <span class="nc">TransitionError</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+    <span class="s">"""Raised when an operation attempts a state transition that's not
+    allowed.
+
+    Attributes:
+        previous -- state at beginning of transition
+        next -- attempted new state
+        message -- explanation of why the specific transition is not allowed
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">previous</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">previous</span> <span class="o">=</span> <span class="n">previous</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
 </pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="函数注解function-annotations">函数注解（Function Annotations）</h2>
-
-<p>从 Python3 开始支持定义函数时使用 <code class="language-plaintext highlighter-rouge">注解</code> 方式说明参数和返回值类型：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span text-data="
-
-
-
-
-    Python
-
-"><i class="fa-fw fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="c1">## 使用注解说明参数 a, b 和返回值类型都是 int
-</span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="p">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>更多关于函数注解说明可以参考 <a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a></p>
 
 <h2 id="引用资料">引用资料</h2>
 
 <ul>
-  <li>[Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#defining-functions</li>
-  <li>[More on Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#more-on-defining-functions</li>
-  <li>[Function definitions] : https://docs.python.org/3.5/reference/compound_stmts.html#function-definitions</li>
-  <li>[PEP 484] : https://www.python.org/dev/peps/pep-0484/</li>
+  <li>[Errors and Exceptions] : https://docs.python.org/3.5/tutorial/errors.html</li>
+  <li>[Exception hierarchy] : https://docs.python.org/3.5/library/exceptions.html#bltin-exceptions</li>
 </ul>
 
 
@@ -1223,33 +1328,33 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1491,17 +1596,17 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/python-tutorial-7-flow-control/" class="btn btn-outline-primary"
+  <a href="/posts/python-tutorial-9-input-and-output/" class="btn btn-outline-primary"
     prompt="上一篇">
-    <p>Python 入门-7-流程控制</p>
+    <p>Python 入门-9-输入输出</p>
   </a>
   
 
   
-  <a href="/posts/python-tutorial-9-input-and-output/" class="btn btn-outline-primary"
+  <span class="btn btn-outline-primary disabled"
     prompt="下一篇">
-    <p>Python 入门-9-输入输出</p>
-  </a>
+    <p>-</p>
+  </span>
   
 
 </div>

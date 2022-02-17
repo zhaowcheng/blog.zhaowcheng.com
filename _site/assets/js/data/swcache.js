@@ -48,7 +48,7 @@ const allowedDomains = [
     'www.google-analytics.com',
   
 
-  'zhaowcheng.com',
+  'localhost:4000',
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',
@@ -59,7 +59,7 @@ const allowedDomains = [
 /* Requests that include the following path will be banned */
 const denyUrls = [
   
-    'https://zhaowcheng.com/pageviews.json'
+    'http://localhost:4000/pageviews.json'
   
 ];
 

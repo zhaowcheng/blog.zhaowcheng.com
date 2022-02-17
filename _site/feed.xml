@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://zhaowcheng.com/</id>
+  <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-09T10:19:56+08:00</updated>
+  <updated>2022-02-17T13:43:24+08:00</updated>
   <author>
     <name>zhaowcheng</name>
-    <uri>https://zhaowcheng.com/</uri>
+    <uri>http://localhost:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="https://zhaowcheng.com/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="https://zhaowcheng.com/"/>
+    href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
   <rights> © 2022 zhaowcheng </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,14 +20,66 @@
 
   
   <entry>
+    <title>Python 入门-10-异常</title>
+    <link href="http://localhost:4000/posts/python-tutorial-10-exceptions/" rel="alternate" type="text/html" title="Python 入门-10-异常" />
+    <published>2022-02-11T14:12:00+08:00</published>
+  
+    <updated>2022-02-11T14:12:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-10-exceptions/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-10-exceptions/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python 入门" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      异常简介
+
+异常（Exception） 即程序执行过程中产生的预期以外的错误，例如有一个脚本 test.py，其内容如下：
+
+#!/bin/python3
+
+print('2' + 2)
+
+
+当执行该脚本时会产生如下异常：
+
+[root@localhost ~] python3 test.py 
+Traceback (most recent call last):
+  File "test.py", line 3, in &amp;lt;module&amp;gt;
+    print('2' + 2)
+TypeError: can only concatenate str (not "int") to str
+
+
+上面打印的内容称为 异常栈，以 File 开头的那一行指明了产生异常的位置（即 test.py 的第 3 行），接下来一行即产生异常的语句（即 print(‘2’ + 2)），最后一行为...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Python 入门-9-输入输出</title>
-    <link href="https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python 入门-9-输入输出" />
+    <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python 入门-9-输入输出" />
     <published>2021-02-24T20:44:30+08:00</published>
   
     <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/</id>
-    <content src="https://zhaowcheng.com/posts/python-tutorial-9-input-and-output/" />
+    <id>http://localhost:4000/posts/python-tutorial-9-input-and-output/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -73,13 +125,13 @@ Please input your name:'tom'
   
   <entry>
     <title>Python 入门-8-函数定义</title>
-    <link href="https://zhaowcheng.com/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python 入门-8-函数定义" />
+    <link href="http://localhost:4000/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python 入门-8-函数定义" />
     <published>2020-11-24T10:45:50+08:00</published>
   
     <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>https://zhaowcheng.com/posts/python-tutorial-8-function-definition/</id>
-    <content src="https://zhaowcheng.com/posts/python-tutorial-8-function-definition/" />
+    <id>http://localhost:4000/posts/python-tutorial-8-function-definition/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -132,13 +184,13 @@ Please input your name:'tom'
   
   <entry>
     <title>Python 入门-7-流程控制</title>
-    <link href="https://zhaowcheng.com/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python 入门-7-流程控制" />
+    <link href="http://localhost:4000/posts/python-tutorial-7-flow-control/" rel="alternate" type="text/html" title="Python 入门-7-流程控制" />
     <published>2020-10-18T15:58:25+08:00</published>
   
     <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>https://zhaowcheng.com/posts/python-tutorial-7-flow-control/</id>
-    <content src="https://zhaowcheng.com/posts/python-tutorial-7-flow-control/" />
+    <id>http://localhost:4000/posts/python-tutorial-7-flow-control/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-7-flow-control/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -186,13 +238,13 @@ positive
   
   <entry>
     <title>Python 入门-6-字典与集合</title>
-    <link href="https://zhaowcheng.com/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python 入门-6-字典与集合" />
+    <link href="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python 入门-6-字典与集合" />
     <published>2020-08-06T10:31:58+08:00</published>
   
     <updated>2022-02-07T16:41:43+08:00</updated>
   
-    <id>https://zhaowcheng.com/posts/python-tutorial-6-dict-and-set/</id>
-    <content src="https://zhaowcheng.com/posts/python-tutorial-6-dict-and-set/" />
+    <id>http://localhost:4000/posts/python-tutorial-6-dict-and-set/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" />
     <author>
       <name>zhaowcheng</name>
     </author>
@@ -226,56 +278,6 @@ positive
     大括号 {} 方式：
 
   ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Python 入门-5-列表与元组</title>
-    <link href="https://zhaowcheng.com/posts/python-tutorial-5-list-and-tuple/" rel="alternate" type="text/html" title="Python 入门-5-列表与元组" />
-    <published>2020-07-15T15:16:00+08:00</published>
-  
-    <updated>2022-02-07T16:41:43+08:00</updated>
-  
-    <id>https://zhaowcheng.com/posts/python-tutorial-5-list-and-tuple/</id>
-    <content src="https://zhaowcheng.com/posts/python-tutorial-5-list-and-tuple/" />
-    <author>
-      <name>zhaowcheng</name>
-    </author>
-
-  
-    
-    <category term="Python 入门" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      序列（Sequence）
-
-在前面已经介绍过的 字符串(str)，以及接下来要学习的 列表(list) 和 元组(tuple) 都属于 序列(Sequence) 类型。
-序列又分为 可变序列(mutable) 和 不可变序列(immutable)，可变指的是可修改序列的元素，列表属于可变序列，字符串和元组都属于不可变序列。
-
-## 列表使用中括号表示
-&amp;gt;&amp;gt;&amp;gt; nums = [1, 2, 3]
-&amp;gt;&amp;gt;&amp;gt; type(nums)
-&amp;lt;class 'list'&amp;gt;
-&amp;gt;&amp;gt;&amp;gt; nums[1] = 0  # 列表是可变序列
-&amp;gt;&amp;gt;&amp;gt; nums
-[1, 0, 3]
-
-## 元组使用圆括号表示
-&amp;gt;&amp;gt;&amp;gt; seqs = (4, 5, 6)
-&amp;gt;&amp;gt;&amp;gt; type(seqs)
-&amp;lt;class 'tu...
     </summary>
   
 
