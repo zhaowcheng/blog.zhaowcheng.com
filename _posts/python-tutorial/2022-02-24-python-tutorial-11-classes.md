@@ -63,6 +63,23 @@ In global scope: global spam
 '''
 ```
 
+## 类定义
+
+__init__
+self
+访问限制
+
+## 类与实例
+
+类是抽象模板，实例是根据类创建出来的具体的对象
+类属性与实例属性
+
+## 类继承
+
+## 获取对象属性
+
+## 类的一些特殊属性
+
 ## 引用资料
 
 - [Classes] : https://docs.python.org/3.5/tutorial/classes.html
