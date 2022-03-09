@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-17T13:43:24+08:00</updated>
+  <updated>2022-03-09T17:22:56+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,59 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Python 入门-11-类</title>
+    <link href="http://localhost:4000/posts/python-tutorial-11-classes/" rel="alternate" type="text/html" title="Python 入门-11-类" />
+    <published>2022-02-24T11:05:00+08:00</published>
+  
+    <updated>2022-03-04T16:59:48+08:00</updated>
+  
+    <id>http://localhost:4000/posts/python-tutorial-11-classes/</id>
+    <content src="http://localhost:4000/posts/python-tutorial-11-classes/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="Python 入门" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Python 类源自于 C++ 和 Modula-3 这两种语言的类机制的结合。
+Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类对象（Class）、实例对象（Instance） 和 方法对象（Method）
+
+作用域和命名空间
+
+作用域（scope） 指的是 Python 代码中的一个文本区域，分为以下几类：
+
+
+  模块
+  类
+  函数
+
+
+命名空间（namespace） 是一个名字到对象的映射，一个作用域对应会有一个命名空间来保存该作用域中的 名称（name），Python 中按照以下顺序去查找一个名称：
+
+
+  最内部作用域的命名空间（包含局部名称）
+  最内部作用域与最近的作用域之间的 中间作用域 的命名空间（包含非全局名称 nonlocal）
+  当前模块的命名空间（包含全局名称 global）
+  内置名称模块（builtins）的命名空间...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -230,54 +283,6 @@ if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 s
 ... 
 positive
 &amp;g...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Python 入门-6-字典与集合</title>
-    <link href="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" rel="alternate" type="text/html" title="Python 入门-6-字典与集合" />
-    <published>2020-08-06T10:31:58+08:00</published>
-  
-    <updated>2022-02-07T16:41:43+08:00</updated>
-  
-    <id>http://localhost:4000/posts/python-tutorial-6-dict-and-set/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-6-dict-and-set/" />
-    <author>
-      <name>zhaowcheng</name>
-    </author>
-
-  
-    
-    <category term="Python 入门" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      字典（dict）
-
-字典通过 键值对(key: value) 的方式，把 key 映射到 value。key 必须是 可 hash 的(hashable)，由于 Python 中所有内置的 不可变类型(immutable) 都是可 hash 的，所以都可用作字典的 key，比如 字符串(str)、数字(int, float) 和 只包含不可变类型元素的元组(tuple)，如果元组直接或间接的包含了 可变类型 的元素，也不能作为字典的 key。value 则可以是任意类型。
-
-字典中元素是无序的，并不会按照插入的顺序排列，可能会是任意的顺序，如果想要有序的字典，可以使用 collections.OrderedDict。但是从 Python 3.7 开始，字典默认是按照插入顺序排序的了。
-
-字典创建
-
-创建一个字典可以通过以下 3 种方式：
-
-
-  
-    大括号 {} 方式：
-
-  ...
     </summary>
   
 
