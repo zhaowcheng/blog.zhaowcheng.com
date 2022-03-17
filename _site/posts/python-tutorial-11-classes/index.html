@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="Python 入门-11-类" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"Python 入门-11-类","dateModified":"2022-03-04T16:59:48+08:00","datePublished":"2022-02-24T11:05:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-11-classes/"},"url":"http://localhost:4000/posts/python-tutorial-11-classes/","@type":"BlogPosting","description":"Python 类源自于 C++ 和 Modula-3 这两种语言的类机制的结合。 Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类对象（Class）、实例对象（Instance） 和 方法对象（Method）","@context":"https://schema.org"}</script>
+{"headline":"Python 入门-11-类","dateModified":"2022-03-09T17:26:02+08:00","datePublished":"2022-02-24T11:05:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-11-classes/"},"url":"http://localhost:4000/posts/python-tutorial-11-classes/","@type":"BlogPosting","description":"Python 类源自于 C++ 和 Modula-3 这两种语言的类机制的结合。 Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类对象（Class）、实例对象（Instance） 和 方法对象（Method）","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -539,8 +539,8 @@
   
     data-toggle="tooltip"
     data-placement="bottom"
-    title="2022-03-04, 16:59 +0800"
-  >03-04<i class="unloaded">2022-03-04T16:59:48+08:00</i>
+    title="2022-03-09, 17:26 +0800"
+  >03-09<i class="unloaded">2022-03-09T17:26:02+08:00</i>
 </span>
 
           </span>
@@ -1533,11 +1533,6 @@ In global scope: global spam
         
         
         
-        <li><a href="/posts/python-tutorial-2-install-and-usage/">Python 入门-2-安装和使用</a></li>
-      
-        
-        
-        
         <li><a href="/posts/python-tutorial-3-variable-type/">Python 入门-3-数据类型</a></li>
       
         
@@ -1549,6 +1544,11 @@ In global scope: global spam
         
         
         <li><a href="/posts/python-tutorial-5-list-and-tuple/">Python 入门-5-列表与元组</a></li>
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-6-dict-and-set/">Python 入门-6-字典与集合</a></li>
       
 
       </ul>
@@ -1613,6 +1613,19 @@ In global scope: global spam
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1770,47 +1783,6 @@ In global scope: global spam
       
       
       <div class="card">
-        <a href="/posts/python-tutorial-2-install-and-usage/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
--->
-
-
-
-
-
-
-<span class="timeago small"
-  >2020-03-07<i class="unloaded">2020-03-07T20:03:27+08:00</i>
-</span>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-2-安装和使用</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Windows
-
-下载安装包
-
-进入Python官网的 windows downloads 页面，以Python 3.5.1为例，可以看到除了帮助文件之外一共有6个安装包可以下载，操作系统位数分为32位(X86)和64位(x86-64)，安装包类型分为embeddable、executable、web-based三种，所以一共有 2*3 = 6 个安装包可下载。
-
-需要注意的是从Python...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/python-tutorial-3-variable-type/">
           <div class="card-body">
             <!--
@@ -1894,6 +1866,47 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/python-tutorial-5-list-and-tuple/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+
+
+
+
+
+<span class="timeago small"
+  >2020-07-15<i class="unloaded">2020-07-15T15:16:00+08:00</i>
+</span>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-5-列表与元组</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                序列（Sequence）
+
+在前面已经介绍过的 字符串(str)，以及接下来要学习的 列表(list) 和 元组(tuple) 都属于 序列(Sequence) 类型。
+序列又分为 可变序列(mutable) 和 不可变序列(immutable)，可变指的是可修改序列的元素，列表属于可变序列，字符串和元组都属于不可变序列。
+
+## 列表使用中括号表示
+&gt;&gt;&gt; nums = ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1912,10 +1925,10 @@ Python 中的 浮点数(float) 则相当于数学上的小数。叫做浮点数�
   
 
   
-  <span class="btn btn-outline-primary disabled"
+  <a href="/posts/python-tutorial-12-modules-and-packages/" class="btn btn-outline-primary"
     prompt="下一篇">
-    <p>-</p>
-  </span>
+    <p>Python 入门-12-模块和包</p>
+  </a>
   
 
 </div>
