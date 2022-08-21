@@ -96,7 +96,7 @@ toc: true
 giscus:
   comments: true
   repo: 
-    name: 'zhaowcheng/zhaowcheng.com'
+    name: 'zhaowcheng/blog.zhaowcheng.com'
     id: 'R_kgDOGknPwA'
   category:
     name: 'Announcements'
