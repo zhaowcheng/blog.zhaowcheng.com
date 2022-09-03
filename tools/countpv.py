@@ -19,7 +19,7 @@ for log in os.listdir(logdir):
         with openfunc(os.path.join(logdir, log)) as fp:
             for line in fp.readlines():
                 m = re.search(r'GET (/posts/\S+/)', line)
-                if m:
+                if m and 'Baiduspider' not in line:
                     post_path = m.group(1)
                     if post_path not in pageviews:
                         pageviews[post_path] = 1
