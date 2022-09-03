@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-08-21T11:26:50+08:00</updated>
+  <updated>2022-09-03T15:52:54+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式</title>
+    <link href="http://localhost:4000/posts/a-packaging-method-with-its-own-deps/" rel="alternate" type="text/html" title="一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式" />
+    <published>2022-09-03T15:34:00+08:00</published>
+  
+    <updated>2022-09-03T15:34:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/a-packaging-method-with-its-own-deps/</id>
+    <content src="http://localhost:4000/posts/a-packaging-method-with-its-own-deps/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="杂七杂八" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Linux 上的 C/C++ 程序编译打包后拿到 同 CPU 架构 的其他 Linux 系统上运行时，通常会由于目标系统上缺少该程序所需的库而无法运行。
+
+这个问题在一个连接上互联网的 Linux 系统上可以很容易的通过 yum 或 apt 安装缺少的依赖库来解决，但是如果是在一个无法使用 yum 和 apt 的内网系统上，则非常麻烦。
+
+本文介绍一种打包方式，让打包后的程序即使在目标系统上没有该程序所需的库时，也能正常运行。
+
+步骤
+
+以下为该方式的详细步骤：
+
+第一步：编译平台的选择
+
+选择一个 libc 版本 小于等于 该程序需要适配的所有系统中 libc 版本最小的系统。
+
+比如该程序需要适配 2 个系统，这两个系统的 libc 版本分别为 2.23 和 2.28，则选择一个 libc 版本 小于等于 2.23 的系统作为编译平台。
+
+第二步：拷贝依赖库
+
+在编译完成后，打包...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -224,65 +276,6 @@ Please input your name:'tom'
 &amp;gt;&amp;gt;&amp;gt; name
 'tom'
 &amp;gt;&amp;gt;&amp;gt...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Python 入门-8-函数定义</title>
-    <link href="http://localhost:4000/posts/python-tutorial-8-function-definition/" rel="alternate" type="text/html" title="Python 入门-8-函数定义" />
-    <published>2020-11-24T10:45:50+08:00</published>
-  
-    <updated>2022-02-07T16:41:43+08:00</updated>
-  
-    <id>http://localhost:4000/posts/python-tutorial-8-function-definition/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-8-function-definition/" />
-    <author>
-      <name>zhaowcheng</name>
-    </author>
-
-  
-    
-    <category term="Python 入门" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      函数定义
-
-先看一个简单的函数定义的例子，以 def 语句开头，定义一个名为 add 的函数，接收两个参数 a 和 b，然后返回这两个参数的 和：
-
-&amp;gt;&amp;gt;&amp;gt; def add(a, b):
-...     return a + b
-...
-&amp;gt;&amp;gt;&amp;gt; add(1, 2)
-3
-&amp;gt;&amp;gt;&amp;gt;
-
-
-在 Python 中，一个定义好的函数可以把函数名赋值给其他变量，然后通过其他变量也可以调用该函数：
-
-&amp;gt;&amp;gt;&amp;gt; def add(a, b):
-...     return a + b
-...
-&amp;gt;&amp;gt;&amp;gt; plus = add
-&amp;gt;&amp;gt;&amp;gt; plus(1, 2)
-3
-&amp;gt;&amp;gt;&amp;gt;
-
-
-如果定义的函数体中没有明确使用 return 语句返回值，那么默认返回值是 None：
-
-&amp;gt;&amp;gt;&amp;gt; d...
     </summary>
   
 
