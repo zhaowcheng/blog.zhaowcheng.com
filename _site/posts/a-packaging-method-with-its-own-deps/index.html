@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"datePublished":"2022-09-03T15:34:00+08:00","headline":"一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式","url":"http://localhost:4000/posts/a-packaging-method-with-its-own-deps/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/a-packaging-method-with-its-own-deps/"},"description":"Linux 上的 C/C++ 程序编译打包后拿到 同 CPU 架构 的其他 Linux 系统上运行时，通常会由于目标系统上缺少该程序所需的库而无法运行。","@type":"BlogPosting","dateModified":"2022-09-03T15:34:00+08:00","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/a-packaging-method-with-its-own-deps/"},"url":"http://localhost:4000/posts/a-packaging-method-with-its-own-deps/","description":"Linux 上的 C/C++ 程序编译打包后拿到 同 CPU 架构 的其他 Linux 系统上运行时，通常会由于目标系统上缺少该程序所需的库而无法运行。","dateModified":"2022-09-03T15:34:00+08:00","datePublished":"2022-09-03T15:34:00+08:00","headline":"一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1040,17 +1040,17 @@ done</span>
         
         
         
-        <li><a href="/posts/python-tutorial-4-string/">Python 入门-4-字符串</a></li>
-      
-        
-        
-        
         <li><a href="/posts/python-tutorial-5-list-and-tuple/">Python 入门-5-列表与元组</a></li>
       
         
         
         
         <li><a href="/posts/python-tutorial-6-dict-and-set/">Python 入门-6-字典与集合</a></li>
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-7-flow-control/">Python 入门-7-流程控制</a></li>
       
 
       </ul>
@@ -1083,6 +1083,45 @@ done</span>
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
   
@@ -1092,7 +1131,13 @@ done</span>
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
       </div>
@@ -1136,6 +1181,19 @@ done</span>
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1312,15 +1370,11 @@ done</span>
   
     
     
+      
+      
+    
   
     
-    
-      
-      
-        
-        
-        
-      
     
   
     
@@ -1350,6 +1404,43 @@ done</span>
     <h3 class="pt-2 mt-1 mb-4 ml-1"
       data-toc-skip>相关文章</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/classification-of-chinese-os-and-cpu/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+
+
+
+
+
+<span class="timeago small"
+  >09-04<i class="unloaded">2022-09-04T15:32:00+08:00</i>
+</span>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>国产操作系统和 CPU 分类</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                国产 操作系统 和 CPU 厂商数量繁多，令人眼花缭乱，如果你做一款 C/C++ 软件需要适配国产的各种操作系统和 CPU，打包时针对每一种操作系统和 CPU 的组合都要打一个包的话，那么每一次打包的数量可能会多达数十个，光是编译环境的准备都需要耗费大量的时间，这无疑是令人难以接受的。
+
+但是万变不离其宗，如果经过仔细分析的话，会发现这些操作系统和 CPU 都是从现有的体系中衍生出来的，而不...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1442,54 +1533,6 @@ Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类
         </a>
       </div>
     
-      
-      
-      <div class="card">
-        <a href="/posts/python-tutorial-10-exceptions/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
--->
-
-
-
-
-
-
-<span class="timeago small"
-  >02-11<i class="unloaded">2022-02-11T14:12:00+08:00</i>
-</span>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-10-异常</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                异常简介
-
-异常（Exception） 即程序执行过程中产生的预期以外的错误，例如有一个脚本 test.py，其内容如下：
-
-#!/bin/python3
-
-print('2' + 2)
-
-
-当执行该脚本时会产生如下异常：
-
-[root@localhost ~] python3 test.py 
-Traceback (most recent call last):
-  File "test....
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1508,10 +1551,10 @@ Traceback (most recent call last):
   
 
   
-  <span class="btn btn-outline-primary disabled"
+  <a href="/posts/classification-of-chinese-os-and-cpu/" class="btn btn-outline-primary"
     prompt="下一篇">
-    <p>-</p>
-  </span>
+    <p>国产操作系统和 CPU 分类</p>
+  </a>
   
 
 </div>
@@ -1618,11 +1661,56 @@ Traceback (most recent call last):
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
     </div>

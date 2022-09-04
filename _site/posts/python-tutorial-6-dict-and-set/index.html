@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="Python 入门-6-字典与集合" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"datePublished":"2020-08-06T10:31:58+08:00","headline":"Python 入门-6-字典与集合","url":"http://localhost:4000/posts/python-tutorial-6-dict-and-set/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-6-dict-and-set/"},"description":"字典（dict）","@type":"BlogPosting","dateModified":"2022-02-07T16:41:43+08:00","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-6-dict-and-set/"},"url":"http://localhost:4000/posts/python-tutorial-6-dict-and-set/","description":"字典（dict）","dateModified":"2022-02-07T16:41:43+08:00","datePublished":"2020-08-06T10:31:58+08:00","headline":"Python 入门-6-字典与集合","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -2239,17 +2239,17 @@ set ^= other</p>
         
         
         
-        <li><a href="/posts/python-tutorial-4-string/">Python 入门-4-字符串</a></li>
-      
-        
-        
-        
         <li><a href="/posts/python-tutorial-5-list-and-tuple/">Python 入门-5-列表与元组</a></li>
       
         
         
         
         <li><a href="/posts/python-tutorial-6-dict-and-set/">Python 入门-6-字典与集合</a></li>
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-7-flow-control/">Python 入门-7-流程控制</a></li>
       
 
       </ul>
@@ -2282,6 +2282,45 @@ set ^= other</p>
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
   
@@ -2291,7 +2330,13 @@ set ^= other</p>
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
       </div>
@@ -2335,6 +2380,19 @@ set ^= other</p>
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2518,53 +2576,6 @@ set ^= other</p>
       
       
       <div class="card">
-        <a href="/posts/python-tutorial-4-string/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
--->
-
-
-
-
-
-
-<span class="timeago small"
-  >2020-07-10<i class="unloaded">2020-07-10T17:39:07+08:00</i>
-</span>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-4-字符串</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                字符串方法
-
-字符串(str) 在 Python 中是一个 对象(object)，并且包含很多的 方法(method)，这些方法可以给我们操作字符串带来很大的方便，下面列举一些常用的方法及其使用示例：
-
-
-  
-    str.capitalize()
-
-    把字符串的首字母变成大写。
-
-      &gt;&gt;&gt; 'hello'.capitalize()
-  'Hello'
-...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/python-tutorial-5-list-and-tuple/">
           <div class="card-body">
             <!--
@@ -2644,6 +2655,59 @@ if_stmt ::=  "if" expression ":" suite
 
 
 if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 suite，...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/python-tutorial-8-function-definition/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+
+
+
+
+
+<span class="timeago small"
+  >2020-11-24<i class="unloaded">2020-11-24T10:45:50+08:00</i>
+</span>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-8-函数定义</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                函数定义
+
+先看一个简单的函数定义的例子，以 def 语句开头，定义一个名为 add 的函数，接收两个参数 a 和 b，然后返回这两个参数的 和：
+
+1
+2
+3
+4
+5
+6
+&gt;&gt;&gt; def add(a, b):
+...     return a + b
+...
+&gt;&gt;&gt; add(1, 2)
+3
+&gt;&gt;&gt;
+
+
+在 Python 中，一个定义好的...
               </p>
             </div>
           </div>
@@ -2778,11 +2842,56 @@ if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 s
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
     </div>

@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="Python 入门-11-类" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"datePublished":"2022-02-24T11:05:00+08:00","headline":"Python 入门-11-类","url":"http://localhost:4000/posts/python-tutorial-11-classes/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-11-classes/"},"description":"Python 类源自于 C++ 和 Modula-3 这两种语言的类机制的结合。 Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类对象（Class）、实例对象（Instance） 和 方法对象（Method）","@type":"BlogPosting","dateModified":"2022-03-09T17:26:02+08:00","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-11-classes/"},"url":"http://localhost:4000/posts/python-tutorial-11-classes/","description":"Python 类源自于 C++ 和 Modula-3 这两种语言的类机制的结合。 Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类对象（Class）、实例对象（Instance） 和 方法对象（Method）","dateModified":"2022-03-09T17:26:02+08:00","datePublished":"2022-02-24T11:05:00+08:00","headline":"Python 入门-11-类","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1538,17 +1538,17 @@ In global scope: global spam
         
         
         
-        <li><a href="/posts/python-tutorial-4-string/">Python 入门-4-字符串</a></li>
-      
-        
-        
-        
         <li><a href="/posts/python-tutorial-5-list-and-tuple/">Python 入门-5-列表与元组</a></li>
       
         
         
         
         <li><a href="/posts/python-tutorial-6-dict-and-set/">Python 入门-6-字典与集合</a></li>
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-7-flow-control/">Python 入门-7-流程控制</a></li>
       
 
       </ul>
@@ -1581,6 +1581,45 @@ In global scope: global spam
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
   
@@ -1590,7 +1629,13 @@ In global scope: global spam
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
       </div>
@@ -1634,6 +1679,19 @@ In global scope: global spam
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1817,53 +1875,6 @@ In global scope: global spam
       
       
       <div class="card">
-        <a href="/posts/python-tutorial-4-string/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
--->
-
-
-
-
-
-
-<span class="timeago small"
-  >2020-07-10<i class="unloaded">2020-07-10T17:39:07+08:00</i>
-</span>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-4-字符串</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                字符串方法
-
-字符串(str) 在 Python 中是一个 对象(object)，并且包含很多的 方法(method)，这些方法可以给我们操作字符串带来很大的方便，下面列举一些常用的方法及其使用示例：
-
-
-  
-    str.capitalize()
-
-    把字符串的首字母变成大写。
-
-      &gt;&gt;&gt; 'hello'.capitalize()
-  'Hello'
-...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/python-tutorial-5-list-and-tuple/">
           <div class="card-body">
             <!--
@@ -1933,6 +1944,50 @@ In global scope: global spam
                 字典（dict）
 
 字典通过 键值对(key: value) 的方式，把 key 映射到 value。key 必须是 可 hash 的(hashable)，由于 Python 中所有内置的 不可变类型(immutable) 都是可 hash 的，所以都可用作字典的 key，比如 字符串(str)、数字(int, float) 和 只包含不可变类型元素的元组(tuple)，如果元组直接或间接的...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/python-tutorial-7-flow-control/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+
+
+
+
+
+<span class="timeago small"
+  >2020-10-18<i class="unloaded">2020-10-18T15:58:25+08:00</i>
+</span>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-7-流程控制</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                if
+
+if 是条件控制语句，其语法定义如下：
+
+if_stmt ::=  "if" expression ":" suite
+             ( "elif" expression ":" suite )*
+             ["else" ":" suite]
+
+
+if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 suite，然后可以在后...
               </p>
             </div>
           </div>
@@ -2067,11 +2122,56 @@ In global scope: global spam
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
     </div>

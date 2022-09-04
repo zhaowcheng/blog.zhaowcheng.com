@@ -49,7 +49,7 @@
 <meta property="twitter:title" content="Python 入门-1-简介" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"datePublished":"2020-03-04T17:43:50+08:00","headline":"Python 入门-1-简介","url":"http://localhost:4000/posts/python-tutorial-1-introduction/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-1-introduction/"},"description":"课程说明","@type":"BlogPosting","dateModified":"2022-02-07T16:41:43+08:00","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-tutorial-1-introduction/"},"url":"http://localhost:4000/posts/python-tutorial-1-introduction/","description":"课程说明","dateModified":"2022-02-07T16:41:43+08:00","datePublished":"2020-03-04T17:43:50+08:00","headline":"Python 入门-1-简介","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -758,17 +758,17 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
         
         
         
-        <li><a href="/posts/python-tutorial-4-string/">Python 入门-4-字符串</a></li>
-      
-        
-        
-        
         <li><a href="/posts/python-tutorial-5-list-and-tuple/">Python 入门-5-列表与元组</a></li>
       
         
         
         
         <li><a href="/posts/python-tutorial-6-dict-and-set/">Python 入门-6-字典与集合</a></li>
+      
+        
+        
+        
+        <li><a href="/posts/python-tutorial-7-flow-control/">Python 入门-7-流程控制</a></li>
       
 
       </ul>
@@ -801,6 +801,45 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
   
@@ -810,7 +849,13 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
       </div>
@@ -1015,6 +1060,19 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1033,54 +1091,6 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
     <h3 class="pt-2 mt-1 mb-4 ml-1"
       data-toc-skip>相关文章</h3>
     <div class="card-deck mb-4">
-    
-      
-      
-      <div class="card">
-        <a href="/posts/python-tutorial-4-string/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: /assets/js/_utils/timeage.js
--->
-
-
-
-
-
-
-<span class="timeago small"
-  >2020-07-10<i class="unloaded">2020-07-10T17:39:07+08:00</i>
-</span>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-4-字符串</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                字符串方法
-
-字符串(str) 在 Python 中是一个 对象(object)，并且包含很多的 方法(method)，这些方法可以给我们操作字符串带来很大的方便，下面列举一些常用的方法及其使用示例：
-
-
-  
-    str.capitalize()
-
-    把字符串的首字母变成大写。
-
-    1
-2
-  &gt;&gt;&gt; 'hello'.capitalize()
-  'Hel...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
     
       
       
@@ -1167,6 +1177,53 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
                 字典（dict）
 
 字典通过 键值对(key: value) 的方式，把 key 映射到 value。key 必须是 可 hash 的(hashable)，由于 Python 中所有内置的 不可变类型(immutable) 都是可 hash 的，所以都可用作字典的 key，比如 字符串(str)、数字(int, float) 和 只包含不可变类型元素的元组(tuple)，如果元组直接或间接的...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/python-tutorial-7-flow-control/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: /assets/js/_utils/timeage.js
+-->
+
+
+
+
+
+
+<span class="timeago small"
+  >2020-10-18<i class="unloaded">2020-10-18T15:58:25+08:00</i>
+</span>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python 入门-7-流程控制</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                if
+
+if 是条件控制语句，其语法定义如下：
+
+1
+2
+3
+if_stmt ::=  "if" expression ":" suite
+             ( "elif" expression ":" suite )*
+             ["else" ":" suite]
+
+
+if 是固定格式，当 if 后面的 expression 为 真 时执行其后面的 suite，...
               </p>
             </div>
           </div>
@@ -1301,11 +1358,56 @@ IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上�
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
 
 
       
         
+        <a class="post-tag" href="/tags/cpu/">cpu</a>
+      
+        
         <a class="post-tag" href="/tags/linux/">linux</a>
+      
+        
+        <a class="post-tag" href="/tags/os/">os</a>
       
 
     </div>

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-09-03T15:52:54+08:00</updated>
+  <updated>2022-09-04T16:25:18+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,42 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>国产操作系统和 CPU 分类</title>
+    <link href="http://localhost:4000/posts/classification-of-chinese-os-and-cpu/" rel="alternate" type="text/html" title="国产操作系统和 CPU 分类" />
+    <published>2022-09-04T15:32:00+08:00</published>
+  
+    <updated>2022-09-04T15:32:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/classification-of-chinese-os-and-cpu/</id>
+    <content src="http://localhost:4000/posts/classification-of-chinese-os-and-cpu/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="杂七杂八" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      国产 操作系统 和 CPU 厂商数量繁多，令人眼花缭乱，如果你做一款 C/C++ 软件需要适配国产的各种操作系统和 CPU，打包时针对每一种操作系统和 CPU 的组合都要打一个包的话，那么每一次打包的数量可能会多达数十个，光是编译环境的准备都需要耗费大量的时间，这无疑是令人难以接受的。
+
+但是万变不离其宗，如果经过仔细分析的话，会发现这些操作系统和 CPU 都是从现有的体系中衍生出来的，而不是完全新生事物，比如操作系统都是基于 Linux 的，且按照系统自带的包管理软件的不同，可以分为 2 个系列，分别是使用 rpm 的 redhat 系 和使用 dpkg 的 debian 系，适用于它们的安装包格式分别是 rpm 和 deb。CPU 按照指令架构划分，则可以分为 x86_64、aarch64、mips64el、loongarch64、sw_64 这 5 类，由于叫法的不同，有的会把...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -224,58 +260,6 @@ TypeError: can only concatenate str (not "int") to str
 
 
 上面打印的内容称为 异常栈，以 File 开头的那一行指明了产生异常的位置（即 test.py 的第 3 行），接下来一行即产生异常的语句（即 print(‘2’ + 2)），最后一行为...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Python 入门-9-输入输出</title>
-    <link href="http://localhost:4000/posts/python-tutorial-9-input-and-output/" rel="alternate" type="text/html" title="Python 入门-9-输入输出" />
-    <published>2021-02-24T20:44:30+08:00</published>
-  
-    <updated>2022-02-07T16:41:43+08:00</updated>
-  
-    <id>http://localhost:4000/posts/python-tutorial-9-input-and-output/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-9-input-and-output/" />
-    <author>
-      <name>zhaowcheng</name>
-    </author>
-
-  
-    
-    <category term="Python 入门" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      终端的输入输出
-
-input
-
-Python 提供了一个 input 函数供终端的输入使用，当程序执行到 input 处时会暂停并等待用户输入，用户输入完成并敲击回车后才会继续执行后续的代码。input 的返回值就是读取到的用户输入内容，还可以在调用 input 时传入一个字符串参数作为等待输入的提示信息显示。
-
-## 用 var 保存用户输入内容
-&amp;gt;&amp;gt;&amp;gt; var = input()
-'hello, world'
-&amp;gt;&amp;gt;&amp;gt; var
-'hello, world'
-&amp;gt;&amp;gt;&amp;gt; 
-
-## 等待输入时显示提示信息
-&amp;gt;&amp;gt;&amp;gt; name = input('Please input your name:')
-Please input your name:'tom'
-&amp;gt;&amp;gt;&amp;gt; name
-'tom'
-&amp;gt;&amp;gt;&amp;gt...
     </summary>
   
 
