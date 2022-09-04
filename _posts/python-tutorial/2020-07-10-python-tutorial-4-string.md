@@ -2,7 +2,7 @@
 title: Python 入门-4-字符串
 date: 2020-07-10 17:39:07 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## 字符串方法

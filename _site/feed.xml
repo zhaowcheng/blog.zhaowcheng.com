@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-09-04T16:25:18+08:00</updated>
+  <updated>2022-09-04T21:41:21+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,48 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>一个跨平台且支持多种包格式的打包工具 - fpm</title>
+    <link href="http://localhost:4000/posts/introduction-to-fpm/" rel="alternate" type="text/html" title="一个跨平台且支持多种包格式的打包工具 - fpm" />
+    <published>2022-09-04T20:42:00+08:00</published>
+  
+    <updated>2022-09-04T20:42:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/introduction-to-fpm/</id>
+    <content src="http://localhost:4000/posts/introduction-to-fpm/" />
+    <author>
+      <name>zhaowcheng</name>
+    </author>
+
+  
+    
+    <category term="杂七杂八" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      通过《一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式》和《国产操作系统和 CPU 分类》两篇文章，介绍了一种针对 Linux 上的 C/C++ 程序的简化打包数量的方式，从一次打需要适配的操作系统和 CPU 组合数量的包，简化为 CPU 架构数 * 2 的数量，那么在准备编译环境的时候也就需要准备 CPU 架构数 * 2 个。
+
+现在介绍一个打包工具 fpm ，这是一个 跨平台 且 支持多种包格式 的打包工具，通过它可以在一个系统上同时打出 rpm 和 deb 的包，这样就可以把编译环境的数量从 CPU 架构数 * 2 减少到 CPU 架构数，进一步提高打包效率。
+
+fpm 相比 rpm 和 deb 原生的打包方式更简单，且打包时间更短，下面演示使用 fpm 打包 postgresql：
+
+[root@el6-x86_64 fpm_example]# ls
+pg9
+[...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -208,58 +250,6 @@ Python 中一切皆 对象（Object），类里边又引入了 3 种对象：类
   最内部作用域与最近的作用域之间的 中间作用域 的命名空间（包含非全局名称 nonlocal）
   当前模块的命名空间（包含全局名称 global）
   内置名称模块（builtins）的命名空间...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Python 入门-10-异常</title>
-    <link href="http://localhost:4000/posts/python-tutorial-10-exceptions/" rel="alternate" type="text/html" title="Python 入门-10-异常" />
-    <published>2022-02-11T14:12:00+08:00</published>
-  
-    <updated>2022-02-11T14:12:00+08:00</updated>
-  
-    <id>http://localhost:4000/posts/python-tutorial-10-exceptions/</id>
-    <content src="http://localhost:4000/posts/python-tutorial-10-exceptions/" />
-    <author>
-      <name>zhaowcheng</name>
-    </author>
-
-  
-    
-    <category term="Python 入门" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      异常简介
-
-异常（Exception） 即程序执行过程中产生的预期以外的错误，例如有一个脚本 test.py，其内容如下：
-
-#!/bin/python3
-
-print('2' + 2)
-
-
-当执行该脚本时会产生如下异常：
-
-[root@localhost ~] python3 test.py 
-Traceback (most recent call last):
-  File "test.py", line 3, in &amp;lt;module&amp;gt;
-    print('2' + 2)
-TypeError: can only concatenate str (not "int") to str
-
-
-上面打印的内容称为 异常栈，以 File 开头的那一行指明了产生异常的位置（即 test.py 的第 3 行），接下来一行即产生异常的语句（即 print(‘2’ + 2)），最后一行为...
     </summary>
   
 

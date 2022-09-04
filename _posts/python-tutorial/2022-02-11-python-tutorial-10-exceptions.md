@@ -2,7 +2,7 @@
 title: Python 入门-10-异常
 date: 2022-02-11 14:12:00 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## 异常简介

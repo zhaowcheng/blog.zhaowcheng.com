@@ -2,7 +2,7 @@
 title: Python 入门-6-字典与集合
 date: 2020-08-06 10:31:58 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## 字典（dict）

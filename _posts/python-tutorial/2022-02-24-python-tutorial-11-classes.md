@@ -2,7 +2,7 @@
 title: Python 入门-11-类
 date: 2022-02-24 11:05:00 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 Python 类源自于 `C++` 和 `Modula-3` 这两种语言的类机制的结合。  

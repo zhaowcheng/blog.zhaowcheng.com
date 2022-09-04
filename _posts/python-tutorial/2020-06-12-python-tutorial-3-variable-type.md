@@ -2,7 +2,7 @@
 title: Python 入门-3-数据类型
 date: 2020-06-12 17:52:02 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## 数字（int, float）

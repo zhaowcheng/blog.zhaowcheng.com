@@ -2,7 +2,7 @@
 title: Python 入门-2-安装和使用
 date: 2020-03-07 20:03:27 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## Windows

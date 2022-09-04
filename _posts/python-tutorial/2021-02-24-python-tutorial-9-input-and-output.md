@@ -2,7 +2,7 @@
 title: Python 入门-9-输入输出
 date: 2021-02-24 20:44:30 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 mermaid: true
 ---
 

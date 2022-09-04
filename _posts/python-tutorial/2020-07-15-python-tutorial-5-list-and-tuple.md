@@ -2,7 +2,7 @@
 title: Python 入门-5-列表与元组
 date: 2020-07-15 15:16:00 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## 序列（Sequence）

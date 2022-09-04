@@ -2,7 +2,7 @@
 title: Python 入门-7-流程控制
 date: 2020-10-18 15:58:25 +0800
 categories: [Python 入门]
-tags: []
+tags: [python]
 ---
 
 ## if
