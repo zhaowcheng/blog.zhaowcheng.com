@@ -1,5 +1,5 @@
 ---
-title: Python 入门-10-异常
+title: Python 入门 - 10 - 异常
 date: 2022-02-11 14:12:00 +0800
 categories: [Python 入门]
 tags: [python]
@@ -283,7 +283,7 @@ class TransitionError(Error):
         self.message = message
 ```
 
-## 引用资料
+## 参考资料
 
 - [Errors and Exceptions] : https://docs.python.org/3.5/tutorial/errors.html
 - [Exception hierarchy] : https://docs.python.org/3.5/library/exceptions.html#bltin-exceptions

@@ -1,5 +1,5 @@
 ---
-title: Python 入门-11-类
+title: Python 入门 - 11 - 类
 date: 2022-02-24 11:05:00 +0800
 categories: [Python 入门]
 tags: [python]
@@ -434,7 +434,7 @@ class Fib(object):
 3
 ```
 
-## 引用资料
+## 参考资料
 
 - [Classes] : https://docs.python.org/3.5/tutorial/classes.html
 - [Special method names] : https://docs.python.org/3/reference/datamodel.html#special-method-names

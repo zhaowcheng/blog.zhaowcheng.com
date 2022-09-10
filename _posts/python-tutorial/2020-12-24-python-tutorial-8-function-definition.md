@@ -1,5 +1,5 @@
 ---
-title: Python 入门-8-函数定义
+title: Python 入门 - 8 - 函数定义
 date: 2020-11-24 10:45:50 +0800
 categories: [Python 入门]
 tags: [python]
@@ -220,7 +220,7 @@ def add(a, b):
 
 更多关于函数注解说明可以参考 [PEP 484](https://www.python.org/dev/peps/pep-0484/)
 
-## 引用资料
+## 参考资料
 
 - [Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#defining-functions  
 - [More on Defining Functions] : https://docs.python.org/3.5/tutorial/controlflow.html#more-on-defining-functions  

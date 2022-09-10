@@ -1,5 +1,5 @@
 ---
-title: Python 入门-3-数据类型
+title: Python 入门 - 3 - 数据类型
 date: 2020-06-12 17:52:02 +0800
 categories: [Python 入门]
 tags: [python]
@@ -224,7 +224,7 @@ Python 中的 `bool` 类其实是从 `int` 类继承实现的，`True` 和 `Fals
 
 如果一个函数没有 `return` 语句，那么默认就会返回 `None`。
 
-## 引用资料
+## 参考资料
 
 - [Numbers] : https://docs.python.org/3.5/tutorial/introduction.html#numbers
 - [数据类型和变量] ：https://www.liaoxuefeng.com/wiki/1016959663602400/1017063826246112

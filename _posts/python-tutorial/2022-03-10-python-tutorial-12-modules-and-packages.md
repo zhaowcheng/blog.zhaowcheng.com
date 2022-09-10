@@ -1,5 +1,5 @@
 ---
-title: Python 入门-12-模块和包
+title: Python 入门 - 12 - 模块和包
 date: 2022-03-10 15:16:00 +0800
 categories: [Python 入门]
 tags: [python]
@@ -235,6 +235,6 @@ from ..filters import equalizer
 
 请注意，相对导入是基于当前模块的名称进行导入的。由于主模块的名称总是 `__main__` ，因此用作 Python 应用程序主模块的模块必须始终使用绝对导入。
 
-## 引用资料
+## 参考资料
 
 - [Modules] : https://docs.python.org/3.5/tutorial/modules.html

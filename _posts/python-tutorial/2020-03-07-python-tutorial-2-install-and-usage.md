@@ -1,5 +1,5 @@
 ---
-title: Python 入门-2-安装和使用
+title: Python 入门 - 2 - 安装和使用
 date: 2020-03-07 20:03:27 +0800
 categories: [Python 入门]
 tags: [python]
@@ -121,7 +121,7 @@ python mystript.py
 python -m http.server
 ```
 
-## 引用资料
+## 参考资料
 
 - [Python安装] ：https://www.liaoxuefeng.com/wiki/1016959663602400/1016959856222624
 - [Python Setup and Usage] ：https://docs.python.org/3.5/using/index.html

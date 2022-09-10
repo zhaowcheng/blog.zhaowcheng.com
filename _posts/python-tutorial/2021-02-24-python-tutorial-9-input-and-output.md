@@ -1,5 +1,5 @@
 ---
-title: Python 入门-9-输入输出
+title: Python 入门 - 9 - 输入输出
 date: 2021-02-24 20:44:30 +0800
 categories: [Python 入门]
 tags: [python]
@@ -311,7 +311,7 @@ True
 'hello'
 ```
 
-## 引用资料
+## 参考资料
 
 - [Input and Output] : https://docs.python.org/3.5/tutorial/inputoutput.html
 - [input] : https://docs.python.org/3.5/library/functions.html#input

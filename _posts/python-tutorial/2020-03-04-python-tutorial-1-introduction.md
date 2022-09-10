@@ -1,5 +1,5 @@
 ---
-title: Python 入门-1-简介
+title: Python 入门 - 1 - 简介
 date: 2020-03-04 17:43:50 +0800
 categories: [Python 入门]
 tags: [python]
@@ -74,7 +74,7 @@ Python自诞生以来经历了2个主要的大版本，一个是发布于2000年
 * VSCode：这个是微软的Visual Studio的精简版，开源且支持大量的插件，通过安装Python插件可以用于Python开发。
 * Vim：如果是Linux下也可以使用这Vim加一些插件进行Python开发。
 
-## 引用资料
+## 参考资料
 
 - [Python简介] ：https://www.liaoxuefeng.com/wiki/1016959663602400/1016959735620448
 - [Whetting Your Appetite] ：https://docs.python.org/3.5/tutorial/appetite.html

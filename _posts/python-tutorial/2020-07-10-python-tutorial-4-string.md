@@ -1,5 +1,5 @@
 ---
-title: Python 入门-4-字符串
+title: Python 入门 - 4 - 字符串
 date: 2020-07-10 17:39:07 +0800
 categories: [Python 入门]
 tags: [python]
@@ -597,7 +597,7 @@ type        ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o"
 
 - #/0 : # 和 0 的作用与 % 格式化的方式相同
 
-## 引用资料
+## 参考资料
 
 - [Strings] : https://docs.python.org/3.5/tutorial/introduction.html#strings
 - [String Methods] : https://docs.python.org/3.5/library/stdtypes.html#string-methods

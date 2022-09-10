@@ -1,5 +1,5 @@
 ---
-title: Python 入门-6-字典与集合
+title: Python 入门 - 6 - 字典与集合
 date: 2020-08-06 10:31:58 +0800
 categories: [Python 入门]
 tags: [python]
@@ -743,7 +743,7 @@ Python 中不可变类型 `immutable` 都是 `hashable` 类型的，但是 hasha
 关于 hashable 可参考：https://docs.python.org/3.5/glossary.html#term-hashable  
 关于 immutable 可参考：https://docs.python.org/3.5/glossary.html#term-immutable
 
-## 引用资料
+## 参考资料
 
 - [Sets] : https://docs.python.org/3.5/tutorial/datastructures.html#sets
 - [Dictionaries] : https://docs.python.org/3.5/tutorial/datastructures.html#dictionaries  

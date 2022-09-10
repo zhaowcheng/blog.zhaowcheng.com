@@ -1,5 +1,5 @@
 ---
-title: Python 入门-5-列表与元组
+title: Python 入门 - 5 - 列表与元组
 date: 2020-07-15 15:16:00 +0800
 categories: [Python 入门]
 tags: [python]
@@ -576,7 +576,7 @@ TypeError: 'tuple' object does not support item assignment
 (1, [3, 3], 4)
 ```
 
-## 引用资料
+## 参考资料
 
 - [More on Lists] : https://docs.python.org/3.5/tutorial/datastructures.html#more-on-lists
 - [Tuples and Sequences] : https://docs.python.org/3.5/tutorial/datastructures.html#tuples-and-sequences
