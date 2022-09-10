@@ -5,10 +5,6 @@ categories: [Python 入门]
 tags: [python]
 ---
 
-## 课程说明
-
-在 [廖雪峰Python3教程](https://www.liaoxuefeng.com/wiki/1016959663602400) 和 [Python3.5官方文档](https://docs.python.org/3.5/tutorial/index.html) 的基础上选取部分内容进行适当讲解，只是进行一个简单入门介绍，所以每个小节最后附上讲解内容对应章节的链接，以供深入学习。
-
 ## Python简介
 
 Python是由荷兰人Guido van Rossum (“龟叔”)于1989年圣诞节期间，为了打发时间而编写。Python这个名字取自作者很喜欢的BBC电视剧"Monty Python’s Flying Circus"。
