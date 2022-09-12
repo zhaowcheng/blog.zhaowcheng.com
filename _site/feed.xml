@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>zhaowcheng</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-09-10T16:53:09+08:00</updated>
+  <updated>2022-09-12T11:08:42+08:00</updated>
   <author>
     <name>zhaowcheng</name>
     <uri>http://localhost:4000/</uri>
@@ -154,7 +154,7 @@ pg9
     <link href="http://localhost:4000/posts/python-tutorial-12-modules-and-packages/" rel="alternate" type="text/html" title="Python 入门 - 12 - 模块和包" />
     <published>2022-03-10T15:16:00+08:00</published>
   
-    <updated>2022-09-04T21:43:35+08:00</updated>
+    <updated>2022-09-10T16:54:55+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-12-modules-and-packages/</id>
     <content src="http://localhost:4000/posts/python-tutorial-12-modules-and-packages/" />
@@ -208,7 +208,7 @@ def fib2(n):
     <link href="http://localhost:4000/posts/python-tutorial-11-classes/" rel="alternate" type="text/html" title="Python 入门 - 11 - 类" />
     <published>2022-02-24T11:05:00+08:00</published>
   
-    <updated>2022-09-04T21:43:35+08:00</updated>
+    <updated>2022-09-10T16:54:55+08:00</updated>
   
     <id>http://localhost:4000/posts/python-tutorial-11-classes/</id>
     <content src="http://localhost:4000/posts/python-tutorial-11-classes/" />
