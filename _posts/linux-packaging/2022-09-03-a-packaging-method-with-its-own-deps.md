@@ -1,8 +1,8 @@
 ---
 title: 一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式
 date: 2022-09-03 15:34:00 +0800
-categories: [杂七杂八]
-tags: [linux]
+categories: [Linux 打包]
+tags: [rpm, deb]
 ---
 
 Linux 上的 `C/C++` 程序编译打包后拿到 `同 CPU 架构` 的其他 Linux 系统上运行时，通常会由于目标系统上缺少该程序所需的库而无法运行。

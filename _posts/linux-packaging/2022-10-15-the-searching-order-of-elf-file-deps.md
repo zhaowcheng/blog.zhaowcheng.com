@@ -1,7 +1,7 @@
 ---
 title: Linux 上 ELF 文件依赖库的查找顺序
 date: 2022-10-15 13:07:00 +0800
-categories: [杂七杂八]
+categories: [Linux 打包]
 tags: [elf, ld.so, rpath]
 ---
 

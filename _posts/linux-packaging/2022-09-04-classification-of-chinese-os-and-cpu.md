@@ -1,7 +1,7 @@
 ---
 title: 国产操作系统和 CPU 分类
 date: 2022-09-04 15:32:00 +0800
-categories: [杂七杂八]
+categories: [Linux 打包]
 tags: [os, cpu]
 mermaid: true
 ---

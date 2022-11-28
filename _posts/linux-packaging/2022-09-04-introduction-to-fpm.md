@@ -1,7 +1,7 @@
 ---
 title: 一个跨平台且支持多种包格式的打包工具 - fpm
 date: 2022-09-04 20:42:00 +0800
-categories: [杂七杂八]
+categories: [Linux 打包]
 tags: [fpm]
 ---
 
