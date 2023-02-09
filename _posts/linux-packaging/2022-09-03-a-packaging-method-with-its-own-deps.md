@@ -159,9 +159,9 @@ for elf in $(find $ELFDIR -type f -exec file {} + | grep ELF | cut -d: -f1); do
     elf_parentdir=$(dirname $elf)
     relative_path=$(realpath --relative-to=$elf_parentdir $LIBDIR)
     if [[ $relative_path == '.' ]]; then
-        relative_rpath="$ORIGIN"
+        relative_rpath="\$ORIGIN"
     else
-        relative_rpath="$ORIGIN/$relative_path"
+        relative_rpath="\$ORIGIN/$relative_path"
     fi
     if [[ $(patchelf --print-rpath $elf) != $relative_rpath ]]; then
         echo "Set the rpath of $elf to $relative_rpath"
