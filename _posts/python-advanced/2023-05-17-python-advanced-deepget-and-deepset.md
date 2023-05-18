@@ -1,7 +1,7 @@
 ---
-title: Python 杂项 - deepget 和 deepset
+title: Python 进阶 - deepget 和 deepset
 date: 2023-05-17 23:16:00 +0800
-categories: [Python 杂项]
+categories: [Python 进阶]
 tags: [python]
 ---
 
