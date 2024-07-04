@@ -94,7 +94,7 @@ avatar: 'assets/img/favicons/android-chrome-512x512.png'
 toc: true
 
 giscus:
-  comments: true
+  comments: false
   repo: 
     name: 'zhaowcheng/blog.zhaowcheng.com'
     id: 'R_kgDOGknPwA'
