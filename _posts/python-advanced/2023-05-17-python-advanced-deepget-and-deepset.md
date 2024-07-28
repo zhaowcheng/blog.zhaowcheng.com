@@ -90,7 +90,7 @@ def dump_deepkey(keys: list[str | int | dict], sep: str = '.') -> list:
     return sep.join(normkeys).replace('.[', '[')
 
 
-def deep_getitem(obj: object, key: str) -> t.Any:
+def deep_getitem(obj: object, key: t.Union[str, int, dict]) -> t.Any:
     """
     专为 deep* 函数设计的获取对象中的值函数。
 
@@ -98,7 +98,9 @@ def deep_getitem(obj: object, key: str) -> t.Any:
     :param key: 键
     :return: 获取到的值
     """
-    if isinstance(key, dict):
+    if obj is None:
+        return None
+    if isinstance(obj, list) and isinstance(key, dict):
         return GetableList(obj).get(musthave=True, **key)
     else:
         return operator.getitem(obj, key)
@@ -119,7 +121,8 @@ def deepget(obj: object, deepkey: str, sep: str = '.') -> t.Any:
     ...         'b2': [1, 2, 3],
     ...         'b3': [{'x': 1, 'y': 'h'}, 
     ...                {'x': 2, 'y': 'i'},
-    ...                {'x': 1, 'y': 'j'}]
+    ...                {'x': 1, 'y': 'j'}],
+    ...         'b4': None
     ...      }
     ... }
     >>> deepget(d, 'a.b1')
@@ -132,6 +135,10 @@ def deepget(obj: object, deepkey: str, sep: str = '.') -> t.Any:
     {'x': 1, 'y': 'h'}
     >>> deepget(d, 'a.b3[x=1, y="j"]')
     {'x': 1, 'y': 'j'}
+    >>> deepget(d, 'a.b4[999]') == None
+    True
+    >>> deepget(d, 'a.b4.x') == None
+    True
     """
     keys = parse_deepkey(deepkey, sep)
     return reduce(deep_getitem, keys, obj)
@@ -200,19 +207,47 @@ def deepset(obj: object, deepkey: str, value: any, sep: str = '.') -> None:
            'b3': [{'x': 1, 'y': 'k'}, {'x': 2, 'y': 'i'}, {'x': 1, 'y': 'k'}],
            'b4': [{'c1': ['x']}]},
      'i': {'j': 'x'}}
+    >>> deepset(d, 'a.b3[x=2]', {'x': 2, 'y': 'k'})
+    >>> pprint(d)
+    {'a': {'b1': 'd',
+           'b2': ['-1', 2, 3, 4],
+           'b3': [{'x': 1, 'y': 'k'}, {'x': 2, 'y': 'k'}, {'x': 1, 'y': 'k'}],
+           'b4': [{'c1': ['x']}]},
+     'i': {'j': 'x'}}
+    >>> deepset(d, 'a.b3[x=8]', {'x': 8, 'y': 'k'})
+    >>> pprint(d)
+    {'a': {'b1': 'd',
+           'b2': ['-1', 2, 3, 4],
+           'b3': [{'x': 1, 'y': 'k'},
+                  {'x': 2, 'y': 'k'},
+                  {'x': 1, 'y': 'k'},
+                  {'x': 8, 'y': 'k'}],
+           'b4': [{'c1': ['x']}]},
+     'i': {'j': 'x'}}
     """
     keys = parse_deepkey(deepkey, sep)
     for i, k in enumerate(keys[:-1]):
         try:
-            obj = deep_getitem(obj, k)
+            child = deep_getitem(obj, k)
+            if child is None:
+                v = [] if isinstance(keys[i+1], (int, dict)) else {}
+                operator.setitem(obj, k, v)
+                child = deep_getitem(obj, k)
+            obj = child
         except KeyError:
-            obj[k] = [] if isinstance(keys[i+1], int) else {}
+            obj[k] = [] if isinstance(keys[i+1], (int, dict)) else {}
             obj = obj[k]
-        except IndexError:
-            obj.append([] if isinstance(keys[i+1], int) else {})
+        except (IndexError, AttributeError):
+            obj.append([] if isinstance(keys[i+1], (int, dict)) else {})
             obj = obj[-1]
-    if isinstance(obj, list) and len(obj) <= keys[-1]:
+    if isinstance(obj, list) and isinstance(keys[-1], int) and len(obj) <= keys[-1]:
         obj.append(value)
+    elif isinstance(obj, list) and isinstance(keys[-1], dict):
+        v = GetableList(obj).get(musthave=False, **keys[-1])
+        if v is None:
+            obj.append(value)
+        else:
+            obj[obj.index(v)] = value
     else:
         operator.setitem(obj, keys[-1], value)
 
@@ -341,4 +376,5 @@ class GetableList(t.Generic[T], list):
             else:
                 elements.append(e)
         return elements
+    
 ```
