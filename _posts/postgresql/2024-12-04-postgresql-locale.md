@@ -87,4 +87,4 @@ PostgreSQL 支持在 `initdb`, `CREATE DATABASE` 和 `CREATE COLLATION` 时均�
 
 ## 参考资料
 
-- [Locale Support] : https://www.postgresql.org/docs/current/locale.html
+- [Locale Support] : https://www.postgresql.org/docs/17/locale.html
