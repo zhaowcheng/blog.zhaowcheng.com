@@ -1,5 +1,5 @@
 ---
-title: 一个跨平台且支持多种包格式的打包工具 - fpm
+title: "fpm: 一个跨平台且支持多种包格式的打包工具"
 date: 2022-09-04 20:42:00 +0800
 categories: [Linux 打包]
 tags: [fpm]
