@@ -71,6 +71,12 @@ $ sed '2,$d'
 $ sed '/hello world/d'
 ```
 
+删除包含 `/path/to/sth` 的行并使用 `#` 作为分隔符
+
+```console
+$sed '\#/path/to/sth#d'
+```
+
 ## 打印
 
 打印第 2 行
