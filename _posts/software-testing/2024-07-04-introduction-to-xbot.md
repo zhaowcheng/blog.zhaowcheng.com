@@ -1,7 +1,7 @@
 ---
 title: "xbot: 一个轻量、易用、可扩展的自动化测试框架"
 date: 2024-07-04 10:31:00 +0800
-categories: [未分类]
+categories: [软件测试]
 tags: [automation-testing]
 ---
 
