@@ -14,3 +14,7 @@ vendor
 # npm dependencies
 node_modules
 package-lock.json
+
+
+# python venv
+venv*/

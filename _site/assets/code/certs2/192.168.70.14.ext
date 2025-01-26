@@ -1,0 +1,4 @@
+subjectAltName = @names
+[names]
+IP.1 = 127.0.0.1
+IP.2 = 192.168.70.14
