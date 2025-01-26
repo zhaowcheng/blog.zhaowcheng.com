@@ -10,9 +10,9 @@
 <span class="go">+------------------+---------+-------+---------------------------+---------------------------+------------+
 |        ID        | STATUS  | NAME  |        PEER ADDRS         |       CLIENT ADDRS        | IS LEARNER |
 +------------------+---------+-------+---------------------------+---------------------------+------------+
-| e36d8869dc221ffe | started | node1 | http://192.168.70.41:2380 | http://192.168.70.41:2379 |      false |
-| 243fcfa74ec0736a | started | node2 | http://192.168.70.15:2380 | http://192.168.70.15:2379 |      false |
-| c8ad351a3ef67e9e | started | node3 | http://192.168.70.14:2380 | http://192.168.70.14:2379 |      false |
+| e36d8869dc221ffe | started | node1 | http://192.168.10.11:2380 | http://192.168.10.11:2379 |      false |
+| 243fcfa74ec0736a | started | node2 | http://192.168.10.12:2380 | http://192.168.10.12:2379 |      false |
+| c8ad351a3ef67e9e | started | node3 | http://192.168.10.13:2380 | http://192.168.10.13:2379 |      false |
 +------------------+---------+-------+---------------------------+---------------------------+------------+
 </span></pre></table></code></div></div><h2 id="生成证书">生成证书</h2><h3 id="使用-python-生成">使用 python 生成</h3><p>下面示例中使用的 python 脚本 <code class="language-plaintext highlighter-rouge">gen_etcd_certs.py</code> 源码在文章末尾附上。</p><p>生成 <code class="language-plaintext highlighter-rouge">根证书和私钥</code>：</p><div class="language-console highlighter-rouge"><div class="code-header"> <span text-data=" Console "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -37,17 +37,17 @@ Saved: ./certs/client.cert
 9
 10
 11
-</pre><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>python gen_etcd_certs.py <span class="nt">-c</span> gen_server_cert <span class="nt">-s</span> ./certs <span class="nt">-k</span> certs/root.key <span class="nt">-t</span> certs/root.cert <span class="nt">-i</span> 192.168.70.41
-<span class="go">Saved: ./certs/192.168.70.41.key
-Saved: ./certs/192.168.70.41.cert
+</pre><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>python gen_etcd_certs.py <span class="nt">-c</span> gen_server_cert <span class="nt">-s</span> ./certs <span class="nt">-k</span> certs/root.key <span class="nt">-t</span> certs/root.cert <span class="nt">-i</span> 192.168.10.11
+<span class="go">Saved: ./certs/192.168.10.11.key
+Saved: ./certs/192.168.10.11.cert
 
-</span><span class="gp">$</span><span class="w"> </span>python gen_etcd_certs.py <span class="nt">-c</span> gen_server_cert <span class="nt">-s</span> ./certs <span class="nt">-k</span> certs/root.key <span class="nt">-t</span> certs/root.cert <span class="nt">-i</span> 192.168.70.15
-<span class="go">Saved: ./certs/192.168.70.15.key
-Saved: ./certs/192.168.70.15.cert
+</span><span class="gp">$</span><span class="w"> </span>python gen_etcd_certs.py <span class="nt">-c</span> gen_server_cert <span class="nt">-s</span> ./certs <span class="nt">-k</span> certs/root.key <span class="nt">-t</span> certs/root.cert <span class="nt">-i</span> 192.168.10.12
+<span class="go">Saved: ./certs/192.168.10.12.key
+Saved: ./certs/192.168.10.12.cert
 
-</span><span class="gp">$</span><span class="w"> </span>python gen_etcd_certs.py <span class="nt">-c</span> gen_server_cert <span class="nt">-s</span> ./certs <span class="nt">-k</span> certs/root.key <span class="nt">-t</span> certs/root.cert <span class="nt">-i</span> 192.168.70.14
-<span class="go">Saved: ./certs/192.168.70.14.key
-Saved: ./certs/192.168.70.14.cert
+</span><span class="gp">$</span><span class="w"> </span>python gen_etcd_certs.py <span class="nt">-c</span> gen_server_cert <span class="nt">-s</span> ./certs <span class="nt">-k</span> certs/root.key <span class="nt">-t</span> certs/root.cert <span class="nt">-i</span> 192.168.10.13
+<span class="go">Saved: ./certs/192.168.10.13.key
+Saved: ./certs/192.168.10.13.cert
 </span></pre></table></code></div></div><h3 id="使用-openssl-生成">使用 openssl 生成</h3><p>生成 <code class="language-plaintext highlighter-rouge">根证书和私钥</code>：</p><div class="language-console highlighter-rouge"><div class="code-header"> <span text-data=" Console "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -131,49 +131,49 @@ Getting CA Private Key
 33
 34
 35
-</pre><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>openssl genrsa <span class="nt">-out</span> 192.168.70.41.key 2048
+</pre><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>openssl genrsa <span class="nt">-out</span> 192.168.10.11.key 2048
 <span class="go">Generating RSA private key, 2048 bit long modulus
 .......................+++
 ..................................+++
 e is 65537 (0x10001)
-</span><span class="gp">$</span><span class="w"> </span>openssl req <span class="nt">-new</span> <span class="nt">-sha256</span> <span class="nt">-key</span> 192.168.70.41.key <span class="nt">-out</span> 192.168.70.41.csr <span class="nt">-subj</span> <span class="s2">"/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"subjectAltName = @names</span><span class="se">\n</span><span class="s2">[names]</span><span class="se">\n</span><span class="s2">IP.1 = 127.0.0.1</span><span class="se">\n</span><span class="s2">IP.2 = 192.168.70.41"</span> <span class="o">&gt;</span> 192.168.70.41.ext
-<span class="gp">$</span><span class="w"> </span>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-sha256</span> <span class="nt">-CA</span>  root.cert <span class="nt">-CAkey</span> root.key  <span class="nt">-CAserial</span> root.srl  <span class="nt">-CAcreateserial</span> <span class="nt">-in</span> 192.168.70.41.csr <span class="nt">-out</span> 192.168.70.41.cert <span class="nt">-extfile</span> 192.168.70.41.ext
+</span><span class="gp">$</span><span class="w"> </span>openssl req <span class="nt">-new</span> <span class="nt">-sha256</span> <span class="nt">-key</span> 192.168.10.11.key <span class="nt">-out</span> 192.168.10.11.csr <span class="nt">-subj</span> <span class="s2">"/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC"</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"subjectAltName = @names</span><span class="se">\n</span><span class="s2">[names]</span><span class="se">\n</span><span class="s2">IP.1 = 127.0.0.1</span><span class="se">\n</span><span class="s2">IP.2 = 192.168.10.11"</span> <span class="o">&gt;</span> 192.168.10.11.ext
+<span class="gp">$</span><span class="w"> </span>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-sha256</span> <span class="nt">-CA</span>  root.cert <span class="nt">-CAkey</span> root.key  <span class="nt">-CAserial</span> root.srl  <span class="nt">-CAcreateserial</span> <span class="nt">-in</span> 192.168.10.11.csr <span class="nt">-out</span> 192.168.10.11.cert <span class="nt">-extfile</span> 192.168.10.11.ext
 <span class="go">Signature ok
 subject=/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC
 Getting CA Private Key
 
-</span><span class="gp">$</span><span class="w"> </span>openssl genrsa <span class="nt">-out</span> 192.168.70.15.key 2048
+</span><span class="gp">$</span><span class="w"> </span>openssl genrsa <span class="nt">-out</span> 192.168.10.12.key 2048
 <span class="go">Generating RSA private key, 2048 bit long modulus
 .......................+++
 ..................................+++
 e is 65537 (0x10001)
-</span><span class="gp">$</span><span class="w"> </span>openssl req <span class="nt">-new</span> <span class="nt">-sha256</span> <span class="nt">-key</span> 192.168.70.15.key <span class="nt">-out</span> 192.168.70.15.csr <span class="nt">-subj</span> <span class="s2">"/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"subjectAltName = @names</span><span class="se">\n</span><span class="s2">[names]</span><span class="se">\n</span><span class="s2">IP.1 = 127.0.0.1</span><span class="se">\n</span><span class="s2">IP.2 = 192.168.70.15"</span> <span class="o">&gt;</span> 192.168.70.15.ext
-<span class="gp">$</span><span class="w"> </span>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-sha256</span> <span class="nt">-CA</span>  root.cert <span class="nt">-CAkey</span> root.key  <span class="nt">-CAserial</span> root.srl  <span class="nt">-CAcreateserial</span> <span class="nt">-in</span> 192.168.70.15.csr <span class="nt">-out</span> 192.168.70.15.cert <span class="nt">-extfile</span> 192.168.70.15.ext
+</span><span class="gp">$</span><span class="w"> </span>openssl req <span class="nt">-new</span> <span class="nt">-sha256</span> <span class="nt">-key</span> 192.168.10.12.key <span class="nt">-out</span> 192.168.10.12.csr <span class="nt">-subj</span> <span class="s2">"/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC"</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"subjectAltName = @names</span><span class="se">\n</span><span class="s2">[names]</span><span class="se">\n</span><span class="s2">IP.1 = 127.0.0.1</span><span class="se">\n</span><span class="s2">IP.2 = 192.168.10.12"</span> <span class="o">&gt;</span> 192.168.10.12.ext
+<span class="gp">$</span><span class="w"> </span>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-sha256</span> <span class="nt">-CA</span>  root.cert <span class="nt">-CAkey</span> root.key  <span class="nt">-CAserial</span> root.srl  <span class="nt">-CAcreateserial</span> <span class="nt">-in</span> 192.168.10.12.csr <span class="nt">-out</span> 192.168.10.12.cert <span class="nt">-extfile</span> 192.168.10.12.ext
 <span class="go">Signature ok
 subject=/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC
 Getting CA Private Key
 
-</span><span class="gp">$</span><span class="w"> </span>openssl genrsa <span class="nt">-out</span> 192.168.70.14.key 2048
+</span><span class="gp">$</span><span class="w"> </span>openssl genrsa <span class="nt">-out</span> 192.168.10.13.key 2048
 <span class="go">Generating RSA private key, 2048 bit long modulus
 .......................+++
 ..................................+++
 e is 65537 (0x10001)
-</span><span class="gp">$</span><span class="w"> </span>openssl req <span class="nt">-new</span> <span class="nt">-sha256</span> <span class="nt">-key</span> 192.168.70.14.key <span class="nt">-out</span> 192.168.70.14.csr <span class="nt">-subj</span> <span class="s2">"/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC"</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"subjectAltName = @names</span><span class="se">\n</span><span class="s2">[names]</span><span class="se">\n</span><span class="s2">IP.1 = 127.0.0.1</span><span class="se">\n</span><span class="s2">IP.2 = 192.168.70.14"</span> <span class="o">&gt;</span> 192.168.70.14.ext
-<span class="gp">$</span><span class="w"> </span>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-sha256</span> <span class="nt">-CA</span>  root.cert <span class="nt">-CAkey</span> root.key  <span class="nt">-CAserial</span> root.srl  <span class="nt">-CAcreateserial</span> <span class="nt">-in</span> 192.168.70.14.csr <span class="nt">-out</span> 192.168.70.14.cert <span class="nt">-extfile</span> 192.168.70.14.ext
+</span><span class="gp">$</span><span class="w"> </span>openssl req <span class="nt">-new</span> <span class="nt">-sha256</span> <span class="nt">-key</span> 192.168.10.13.key <span class="nt">-out</span> 192.168.10.13.csr <span class="nt">-subj</span> <span class="s2">"/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC"</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"subjectAltName = @names</span><span class="se">\n</span><span class="s2">[names]</span><span class="se">\n</span><span class="s2">IP.1 = 127.0.0.1</span><span class="se">\n</span><span class="s2">IP.2 = 192.168.10.13"</span> <span class="o">&gt;</span> 192.168.10.13.ext
+<span class="gp">$</span><span class="w"> </span>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-sha256</span> <span class="nt">-CA</span>  root.cert <span class="nt">-CAkey</span> root.key  <span class="nt">-CAserial</span> root.srl  <span class="nt">-CAcreateserial</span> <span class="nt">-in</span> 192.168.10.13.csr <span class="nt">-out</span> 192.168.10.13.cert <span class="nt">-extfile</span> 192.168.10.13.ext
 <span class="go">Signature ok
 subject=/C=CN/ST=CQ/L=YB/O=BC/OU=ZWC
 Getting CA Private Key
-</span></pre></table></code></div></div><h2 id="上传证书">上传证书</h2><div class="table-wrapper"><table><thead><tr><th>节点<th>需要上传的文件<tbody><tr><td>192.168.70.41<td><code class="language-plaintext highlighter-rouge">root.cert</code>, <code class="language-plaintext highlighter-rouge">root.key</code>, <code class="language-plaintext highlighter-rouge">client.cert</code>, <code class="language-plaintext highlighter-rouge">client.key</code>, <code class="language-plaintext highlighter-rouge">192.168.70.41.cert</code>, <code class="language-plaintext highlighter-rouge">192.168.70.41.key</code><tr><td>192.168.70.15<td><code class="language-plaintext highlighter-rouge">root.cert</code>, <code class="language-plaintext highlighter-rouge">root.key</code>, <code class="language-plaintext highlighter-rouge">client.cert</code>, <code class="language-plaintext highlighter-rouge">client.key</code>, <code class="language-plaintext highlighter-rouge">192.168.70.15.cert</code>, <code class="language-plaintext highlighter-rouge">192.168.70.15.key</code><tr><td>192.168.70.14<td><code class="language-plaintext highlighter-rouge">root.cert</code>, <code class="language-plaintext highlighter-rouge">root.key</code>, <code class="language-plaintext highlighter-rouge">client.cert</code>, <code class="language-plaintext highlighter-rouge">client.key</code>, <code class="language-plaintext highlighter-rouge">192.168.70.14.cert</code>, <code class="language-plaintext highlighter-rouge">192.168.70.14.key</code></table></div><h2 id="更新配置">更新配置</h2><p>节点 <code class="language-plaintext highlighter-rouge">192.168.70.41</code> 配置文件需要更新的配置：</p><pre><code class="language-YAML">listen-peer-urls: https://0.0.0.0:2380
+</span></pre></table></code></div></div><h2 id="上传证书">上传证书</h2><div class="table-wrapper"><table><thead><tr><th>节点<th>需要上传的文件<tbody><tr><td>192.168.10.11<td><code class="language-plaintext highlighter-rouge">root.cert</code>, <code class="language-plaintext highlighter-rouge">root.key</code>, <code class="language-plaintext highlighter-rouge">client.cert</code>, <code class="language-plaintext highlighter-rouge">client.key</code>, <code class="language-plaintext highlighter-rouge">192.168.10.11.cert</code>, <code class="language-plaintext highlighter-rouge">192.168.10.11.key</code><tr><td>192.168.10.12<td><code class="language-plaintext highlighter-rouge">root.cert</code>, <code class="language-plaintext highlighter-rouge">root.key</code>, <code class="language-plaintext highlighter-rouge">client.cert</code>, <code class="language-plaintext highlighter-rouge">client.key</code>, <code class="language-plaintext highlighter-rouge">192.168.10.12.cert</code>, <code class="language-plaintext highlighter-rouge">192.168.10.12.key</code><tr><td>192.168.10.13<td><code class="language-plaintext highlighter-rouge">root.cert</code>, <code class="language-plaintext highlighter-rouge">root.key</code>, <code class="language-plaintext highlighter-rouge">client.cert</code>, <code class="language-plaintext highlighter-rouge">client.key</code>, <code class="language-plaintext highlighter-rouge">192.168.10.13.cert</code>, <code class="language-plaintext highlighter-rouge">192.168.10.13.key</code></table></div><h2 id="更新配置">更新配置</h2><p>节点 <code class="language-plaintext highlighter-rouge">192.168.10.11</code> 配置文件需要更新的配置：</p><pre><code class="language-YAML">listen-peer-urls: https://0.0.0.0:2380
 listen-client-urls: https://0.0.0.0:2379
-advertise-client-urls: https://192.168.70.41:2379
+advertise-client-urls: https://192.168.10.11:2379
 client-transport-security:
   # 服务端证书，在 TLS 握手过程中提供给客户端。
-  cert-file: /path/to/192.168.70.41.cert
+  cert-file: /path/to/192.168.10.11.cert
   # 服务端私钥，用来解密客户端使用服务端公钥加密发送的数据。
-  key-file: /path/to/192.168.70.41.key
+  key-file: /path/to/192.168.10.11.key
   # 是否要求客户端访问时提供客户端证书。
   client-cert-auth: true
   # 受信任的 CA 证书（root 证书/根证书），用来验证客户端证书。
@@ -182,23 +182,23 @@ client-transport-security:
   auto-tls: false
 peer-transport-security:
   # 本节点证书，在 TLS 握手过程中提供给伙伴节点。
-  cert-file: /path/to/192.168.70.41.cert
+  cert-file: /path/to/192.168.10.11.cert
   # 本节点私钥，用来解密伙伴节点使用本节点公钥加密发送的数据。
-  key-file: /path/to/192.168.70.41.key
+  key-file: /path/to/192.168.10.11.key
   # 是否要求伙伴节点访问时提供其证书。
   client-cert-auth: true
   # 受信任的 CA 证书（root 证书/根证书），用来验证伙伴节点证书。
   trusted-ca-file: /path/to/root.cert
   # 是否自动配置 TLS，开启该配置后则无需上面的其他配置。
   auto-tls: false
-</code></pre><p>节点 <code class="language-plaintext highlighter-rouge">192.168.70.15</code> 配置文件需要更新的配置：</p><pre><code class="language-YAML">listen-peer-urls: https://0.0.0.0:2380
+</code></pre><p>节点 <code class="language-plaintext highlighter-rouge">192.168.10.12</code> 配置文件需要更新的配置：</p><pre><code class="language-YAML">listen-peer-urls: https://0.0.0.0:2380
 listen-client-urls: https://0.0.0.0:2379
-advertise-client-urls: https://192.168.70.15:2379
+advertise-client-urls: https://192.168.10.12:2379
 client-transport-security:
   # 服务端证书，在 TLS 握手过程中提供给客户端。
-  cert-file: /path/to/192.168.70.15.cert
+  cert-file: /path/to/192.168.10.12.cert
   # 服务端私钥，用来解密客户端使用服务端公钥加密发送的数据。
-  key-file: /path/to/192.168.70.15.key
+  key-file: /path/to/192.168.10.12.key
   # 是否要求客户端访问时提供客户端证书。
   client-cert-auth: true
   # 受信任的 CA 证书（root 证书/根证书），用来验证客户端证书。
@@ -207,23 +207,23 @@ client-transport-security:
   auto-tls: false
 peer-transport-security:
   # 本节点证书，在 TLS 握手过程中提供给伙伴节点。
-  cert-file: /path/to/192.168.70.15.cert
+  cert-file: /path/to/192.168.10.12.cert
   # 本节点私钥，用来解密伙伴节点使用本节点公钥加密发送的数据。
-  key-file: /path/to/192.168.70.15.key
+  key-file: /path/to/192.168.10.12.key
   # 是否要求伙伴节点访问时提供其证书。
   client-cert-auth: true
   # 受信任的 CA 证书（root 证书/根证书），用来验证伙伴节点证书。
   trusted-ca-file: /path/to/root.cert
   # 是否自动配置 TLS，开启该配置后则无需上面的其他配置。
   auto-tls: false
-</code></pre><p>节点 <code class="language-plaintext highlighter-rouge">192.168.70.14</code> 配置文件需要更新的配置：</p><pre><code class="language-YAML">listen-peer-urls: https://0.0.0.0:2380
+</code></pre><p>节点 <code class="language-plaintext highlighter-rouge">192.168.10.13</code> 配置文件需要更新的配置：</p><pre><code class="language-YAML">listen-peer-urls: https://0.0.0.0:2380
 listen-client-urls: https://0.0.0.0:2379
-advertise-client-urls: https://192.168.70.14:2379
+advertise-client-urls: https://192.168.10.13:2379
 client-transport-security:
   # 服务端证书，在 TLS 握手过程中提供给客户端。
-  cert-file: /path/to/192.168.70.14.cert
+  cert-file: /path/to/192.168.10.13.cert
   # 服务端私钥，用来解密客户端使用服务端公钥加密发送的数据。
-  key-file: /path/to/192.168.70.14.key
+  key-file: /path/to/192.168.10.13.key
   # 是否要求客户端访问时提供客户端证书。
   client-cert-auth: true
   # 受信任的 CA 证书（root 证书/根证书），用来验证客户端证书。
@@ -232,9 +232,9 @@ client-transport-security:
   auto-tls: false
 peer-transport-security:
   # 本节点证书，在 TLS 握手过程中提供给伙伴节点。
-  cert-file: /path/to/192.168.70.14.cert
+  cert-file: /path/to/192.168.10.13.cert
   # 本节点私钥，用来解密伙伴节点使用本节点公钥加密发送的数据。
-  key-file: /path/to/192.168.70.14.key
+  key-file: /path/to/192.168.10.13.key
   # 是否要求伙伴节点访问时提供其证书。
   client-cert-auth: true
   # 受信任的 CA 证书（root 证书/根证书），用来验证伙伴节点证书。
@@ -249,13 +249,13 @@ peer-transport-security:
 6
 7
 8
-</pre><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>etcdctl member update e36d8869dc221ffe <span class="nt">--peer-urls</span><span class="o">=</span><span class="s2">"https://192.168.70.41:2380"</span>
+</pre><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>etcdctl member update e36d8869dc221ffe <span class="nt">--peer-urls</span><span class="o">=</span><span class="s2">"https://192.168.10.11:2380"</span>
 <span class="go">Member e36d8869dc221ffe updated in cluster 77feb499f2ffa1c8
 
-</span><span class="gp">$</span><span class="w"> </span>etcdctl member update 243fcfa74ec0736a <span class="nt">--peer-urls</span><span class="o">=</span><span class="s2">"https://192.168.70.15:2380"</span>
+</span><span class="gp">$</span><span class="w"> </span>etcdctl member update 243fcfa74ec0736a <span class="nt">--peer-urls</span><span class="o">=</span><span class="s2">"https://192.168.10.12:2380"</span>
 <span class="go">Member 243fcfa74ec0736a updated in cluster 77feb499f2ffa1c8
 
-</span><span class="gp">$</span><span class="w"> </span>etcdctl member update c8ad351a3ef67e9e <span class="nt">--peer-urls</span><span class="o">=</span><span class="s2">"https://192.168.70.14:2380"</span>
+</span><span class="gp">$</span><span class="w"> </span>etcdctl member update c8ad351a3ef67e9e <span class="nt">--peer-urls</span><span class="o">=</span><span class="s2">"https://192.168.10.13:2380"</span>
 <span class="go">Member c8ad351a3ef67e9e updated in cluster 77feb499f2ffa1c8
 </span></pre></table></code></div></div><h2 id="重启集群">重启集群</h2><p>先依次停止所有节点服务，然后再依次启动所有节点服务（在启动第一个节点时会一直等待第二个节点的加入，这时可以直接去启动第二个节点让其加入后，第一个节点也就启动成功了，接着继续去启动第三个节点即可），启动完成后重新查看集群信息如下：</p><div class="language-console highlighter-rouge"><div class="code-header"> <span text-data=" Console "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -269,9 +269,9 @@ peer-transport-security:
 <span class="go">+------------------+---------+-------+----------------------------+----------------------------+------------+
 |        ID        | STATUS  | NAME  |        PEER ADDRS          |       CLIENT ADDRS         | IS LEARNER |
 +------------------+---------+-------+----------------------------+----------------------------+------------+
-| e36d8869dc221ffe | started | node1 | https://192.168.70.41:2380 | https://192.168.70.41:2379 |      false |
-| 243fcfa74ec0736a | started | node2 | https://192.168.70.15:2380 | https://192.168.70.15:2379 |      false |
-| c8ad351a3ef67e9e | started | node3 | https://192.168.70.14:2380 | https://192.168.70.14:2379 |      false |
+| e36d8869dc221ffe | started | node1 | https://192.168.10.11:2380 | https://192.168.10.11:2379 |      false |
+| 243fcfa74ec0736a | started | node2 | https://192.168.10.12:2380 | https://192.168.10.12:2379 |      false |
+| c8ad351a3ef67e9e | started | node3 | https://192.168.10.13:2380 | https://192.168.10.13:2379 |      false |
 +------------------+---------+-------+----------------------------+----------------------------+------------+
 </span></pre></table></code></div></div><h2 id="tls-与鉴权">TLS 与鉴权</h2><p>TLS 与鉴权（Authentication）是两个不同的功能，互不影响，不能混为一谈，已知的相互间有关联的情况只有一种：当鉴权和 <code class="language-plaintext highlighter-rouge">client-transport-security</code> 都开启的情况下，一个客户端使用设置了 CN 的证书 <code class="language-plaintext highlighter-rouge">client.cert</code> 访问服务端，且未提供用户密码时，CN 的值则被当作用户名进行鉴权，但是如果访问时提供了用户密码，则使用提供的用户进行鉴权。</p><h2 id="gen_etcd_certspy-源码">gen_etcd_certs.py 源码</h2><div class="language-python highlighter-rouge"><div class="code-header"> <span text-data=" Python "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -835,4 +835,4 @@ ETCD 证书生成脚本。
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
-</pre></table></code></div></div><h2 id="参考资料">参考资料</h2><ul><li>[Transport security model] : https://etcd.io/docs/v3.5/op-guide/security/</ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/etcd/'>ETCD</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/etcd/" class="post-tag no-text-decoration" >etcd</a> <a href="/tags/network/" class="post-tag no-text-decoration" >network</a> <a href="/tags/ssl/" class="post-tag no-text-decoration" >ssl</a> <a href="/tags/tls/" class="post-tag no-text-decoration" >tls</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 本文由作者按照 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 进行授权</div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>最近更新</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/sed-examples/">sed 命令使用示例</a><li><a href="/posts/introduction-to-fpm/">fpm: 一个跨平台且支持多种包格式的打包工具</a><li><a href="/posts/python-advanced-deepget-and-deepset/">Python 进阶 - deepget 和 deepset</a><li><a href="/posts/a-packaging-method-with-its-own-deps/">一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式</a><li><a href="/posts/python-tutorial-1-introduction/">Python 入门 - 1 - 简介</a></ul></div><div id="access-tags"> <span>热门标签</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/network/">network</a> <a class="post-tag" href="/tags/postgresql/">postgresql</a> <a class="post-tag" href="/tags/ssl/">ssl</a> <a class="post-tag" href="/tags/tls/">tls</a> <a class="post-tag" href="/tags/automation-testing/">automation-testing</a> <a class="post-tag" href="/tags/character-set/">character-set</a> <a class="post-tag" href="/tags/codeset/">codeset</a> <a class="post-tag" href="/tags/cpu/">cpu</a> <a class="post-tag" href="/tags/date/">date</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">文章内容</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>相关文章</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/ssl-notes/"><div class="card-body"> <span class="timeago small" >2024-12-22<i class="unloaded">2024-12-22T14:16:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>SSL/TLS 笔记</h3><div class="text-muted small"><p> 密码学基础 对称加密（又称单钥加密、私钥加密、共享密钥加密）：加密和解密使用同一个密钥，常见算法有 AES 和 DES 等。 非对称加密（又称双钥加密、公钥加密）：有一对密钥，私钥和公钥，公钥加密的数据，只能用对应的私钥来解密，反之亦然，常见算法有 RSA, DSA, DH, ECDSA 等。 数字签名（Digital Signatu...</p></div></div></a></div><div class="card"> <a href="/posts/postgresql-encoding/"><div class="card-body"> <span class="timeago small" >2024-12-22<i class="unloaded">2024-12-22T10:23:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>PostgreSQL 编码支持（character set/encoding)</h3><div class="text-muted small"><p> 编码支持 PostgreSQL 支持的所有编码（包括服务端和客户端）: PostgreSQL Character Sets 客户端支持表中所有编码； 服务端支持表中大部分编码； 在服务端，编码设置必须与 locale 设置 LC_CTYPE 和 LC_COLLATE 兼容： 当 locale 设置为 C 或 ...</p></div></div></a></div><div class="card"> <a href="/posts/postgresql-locale/"><div class="card-body"> <span class="timeago small" >2024-12-21<i class="unloaded">2024-12-21T17:44:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>PostgreSQL 区域设置（locale）</h3><div class="text-muted small"><p> locale 分类 分类 作用 LC_COLLATE 字符顺序 LC_CTYPE 字符分类（什么是一个字符？它的大写形式是否等效？） LC_MESSAGES 消息语言 LC_...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/ssl-notes/" class="btn btn-outline-primary" prompt="上一篇"><p>SSL/TLS 笔记</p></a> <span class="btn btn-outline-primary disabled" prompt="下一篇"><p>-</p></span></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2025 <a href="https://zhaowcheng.com">zhaowcheng</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span> <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">蜀ICP备2021030991号-1</a></p></div><div class="footer-right"><p class="mb-0"> 本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题。</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">热门标签</h4><a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/network/">network</a> <a class="post-tag" href="/tags/postgresql/">postgresql</a> <a class="post-tag" href="/tags/ssl/">ssl</a> <a class="post-tag" href="/tags/tls/">tls</a> <a class="post-tag" href="/tags/automation-testing/">automation testing</a> <a class="post-tag" href="/tags/character-set/">character set</a> <a class="post-tag" href="/tags/codeset/">codeset</a> <a class="post-tag" href="/tags/cpu/">cpu</a> <a class="post-tag" href="/tags/date/">date</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script> <script defer src="/assets/js/dist/pvreport.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PVZNL9JKFB"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PVZNL9JKFB'); }); </script>
+</pre></table></code></div></div><h2 id="参考资料">参考资料</h2><ul><li>[Transport security model] : https://etcd.io/docs/v3.5/op-guide/security/</ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/etcd/'>ETCD</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/etcd/" class="post-tag no-text-decoration" >etcd</a> <a href="/tags/network/" class="post-tag no-text-decoration" >network</a> <a href="/tags/ssl/" class="post-tag no-text-decoration" >ssl</a> <a href="/tags/tls/" class="post-tag no-text-decoration" >tls</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 本文由作者按照 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 进行授权</div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>最近更新</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/ssl-notes/">SSL/TLS 笔记</a><li><a href="/posts/sed-examples/">sed 命令使用示例</a><li><a href="/posts/introduction-to-fpm/">fpm: 一个跨平台且支持多种包格式的打包工具</a><li><a href="/posts/python-advanced-deepget-and-deepset/">Python 进阶 - deepget 和 deepset</a><li><a href="/posts/a-packaging-method-with-its-own-deps/">一种让 Linux 上的 C/C++ 程序自带依赖库的打包方式</a></ul></div><div id="access-tags"> <span>热门标签</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/network/">network</a> <a class="post-tag" href="/tags/postgresql/">postgresql</a> <a class="post-tag" href="/tags/ssl/">ssl</a> <a class="post-tag" href="/tags/tls/">tls</a> <a class="post-tag" href="/tags/automation-testing/">automation-testing</a> <a class="post-tag" href="/tags/character-set/">character-set</a> <a class="post-tag" href="/tags/codeset/">codeset</a> <a class="post-tag" href="/tags/cpu/">cpu</a> <a class="post-tag" href="/tags/date/">date</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">文章内容</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>相关文章</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/ssl-notes/"><div class="card-body"> <span class="timeago small" >2024-12-22<i class="unloaded">2024-12-22T14:16:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>SSL/TLS 笔记</h3><div class="text-muted small"><p> 密码学基础 对称加密（又称单钥加密、私钥加密、共享密钥加密）：加密和解密使用同一个密钥，常见算法有 AES 和 DES 等。 非对称加密（又称双钥加密、公钥加密）：有一对密钥，私钥和公钥，公钥加密的数据，只能用对应的私钥来解密，反之亦然，常见算法有 RSA, DSA, DH, ECDSA 等。 数字签名（Digital Signatu...</p></div></div></a></div><div class="card"> <a href="/posts/postgresql-encoding/"><div class="card-body"> <span class="timeago small" >2024-12-22<i class="unloaded">2024-12-22T10:23:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>PostgreSQL 编码支持（character set/encoding)</h3><div class="text-muted small"><p> 编码支持 PostgreSQL 支持的所有编码（包括服务端和客户端）: PostgreSQL Character Sets 客户端支持表中所有编码； 服务端支持表中大部分编码； 在服务端，编码设置必须与 locale 设置 LC_CTYPE 和 LC_COLLATE 兼容： 当 locale 设置为 C 或 ...</p></div></div></a></div><div class="card"> <a href="/posts/postgresql-locale/"><div class="card-body"> <span class="timeago small" >2024-12-21<i class="unloaded">2024-12-21T17:44:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>PostgreSQL 区域设置（locale）</h3><div class="text-muted small"><p> locale 分类 分类 作用 LC_COLLATE 字符顺序 LC_CTYPE 字符分类（什么是一个字符？它的大写形式是否等效？） LC_MESSAGES 消息语言 LC_...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/ssl-notes/" class="btn btn-outline-primary" prompt="上一篇"><p>SSL/TLS 笔记</p></a> <span class="btn btn-outline-primary disabled" prompt="下一篇"><p>-</p></span></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2025 <a href="https://zhaowcheng.com">zhaowcheng</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span> <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">蜀ICP备2021030991号-1</a></p></div><div class="footer-right"><p class="mb-0"> 本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题。</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">热门标签</h4><a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/network/">network</a> <a class="post-tag" href="/tags/postgresql/">postgresql</a> <a class="post-tag" href="/tags/ssl/">ssl</a> <a class="post-tag" href="/tags/tls/">tls</a> <a class="post-tag" href="/tags/automation-testing/">automation testing</a> <a class="post-tag" href="/tags/character-set/">character set</a> <a class="post-tag" href="/tags/codeset/">codeset</a> <a class="post-tag" href="/tags/cpu/">cpu</a> <a class="post-tag" href="/tags/date/">date</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script> <script defer src="/assets/js/dist/pvreport.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PVZNL9JKFB"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-PVZNL9JKFB'); }); </script>
