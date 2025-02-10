@@ -83,7 +83,7 @@ Processing /usr/local/pg9/lib/libpq.so.5
 以下为 `copy_deps.sh` 脚本内容：
 
 ```sh
-#/bin/bash -e
+#!/bin/bash -e
 # Copy the deps of all elf files in `ELFDIR` to `LIBDIR`.
 
 PROGNAME=$(basename $0)
@@ -143,7 +143,7 @@ Set the rpath of/usr/local/pg9/bin/ecpg to $ORIGIN/../lib
 以下为 `set_relative_rpath.sh` 脚本内容：
 
 ```sh
-#/bin/bash -e
+#!/bin/bash -e
 # Set the rpath of all elf files in `ELFDIR` to relative paths to `LIBDIR`.
 
 PROGNAME=$(basename $0)
