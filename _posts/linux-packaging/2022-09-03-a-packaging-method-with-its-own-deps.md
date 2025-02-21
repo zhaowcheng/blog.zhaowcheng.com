@@ -98,7 +98,7 @@ LIBDIR=$2
 for elf in `find $ELFDIR -type f -exec file {} + | grep ELF | cut -d: -f1`; do 
     echo "Analysing $elf"
     ldd $elf
-    for sopath in `ldd $elf | grep -E '.+.so.* => /.+.so.* \(θx.+\)' | awk '{print $3}'`; do 
+    for sopath in `ldd $elf | grep -E '.+.so.* => /.+.so.* \(0x.+\)' | awk '{print $3}'`; do 
         sopaths+=($sopath)
     done
 done
@@ -202,3 +202,7 @@ root@ubt20-x86-64:~/pg9# ./bin/psql -V
 psql (PostgreSQL) 9.6.24
 root@ubt20-x86-64:~/pg9# 
 ```
+
+## 变更日志
+
+- **2025-02-21**：修改 `copy_deps.sh` 源码中导致没有拷贝 so 文件的错误。同时发现 patchelf-0.18 修改 so 文件后出现格式错误，建议使用 patchelf-0.13；
