@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL 版本策略（versioning policy)
-date: 2025-03-11 17:30:00 +0800
+date: 2025-03-11 21:52:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, versioning]
 ---
@@ -23,7 +23,7 @@ tags: [postgresql, versioning]
 
 | 升级路径 | 升级方式 |
 |------|-------|
-| 跨 major 版本 | 使用 `pg_dumpall`、`pg_upgrade` 等工具，详情见 [官方文档](https://www.postgresql.org/developer/roadmap/) |
+| 跨 major 版本 | 使用 `pg_dumpall`、`pg_upgrade`、`Replication` 等工具或方式，详情见 [官方文档](https://www.postgresql.org/developer/roadmap/) |
 | 跨 minor 版本 | 可以通过直接替换安装目录的方式实现 |
 
 ## 参考资料
