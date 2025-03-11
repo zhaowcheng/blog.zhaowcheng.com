@@ -57,7 +57,7 @@ locale -a
 
 PostgreSQL 支持选择不同的 locale 提供程序为 `LC_COLLATE` 和 `LC_CTYPE` 分类提供支持，而其他的分类则仍然由操作系统提供支持。
 
-PostgreSQL 支持在 `initdb`, `CREATE DATABASE` 和 `CREATE COLLATION` 时均可选择，也就是说可以在不同的维度上进行混用。
+PostgreSQL 提供程序在 `initdb`, `CREATE DATABASE` 和 `CREATE COLLATION` 时均可选择，也就是说可以在不同的维度上进行混用。
 
 | 提供程序 | 说明 |
 | ------ | ---- |
