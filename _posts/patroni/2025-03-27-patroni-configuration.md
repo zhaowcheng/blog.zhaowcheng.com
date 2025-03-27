@@ -1,6 +1,6 @@
 ---
 title: Patroni 配置说明
-date: 2025-03-18 21:58:00 +0800
+date: 2025-03-27 18:58:00 +0800
 categories: [Patroni]
 tags: [patroni, postgresql]
 ---
