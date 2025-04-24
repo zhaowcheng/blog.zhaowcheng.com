@@ -7,13 +7,13 @@ tags: [postgresql, high-availability, unfinished]
 
 ## 1 简介
 
-主节点持续归档/传送 WAL，备节点持续恢复/接收 WAL 并应用，以此实现一个高可用集群，这种方式叫做 `log shipping`，这样的备节点也叫做 `warm standby`，如果备节点接受 `只读查询`，则叫做 `hot standby`。
+主节点持续归档/传送 WAL，备节点持续恢复/接收 WAL 并回放（replay），以此实现一个高可用集群，这种方式叫做 `log shipping`，这样的备节点也叫做 `warm standby`，如果备节点还可以接受 `只读查询`，则叫做 `hot standby`。
 
 PostgreSQL 支持 2 种级别的 `log shipping`：
 
-1. **文件级（file-based）**：主节点配置 `archive_command` 持续归档 WAL 文件，备节点配置 `restore_command` 持续恢复 WAL 文件并应用。
+1. **文件级（file-based）**：主节点配置 `archive_command` 持续归档 WAL 文件，备节点配置 `restore_command` 持续恢复 WAL 文件并回放。
 
-2. **记录级（record-based）**： 主节点持续传送 WAL 记录，备节点持续接收 WAL 记录并应用，即 `流复制（streaming replication）`。
+2. **记录级（record-based）**： 主节点持续传送 WAL 记录，备节点持续接收 WAL 记录并回放，即 `流复制（streaming replication）`。
 
 ## 2 环境要求
 
@@ -27,17 +27,17 @@ PostgreSQL 支持 2 种级别的 `log shipping`：
 
 当一个数据库实例的数据目录（datadir）下存在 `standby.signal` 文件时，该实例启动时则进入 `备节点模式（standby mode）`。
 
-备节点模式下启动，数据库按照如下顺序读取 WAL 并应用：
+备节点模式下启动，数据库按照如下顺序读取 WAL 并回放：
 
-1. 如果配置了 `restore_command`，则调用 restore_command 从归档中恢复 WAL 并应用直到 restore_command 失败为止。
+1. 如果配置了 `restore_command`，则调用 restore_command 从归档中恢复 WAL 并回放直到 restore_command 失败为止。
 
-2. 然后读取 `pg_wal` 目录中的所有可用 WAL 并应用直到结束；
+2. 然后读取 `pg_wal` 目录中的所有可用 WAL 并回放直到结束；
 
-3. 然后，如果配置了流复制，则通过流复制从主节点持续接收 WAL 并应用；
+3. 然后，如果配置了流复制，则通过流复制从主节点持续接收 WAL 并回放；
 
-4. 如果流复制断开，则重新从第 1 步开始，如此往复；
+4. 如果流复制断开，则重新从第 1 步开始，如此循环往复；
 
-当备节点执行升主操作（`pg_ctl promote` 或调用 `pg_promote()` 函数）后，则退出备节点模式，但是在升主前，会把 `归档` 和 `pg_wal` 中的可用 WAL 都先应用了。
+当备节点执行升主操作（`pg_ctl promote` 或调用 `pg_promote()` 函数）后，则退出备节点模式，但是在升主前，会把 `归档` 和 `pg_wal` 中的可用 WAL 都先回放了。
 
 ## 4 文件级（持续归档和恢复）
 
@@ -45,13 +45,13 @@ PostgreSQL 支持 2 种级别的 `log shipping`：
 
 1. 配置 `archive_mode` 参数为 `on`。
 
-2. 配置 `archive_command` 参数来持续归档 WAL 到一个即使主节点挂掉了，备节点也能访问的地方，可以是第一个第三方节点或者就在备节点上。
+2. 配置 `archive_command` 参数来持续归档 WAL 到一个即使主节点挂掉了，备节点也能访问的地方，可以是第三方节点或者就在备节点上。
 
 ### 4.2 备节点配置
 
 1. 使用 `pg_basebackup` 命令从主节点拉取数据目录，如 `pg_basebackup -P -h <PRIMARY_NODE_IP> -U <REPLICATION_USER> -p <DBPORT> -D <DATADIR>`。
 
-2. 配置 `restore_command` 参数来从归档持续恢复 WAL 文件并应用。
+2. 配置 `restore_command` 参数来从归档持续恢复 WAL 文件并回放。
 
 3. 配置 `archive_mode` 和 `archive_command` 参数和主节点一样，以备当前备节点提升为主节点后能继续归档（除非 `archive_mode` 为 `always`，否则备节点模式下不会执行归档命令）。
 
@@ -73,7 +73,7 @@ PostgreSQL 支持 2 种级别的 `log shipping`：
 
 2. 创建一个带 `REPLICATION` 权限的用户，如 `CREATE USER <REPLICATION_USER> PASSWORD '<REPLICATION_PWD>' REPLICATION;`。
 
-3. 在 `pg_hba.conf` 文件中增加允许备节点访问的配置，如 `host replication replica <STANDBY_NODE_IP>/32 md5`（`database` 列配置为虚拟数据库名 `replication`）。
+3. 在 `pg_hba.conf` 文件中增加允许备节点访问的配置，如 `host replication <REPLICATION_USER> <STANDBY_NODE_IP>/32 md5`（`database` 列配置为虚拟数据库名 `replication`）。
 
 4. 配置 `max_wal_senders` 参数为足够所有备节点使用的值。
 
@@ -136,9 +136,9 @@ primary_slot_name = 'node_a_slot'
 
 ### 5.5 同步复制（synchronous replication）
 
-流复制默认是 `异步（asynchronous）` 的，即一个事物在主节点提交后如果马上去备节点查询，有可能还查询不到，因为 WAL 记录可能还没有传送到备节点或者备节点还没有回放（replay）该记录。
+流复制默认是 `异步（asynchronous）` 的，即一个事物在主节点提交后如果马上去备节点查询，有可能还查询不到，因为 WAL 记录可能还没有传送到备节点或者备节点还没有回放该记录。
 
-可以把一个或多个备节点指定为 `同步（synchronous）` 备节点，配置了同步备节点的流复制集群，在事务提交时需要 `一直等待` 直到收到同步备节点回复的 WAL 记录已保存的消息后，才返回成功。
+可以把一个或多个备节点指定为 `同步（synchronous）` 备节点，配置了同步备节点的流复制集群，在事务提交时需要 `一直等待` 直到收到同步备节点回复的 WAL 记录已保存的消息后，才给客户端返回成功。
 
 以下情况不需要等待同步备节点回复：
 - 只读事务（read-only transactions）
@@ -148,6 +148,17 @@ primary_slot_name = 'node_a_slot'
 - 索引构建（index building）
 
 同步备节点可以是 `物理（流）复制备节点（physical/stream replication standby）`，也可以是 `逻辑复制订阅者（logical replication subscriber）`，也可以是其他一些第三方程序，比如 `pg_receivewal` 和 `pg_recvlogical` 等。
+
+发生 `fast shutdown` 请求时，数据库会将正在等待的同步备节点的事务提交立即返回给客户端让其停止等待，但是仍然会等到 WAL 都已发送到所有备节点后才关闭（异步情况下也是如此）。
+
+启用同步复制，需要在发送节点同时配置参数 [synchronous_commit](/posts/postgresql-configuration/#synchronous_commit-enum) 和 [synchronous_standby_names](/posts/postgresql-configuration/#synchronous_standby_names-string)，配置说明请点击对应参数链接查看。
+
+如果因为同步备节点故障导致事务提交被阻塞，可以设置 `synchronous_standby_names` 参数为空并 `reload` 来立即关闭同步模式，从而解决阻塞的问题：
+
+```SQL
+ALTER SYSTEM SET synchronous_standby_names TO '';
+SELECT pg_reload_conf();
+```
 
 ### 5.6 状态查询
 
