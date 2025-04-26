@@ -162,11 +162,35 @@ SELECT pg_reload_conf();
 
 ### 5.6 状态查询
 
+查询流复制状态主要通过以下函数和视图：
+
+| 函数/视图 | 说明 | 使用范围/条件 |
+| -------- | --- | ----------- |
+| [pg_current_wal_flush_lsn()](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-ADMIN-BACKUP) | 已刷盘的最新的 LSN | 恢复状态下不可用 |
+| [pg_current_wal_lsn()](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-ADMIN-BACKUP) | 已写入文件系统缓存的最新的 LSN | 恢复状态下不可用 |
+| [pg_current_wal_insert_lsn()](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-ADMIN-BACKUP) | 已插入 WAL 缓存的最新的 LSN | 恢复状态下不可用 |
+| [pg_last_wal_receive_lsn()](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-RECOVERY-CONTROL) | 已收到并且已刷盘的最新的 LSN | 没有 receiver 进程则返回 NULL |
+| [pg_last_wal_replay_lsn()](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-RECOVERY-CONTROL) | 恢复状态下已回放的最新的 LSN | 非恢复状态下则返回 NULL |
+| [pg_stat_replication](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-REPLICATION-VIEW) | 每个 sender 进程对应流复制的状态信息 | N/A |
+| [pg_stat_wal_receiver](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-WAL-RECEIVER-VIEW) | receiver 进程对应的流复制状态信息 | N/A |
+
+> 注：一个数据库实例最多只能有一个 receiver。
+
 ## 6 文件级 + 记录级
+
+同时配置文件级和记录级的 `log shipping` 可以达到更佳的效果，例如当备节点长时间离线后重新回归时，主节点上有些 WAL 可能已经被回收，但是备节点可以通过持续恢复从归档中获取 WAL，避免了 WAL 缺失导致的备节点回归失败。
 
 ## 7 热备（hot standby）
 
+当数据库 `hot_standby` 参数配置为 `on` 时，则在恢复状态下仍然可以接受 `只读查询`，所以如果备节点开启了该参数，也就可以同时接受只读查询，也就是一个 `热备（hot standby）`。
+
 ## 8 故障转移（failover）
+
+当主节点故障时，备节点可以通过执行 `pg_ctl promote` 命令或者 `pg_promote()` 函数来升级为主节点，以此实现故障转移。
+
+故障切换后，原主节点故障修复后应该配置为备节点跟随新主节点，如果仍然以主节点启动，将会导致脑裂（即存在多个主节点）。
+
+可以使用 [pg_rewind](https://www.postgresql.org/docs/17/app-pgrewind.html) 帮助原主节点作为备节点快速同步新主节点的数据。
 
 ## 9 参考资料
 
