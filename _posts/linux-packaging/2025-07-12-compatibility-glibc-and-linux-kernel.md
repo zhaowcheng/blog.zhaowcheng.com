@@ -14,7 +14,7 @@ tags: [glibc, kernel]
 | 2.24 ~ 2.25 | 运行时：x86 上要求 >= 2.6.32，其他架构要求 >= 3.2；编译时：所有架构都要求内核头文件版本 >= 3.2 |
 | 2.26 ~ 2.41 | >= 3.2 |
 
-对于已编译好的 glibc，可以直接运行 `libc.so.6` 查看兼容的最低内核版本：
+glibc 在编译配置时可通过参数 `--enable-kernel` 指定兼容的最低内核版本，未指定时则默认按照最低兼容配置，对于已编译好的 glibc，可以直接运行 `libc.so.6` 查看兼容的最低内核版本：
 ```console
 $ /lib/x86_64-linux-gnu/libc.so.6 
 GNU C Library (Ubuntu GLIBC 2.40-1ubuntu3.1) stable release version 2.40.
