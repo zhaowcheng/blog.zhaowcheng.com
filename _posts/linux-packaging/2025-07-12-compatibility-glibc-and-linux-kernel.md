@@ -13,3 +13,18 @@ tags: [glibc, kernel]
 | 2.20 ~ 2.23 | >= 2.6.32 |
 | 2.24 ~ 2.25 | 运行时：x86 上要求 >= 2.6.32，其他架构要求 >= 3.2；编译时：所有架构都要求内核头文件版本 >= 3.2 |
 | 2.26 ~ 2.41 | >= 3.2 |
+
+对于已编译好的 glibc，可以直接运行 `libc.so.6` 查看兼容的最低内核版本：
+```console
+$ /lib/x86_64-linux-gnu/libc.so.6 
+GNU C Library (Ubuntu GLIBC 2.40-1ubuntu3.1) stable release version 2.40.
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 14.2.0.
+libc ABIs: UNIQUE IFUNC ABSOLUTE
+Minimum supported kernel: 3.2.0
+For bug reporting instructions, please see:
+<https://bugs.launchpad.net/ubuntu/+source/glibc/+bugs>.
+```
