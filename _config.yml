@@ -60,12 +60,12 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 # ↑ --------------------------
 
 
-google_analytics:
-  id: 'G-PVZNL9JKFB'              # fill in your Google Analytics ID
+# google_analytics:
+  # id: 'G-PVZNL9JKFB'              # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint:  # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path: '/pageviews.json'  # the local PV cache data, friendly to visitors from GFW region
+  # pv:
+    # proxy_endpoint:  # fill in the Google Analytics superProxy endpoint of Google App Engine
+    # cache_path: '/pageviews.json'  # the local PV cache data, friendly to visitors from GFW region
 
 # Prefer color scheme setting.
 #
