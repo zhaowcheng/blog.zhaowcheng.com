@@ -1,0 +1,55 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* Custom styles for sidebar centering */
+#sidebar {
+  .profile-wrapper {
+    text-align: center;
+    
+    #avatar {
+      margin: 0 auto;
+    }
+    
+    .site-title {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .site-subtitle {
+      text-align: center;
+    }
+  }
+  
+  ul li.nav-item {
+    text-align: center;
+    
+    a.nav-link {
+      justify-content: center;
+      
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  
+  .sidebar-bottom {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    
+    a, #mode-toggle {
+      margin-right: 0;
+    }
+  }
+}
