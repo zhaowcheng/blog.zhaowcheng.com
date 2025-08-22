@@ -79,7 +79,7 @@ analytics:
   fathom:
     id: # fill in your Fathom Site ID
   vercel:
-    enabled: true # enable Vercel Web Analytics
+    id: "vercel-analytics" # enable Vercel Web Analytics
 
 # Page views settings
 pageviews:
