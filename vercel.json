@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "JEKYLL_ENV": "production"
+    }
+  },
+  "buildCommand": "bundle exec jekyll build"
+}
