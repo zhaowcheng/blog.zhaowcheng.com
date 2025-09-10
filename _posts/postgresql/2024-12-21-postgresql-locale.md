@@ -20,7 +20,7 @@ tags: [postgresql, locale]
 
 可通过 SQL 命令 `SHOW LC_*` 查询对应分类的 locale 设置，如：
 
-```SQL
+```sql
 SHOW LC_COLLATE;
 ```
 
