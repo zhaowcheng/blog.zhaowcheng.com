@@ -45,6 +45,14 @@ $ sed '/hello/i world'
 $ sed '/hello/a world'
 ```
 
+## 追加
+
+在 `hello` 后面追加 `world`
+
+```console
+$ sed 's/hello/&world/'
+```
+
 ## 删除
 
 删除第 2 行
