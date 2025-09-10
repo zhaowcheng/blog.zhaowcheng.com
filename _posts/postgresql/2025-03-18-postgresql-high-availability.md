@@ -53,7 +53,7 @@ PostgreSQL 支持 2 种级别的 `log shipping`：
 
 2. 配置 `restore_command` 参数来从归档持续恢复 WAL 文件并回放。
 
-3. 配置 `archive_mode` 和 `archive_command` 参数和主节点一样，以备当前备节点提升为主节点后能继续归档（除非 `archive_mode` 为 `always`，否则备节点模式下不会执行归档命令）。
+3. 配置 `archive_mode` 和 `archive_command` 参数和主节点一样，为了当前备节点提升为主节点后能继续归档（除非 `archive_mode` 为 `always`，否则备节点模式下不会执行归档命令）。
 
 4. 配置 `recovery_target_timeline` 为 `latest`（默认值），以此保证当发生切主到其他备节点时，当前备节点能及时跟随新主。
 
@@ -93,7 +93,7 @@ PostgreSQL 支持 2 种级别的 `log shipping`：
 
 ### 5.3 复制槽
 
-如果流复制备节点连接断开后过了较长时间才恢复连接，那么有些还没有被备节点接收的 WAL 文件可能在主节点已经被回收，导致备节点无法追赶（catch-up）上主节点。我们可以通过配置 `wal_keep_size` 参数或 `复制槽` 来避免该问题。但是配置 `wal_keep_size` 的方式需要估计一个比实际需要保存更大的值，这样就会又些冗余文件的方式，而 `复制槽` 的方式则更精确，仅保留未被绑定到该复制槽上的备节点们接收的 WAL 文件。
+如果流复制备节点连接断开后过了较长时间才恢复连接，那么有些还没有被备节点接收的 WAL 文件可能在主节点已经被回收，导致备节点无法追赶（catch-up）上主节点。我们可以通过配置 `wal_keep_size` 参数或 `复制槽` 来避免该问题。但是配置 `wal_keep_size` 的方式需要估计一个比实际需要保存更大的值，这样就会又些冗余文件的方式，而 `复制槽` 的方式则更精确，仅保留绑定到该复制槽上的备节点们未接收的 WAL 文件。
 
 需要注意的是配置复制槽后，如果备节点长期离线，可能会导致主节点积压过多的 WAL 文件而占用大量空间，为了避免该问题，可以配置 `max_slot_wal_keep_size` 参数来限制保留的最大值。
 
@@ -136,7 +136,7 @@ primary_slot_name = 'node_a_slot'
 
 ### 5.5 同步复制（synchronous replication）
 
-流复制默认是 `异步（asynchronous）` 的，即一个事物在主节点提交后如果马上去备节点查询，有可能还查询不到，因为 WAL 记录可能还没有传送到备节点或者备节点还没有回放该记录。
+流复制默认是 `异步（asynchronous）` 的，即一个事务在主节点提交后如果马上去备节点查询，有可能还查询不到，因为 WAL 记录可能还没有传送到备节点或者备节点还没有回放该记录。
 
 可以把一个或多个备节点指定为 `同步（synchronous）` 备节点，配置了同步备节点的流复制集群，在事务提交时需要 `一直等待` 直到收到同步备节点回复的 WAL 记录已保存的消息后，才给客户端返回成功。
 
@@ -155,7 +155,7 @@ primary_slot_name = 'node_a_slot'
 
 如果因为同步备节点故障导致事务提交被阻塞，可以设置 `synchronous_standby_names` 参数为空并 `reload` 来立即关闭同步模式，从而解决阻塞的问题：
 
-```SQL
+```sql
 ALTER SYSTEM SET synchronous_standby_names TO '';
 SELECT pg_reload_conf();
 ```
