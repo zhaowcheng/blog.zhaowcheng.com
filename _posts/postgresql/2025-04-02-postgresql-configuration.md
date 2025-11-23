@@ -87,6 +87,32 @@ standby_name [, ...]
 
 - 而没在给定列表中的 `sync_priority` 和 `sync_state` 则为 `0` 和 `async`。
 
+### [hot_standby_feedback](https://www.postgresql.org/docs/17/runtime-config-replication.html#GUC-HOT-STANDBY-FEEDBACK) (boolean)
+
+
+
+### [recovery_min_apply_delay](https://www.postgresql.org/docs/17/runtime-config-replication.html#GUC-RECOVERY-MIN-APPLY-DELAY) (integer)
+
+设置备节点回放 WAL 记录的延迟时间（默认值 `0`，即不延迟；默认单位 `ms(毫秒)`，也可以指定单位，如 `5min`），该设置可以保留一个时间窗口用于修复错误的 WAL 数据。
+
+实际延迟的时间计算方式如下：
+```
+recovery_min_apply_delay - (当前备节点系统时间 - WAL记录中的时间戳(主节点上被创建时写入))
+```
+所以，如果主备节点系统时间不一致，可能会导致和预期的延迟不同；如果网络延迟大到超过了该值，备节点收到 WAL 记录后就会立即回放。
+
+该设置只对 `事务提交` 类型的 WAL 记录有效，其他类型的 WAL 收到后立即回放，因为 MVCC 机制下，没提交的事务的 WAL 是不可见的，因此不会对其他事务产生影响。
+
+该设置只有当备节点达到一致状态后才会生效。
+
+在延迟等待期间，如果备节点收到 `升主（promote）` 信号，会立即结束等待。
+
+如果设置时间太长，可能会导致备节点积压过多 WAL 文件从而占用磁盘空间。
+
+当 [hot_standby_feedback](#hot_standby_feedback-boolean) 参数设置为 `on` 时，该设置会导致备节点发送 `feedback` 消息的延迟。
+
+当 [synchronous_commit](#synchronous_commit-enum) 参数设置为 `remote_apply` 时，该设置会导致每次 `COMMIT` 都需等待该延迟结束。
+
 ## Error Reporting and Logging
 
 ### [cluster_name](https://www.postgresql.org/docs/17/runtime-config-logging.html#GUC-CLUSTER-NAME) (string)

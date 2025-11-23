@@ -25,3 +25,6 @@ package-lock.json
 _sass/vendors
 assets/js/dist
 .vercel
+
+# MacOS
+.DS_Store
