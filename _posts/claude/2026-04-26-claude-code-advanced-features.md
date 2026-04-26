@@ -101,4 +101,4 @@ How CLAUDE.md files load](https://code.claude.com/docs/en/memory#how-claude-md-f
 
 ## 参考资料
 
-- [Claude Code Docs]: https://code.claude.com/docs/en
+- [Claude Code Docs] : https://code.claude.com/docs/en
