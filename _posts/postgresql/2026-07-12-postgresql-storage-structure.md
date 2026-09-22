@@ -175,7 +175,7 @@ $ ls -la base/16384/18751*
 -rw------- 1 postgres postgres  8192 Apr 21 10:18 base/16384/18751_vm
 ```
 
-在数据系统内部，把数据文件、fsm 文件、vm 文件、init 文件称作对应关系（relation）的分支（fork），数据文件是 `fork 0`，fsm 文件是 `fork 1`，vm 文件是 `fork 2`，init 文件是 `fork 3`。和数据文件一样，其他分支文件大小超过编译时指定的段大小时，也会创建新段文件来继续写。
+在数据库系统内部，把数据文件、fsm 文件、vm 文件、init 文件称作对应关系（relation）的分支（fork），数据文件是 `fork 0`，fsm 文件是 `fork 1`，vm 文件是 `fork 2`，init 文件是 `fork 3`。和数据文件一样，其他分支文件大小超过编译时指定的段大小时，也会创建新段文件来继续写。
 
 ### 3.4 表空间布局
 
@@ -207,7 +207,7 @@ total 4
 drwx------ 2 postgres postgres 4096 Apr 21 10:10 16387
 ```
 
-如果一个 PGDATA 中已存在的数据库里创建了一个使用表空间的表，假设该数据库 OID 为 16384，那么也会在表空间版本目录下以数据库 OID 创建一个子目录，然后再该子目录下创建表的相关文件：
+如果一个 PGDATA 中已存在的数据库里创建了一个使用表空间的表，假设该数据库 OID 为 16384，那么也会在表空间版本目录下以数据库 OID 创建一个子目录，然后在该子目录下创建表的相关文件：
 
 ```console
 sampledb=# CREATE TABLE newtbl (.....) TABLESPACE new_tblspc;
@@ -230,7 +230,7 @@ sampledb=# SELECT pg_relation_filepath('newtbl');
 
 表文件页内包含 3 种类型的数据：
 
-1. **元组（tuple）**: 一个元组对应表中的一行数据，在页内是从底部开始依次往上堆叠着存。正式因为这种存放方式，所以在 PostgreSQL 中元组又叫做`堆元组（heap tuple）`，表又叫做`堆表（heap table）`。
+1. **元组（tuple）**: 一个元组对应表中的一行数据，在页内是从底部开始依次往上堆叠着存。正是因为这种存放方式，所以在 PostgreSQL 中元组又叫做`堆元组（heap tuple）`，表又叫做`堆表（heap table）`。
 
 2. **行指针（line pointer）**: 行指针是一个 4 字节长的数据结构，保存着指向特定元组的指针，也被叫做`项目指针（item pointer）`。页内所有行指针是以数组的形式组织的，数组内的的行指针从 1 开始编号，这个编号也被叫做`偏移号（offset number）`。当向页内插入一个元组时，相应的也会追加一个行指针到行指针数组中。
 
@@ -252,7 +252,7 @@ sampledb=# SELECT pg_relation_filepath('newtbl');
 
 ![writing_tuples](/assets/img/postgresql/writing_tuples.png)
 
-如上图，假设一张表当前只有一个页，这个页内页只有一个元组 Tuple 1，这时 pd_lower 则指向行指针 1 的末尾，pd_upper 则指向元组 Tuple 1 的开头。当第二个元组 Tuple 2 插入时，则放到第一个元组 Tuple 1 的前面，同时在第一个行指针 1 后面追加一个行指针 2 指向元组 Tuple 2 的开头，pd_lower 改为指向行指针 2 的末尾，pd_upper 改为指向元组 Tuple 2 的开头，同时页头部相应字段（如 pd_lsn, pd_checksum, pd_flags 等）也进行更新。
+如上图，假设一张表当前只有一个页，这个页内只有一个元组 Tuple 1，这时 pd_lower 则指向行指针 1 的末尾，pd_upper 则指向元组 Tuple 1 的开头。当第二个元组 Tuple 2 插入时，则放到第一个元组 Tuple 1 的前面，同时在第一个行指针 1 后面追加一个行指针 2 指向元组 Tuple 2 的开头，pd_lower 改为指向行指针 2 的末尾，pd_upper 改为指向元组 Tuple 2 的开头，同时页头部相应字段（如 pd_lsn, pd_checksum, pd_flags 等）也进行更新。
 
 ##### 3.5.2.2 读
 
