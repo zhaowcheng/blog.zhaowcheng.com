@@ -13,10 +13,10 @@ tags: [postgresql, unfinished]
 - **Boolean**: 布尔类型，合法值包括 `on`、`off`、`true`、`false`、`yes`、`no`、`1`、`0`，以及这些值的没有歧义的前缀，比如 `of`、`t`、`f`、`y` 等。所有值都是`大小写不敏感的（case-insensitive）`。该类型的值`不需要引号包裹`。
 - **String**: 字符串类型，该类型的值通常需要使用`单引号（Single quotes）`包裹，如果值中包含单引号，则需要`双写（Doubling any single quotes）`值中的单引号。如果是简单的标识符（没有特殊字符），也可以不用单引号包裹，但是如果是 `SQL 关键字`，则必须使用单引号包裹。
 - **Numeric (integer and floating point):**: 数值类型，包括 `integer` 和 `floating point`。integer 类型参数还接受`小数（Fractional）`、`十六进制（以 0x 开头）`、`八进制（以 0 开头）`等形式的值，但是小数形式会被四舍五入为最近的整数，除十六进制外，其他形式都可以不加单引号包裹。不接受千分位（Thousands separators）形式。
-- **Numeric with Unit**: 有的数值类型是有单位的，比如和存储和时间相关的参数，该类型的值如果是给的纯数字，那么会使用默认单位（可以从 `pg_settings.unit` 查看默认单位），关于单位的写法要求如下：
+- **Numeric with Unit**: 有的数值类型是有单位的，比如和存储和时间相关的参数，该类型的值如果是纯数字，那么会使用默认单位（可以从 `pg_settings.unit` 查看默认单位），关于单位的写法要求如下：
     - 存储相关的单位可以是 `B(bytes)`、`kB(kilobytes)`、`MB(megabytes)`、`GB(gigabytes)`、`TB(terabytes)`，不同级别单位之间的乘数是 `1024`。
     - 时间相关的单位可以是 `us(microseconds)`、`ms(milliseconds)`、`s(seconds)`、`min(minutes)`、`h(hours)`、`d(days)`。
-    - 给的其他级别单位的值最终会被转换为默认级别单位的值。
+    - 其他级别单位的值最终会被转换为默认级别单位的值。
     - 带单位的时候必须使用单引号包裹起来，单位和数字之间可以有空格。
     - 单位是`大小写敏感的（case-sensitive）`。
     - 如果一个带单位的值写成了小数，PostgreSQL 会先把它换算成“更小一级的单位”后再取整。比如 30.1 GB 会被换算成 30822 MB，而不是直接变成 32319628902 B。如果这个参数本身还是整数类型，那么在单位换算之后，还会再做一次整数取整。
@@ -42,7 +42,7 @@ data 目录下的 `postgresql.conf` 是提供给用户手动修改设置数据�
 
 当注释参数行（`#` 开头）时表示把参数恢复为编译时确定的内建默认值（built-in default）。
 
-该方式支持设置的参数 context 类型为 postmaster、sighup、superuser-backend、backend、superuser、user，支持重载生效的参数 context 类型为 sighup、superuser-backend、backend、superuser、user（关于 context 类型请查看 [pg_settings](#127-pg_settings)）。
+该方式支持设置的参数 context 类型为 postmaster、sighup、superuser-backend、backend、superuser、user。（关于 context 类型请查看 [pg_settings](#127-pg_settings)）
 
 支持重载生效的参数 context 类型为 sighup、superuser-backend、backend、superuser、user，且前提是没有被后续所诉的方式覆盖设置。
 
