@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL 版本策略（versioning policy)
+title: PostgreSQL 版本策略
 date: 2025-03-11 21:52:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, versioning]

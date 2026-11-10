@@ -1,11 +1,10 @@
 ---
-title: PostgreSQL WAL（Write-Ahead Logging）
+title: PostgreSQL WAL
 date: 2026-01-01 23:05:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, wal]
 mermaid: true
 ---
-
 
 ## 1 简介
 

@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL 高可用（high availability)
+title: PostgreSQL 高可用
 date: 2025-03-18 22:40:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, high-availability, unfinished]

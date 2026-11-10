@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL 编码支持（character set/encoding)
+title: PostgreSQL 编码支持
 date: 2024-12-22 10:23:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, encoding, character-set, codeset]

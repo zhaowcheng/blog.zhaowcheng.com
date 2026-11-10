@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL 区域设置（locale）
+title: PostgreSQL 区域设置
 date: 2024-12-21 17:44:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, locale]

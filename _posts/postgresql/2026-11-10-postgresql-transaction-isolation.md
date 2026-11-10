@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL 事务隔离
-date: 2026-11-10 23:19:00 +0800
+date: 2026-11-10 17:28:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, isolation]
 ---

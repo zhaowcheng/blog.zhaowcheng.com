@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL 回归测试（regressio tests)
+title: PostgreSQL 回归测试
 date: 9999-01-01 00:00:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, regression]
