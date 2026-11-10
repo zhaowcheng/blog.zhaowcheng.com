@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL 流复制
-date: 9999-01-01 00:00:00 +0800
+date: 2026-11-9 22:22:00 +0800
 categories: [PostgreSQL]
 tags: [postgresql, replication]
 ---
